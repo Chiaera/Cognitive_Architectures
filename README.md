@@ -45,3 +45,9 @@ The goal is to understand how visual–proprioceptive conflicts can generate con
 - [ ] Full experimental protocol
 - [ ] Raw dataset of user responses
 - [ ] Statistical analysis report
+
+# Starting repo
+- https://unity.com/products/unity-student use the unige email for the license
+- https://docs.manus-meta.com/2.4.0/Plugins/Unity/getting%20started/ UnityxMANUS
+- I'm searching the license for the MANUS, start with download the MANUS SDK (https://docs.manus-meta.com/2.4.0/Products/Optitrack%20Metagloves/)
+- https://developer-docs.magicleap.cloud/docs/guides/developer-tools/ml-hub/magic-leap-hub/ Magic Leap 2 SDK -> download the Unity's packages from the ML Hub 2.0
