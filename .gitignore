@@ -1,0 +1,67 @@
+# Unity — generati automaticamente
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+*.pidb.meta
+*.pdb.meta
+*.mdb.meta
+*.apk
+*.aab
+
+# Unity — asset importati
+/[Aa]ssets/[Ss]treamingAssets/aa.meta
+/[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
+/[Aa]ssets/[Ss]treamingAssets/aa/**
+crashlytics-build.properties
+
+# IDE — Visual Studio / Rider
+.vs/
+*.csproj
+*.sln
+*.suo
+*.user
+.idea/
+.vscode/
+
+# Magic Leap 2 / OpenXR
+*.mlpkg
+MagicLeap/
+*.privacyconfig
+ml_signing_key.*
+
+# MANUS Core SDK
+ManusCore/Bin/
+ManusCore/Logs/
+*.manus_session
+manus_config_local.*
+
+# Dati esperimento / studio utenti
+Data/Raw/
+Data/Participants/
+*.csv
+*.json.bak
+ExperimentLogs/
+Analysis/Output/
+*.Rhistory
+.Rdata
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# OS & sistema
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.lnk
+
+# Sicurezza — mai committare
+.env
+.env.local
+*.keystore
+*.p12
+*_credentials.*
+consent_forms/
