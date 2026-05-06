@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Keys: 0100000007000000
   Values:
-  - featureSets: []
+  - featureSets:
+    - com.magicleap.openxr.featuregroup.appsim
+    - com.magicleap.openxr.featuregroup.appsim-exp
   - featureSets:
     - com.magicleap.openxr.featuregroup
   m_vulkanAdditionalGraphicsQueue: 0

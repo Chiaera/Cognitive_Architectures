@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 26
-  productGUID: cbfd63e3256f2b5488ca80315c1810d7
+  productGUID: bda1241c9f27ae843a74e117091c7cc1
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -12,8 +12,8 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: UniGe
-  productName: PseudoHaptics
+  companyName: DefaultCompany
+  productName: CogAr_pseudoHaptics
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -272,7 +272,7 @@ PlayerSettings:
   AndroidKeystoreName: 
   AndroidKeyaliasName: 
   AndroidEnableArmv9SecurityFeatures: 0
-  AndroidBuildApkPerCpuArchitecture: 0
+  AndroidBuildApkPerCpuArchitecture: 1
   AndroidTVCompatibility: 0
   AndroidIsGame: 1
   AndroidEnableTango: 0
@@ -391,66 +391,6 @@ PlayerSettings:
   - m_BuildTarget: Android
     m_Icons:
     - m_Textures: []
-      m_Width: 192
-      m_Height: 192
-      m_Kind: 1
-      m_SubKind: 
-    - m_Textures: []
-      m_Width: 144
-      m_Height: 144
-      m_Kind: 1
-      m_SubKind: 
-    - m_Textures: []
-      m_Width: 96
-      m_Height: 96
-      m_Kind: 1
-      m_SubKind: 
-    - m_Textures: []
-      m_Width: 72
-      m_Height: 72
-      m_Kind: 1
-      m_SubKind: 
-    - m_Textures: []
-      m_Width: 48
-      m_Height: 48
-      m_Kind: 1
-      m_SubKind: 
-    - m_Textures: []
-      m_Width: 36
-      m_Height: 36
-      m_Kind: 1
-      m_SubKind: 
-    - m_Textures: []
-      m_Width: 192
-      m_Height: 192
-      m_Kind: 0
-      m_SubKind: 
-    - m_Textures: []
-      m_Width: 144
-      m_Height: 144
-      m_Kind: 0
-      m_SubKind: 
-    - m_Textures: []
-      m_Width: 96
-      m_Height: 96
-      m_Kind: 0
-      m_SubKind: 
-    - m_Textures: []
-      m_Width: 72
-      m_Height: 72
-      m_Kind: 0
-      m_SubKind: 
-    - m_Textures: []
-      m_Width: 48
-      m_Height: 48
-      m_Kind: 0
-      m_SubKind: 
-    - m_Textures: []
-      m_Width: 36
-      m_Height: 36
-      m_Kind: 0
-      m_SubKind: 
-    - m_Textures: []
       m_Width: 432
       m_Height: 432
       m_Kind: 2
@@ -479,6 +419,66 @@ PlayerSettings:
       m_Width: 81
       m_Height: 81
       m_Kind: 2
+      m_SubKind: 
+    - m_Textures: []
+      m_Width: 192
+      m_Height: 192
+      m_Kind: 1
+      m_SubKind: 
+    - m_Textures: []
+      m_Width: 144
+      m_Height: 144
+      m_Kind: 1
+      m_SubKind: 
+    - m_Textures: []
+      m_Width: 96
+      m_Height: 96
+      m_Kind: 1
+      m_SubKind: 
+    - m_Textures: []
+      m_Width: 72
+      m_Height: 72
+      m_Kind: 1
+      m_SubKind: 
+    - m_Textures: []
+      m_Width: 48
+      m_Height: 48
+      m_Kind: 1
+      m_SubKind: 
+    - m_Textures: []
+      m_Width: 36
+      m_Height: 36
+      m_Kind: 1
+      m_SubKind: 
+    - m_Textures: []
+      m_Width: 192
+      m_Height: 192
+      m_Kind: 0
+      m_SubKind: 
+    - m_Textures: []
+      m_Width: 144
+      m_Height: 144
+      m_Kind: 0
+      m_SubKind: 
+    - m_Textures: []
+      m_Width: 96
+      m_Height: 96
+      m_Kind: 0
+      m_SubKind: 
+    - m_Textures: []
+      m_Width: 72
+      m_Height: 72
+      m_Kind: 0
+      m_SubKind: 
+    - m_Textures: []
+      m_Width: 48
+      m_Height: 48
+      m_Kind: 0
+      m_SubKind: 
+    - m_Textures: []
+      m_Width: 36
+      m_Height: 36
+      m_Kind: 0
       m_SubKind: 
   - m_BuildTarget: tvOS
     m_Icons:
@@ -527,6 +527,9 @@ PlayerSettings:
     m_Automatic: 1
   - m_BuildTarget: AndroidPlayer
     m_APIs: 15000000
+    m_Automatic: 0
+  - m_BuildTarget: WindowsStandaloneSupport
+    m_APIs: 1500000002000000
     m_Automatic: 0
   m_BuildTargetVRSettings: []
   m_DefaultShaderChunkSizeInMB: 16
@@ -812,20 +815,20 @@ PlayerSettings:
   webGLMemoryGeometricGrowthCap: 96
   webGLPowerPreference: 2
   scriptingDefineSymbols:
-    Android: USE_ML_OPENXR;USE_INPUT_SYSTEM_POSE_CONTROL;USE_STICK_CONTROL_THUMBSTICKS;MAGICLEAP
-    EmbeddedLinux: USE_ML_OPENXR;MAGICLEAP
-    GameCoreXboxOne: USE_ML_OPENXR;MAGICLEAP
-    Nintendo Switch: USE_ML_OPENXR;MAGICLEAP
-    PS4: USE_ML_OPENXR;MAGICLEAP
-    PS5: USE_ML_OPENXR;MAGICLEAP
-    QNX: USE_ML_OPENXR;MAGICLEAP
-    Stadia: USE_ML_OPENXR;MAGICLEAP
-    Standalone: USE_ML_OPENXR;USE_INPUT_SYSTEM_POSE_CONTROL;USE_STICK_CONTROL_THUMBSTICKS;MAGICLEAP
-    VisionOS: USE_ML_OPENXR;MAGICLEAP
-    WebGL: USE_ML_OPENXR;MAGICLEAP
+    Android: MAGICLEAP;USE_ML_OPENXR;USE_INPUT_SYSTEM_POSE_CONTROL;USE_STICK_CONTROL_THUMBSTICKS
+    EmbeddedLinux: MAGICLEAP;USE_ML_OPENXR
+    GameCoreXboxOne: MAGICLEAP;USE_ML_OPENXR
+    Nintendo Switch: MAGICLEAP;USE_ML_OPENXR
+    PS4: MAGICLEAP;USE_ML_OPENXR
+    PS5: MAGICLEAP;USE_ML_OPENXR
+    QNX: MAGICLEAP;USE_ML_OPENXR
+    Stadia: MAGICLEAP;USE_ML_OPENXR
+    Standalone: MAGICLEAP;USE_ML_OPENXR;USE_INPUT_SYSTEM_POSE_CONTROL;USE_STICK_CONTROL_THUMBSTICKS
+    VisionOS: MAGICLEAP;USE_ML_OPENXR
+    WebGL: MAGICLEAP;USE_ML_OPENXR
     Windows Store Apps: USE_INPUT_SYSTEM_POSE_CONTROL;USE_STICK_CONTROL_THUMBSTICKS
-    XboxOne: USE_ML_OPENXR;MAGICLEAP
-    tvOS: USE_ML_OPENXR;MAGICLEAP
+    XboxOne: MAGICLEAP;USE_ML_OPENXR
+    tvOS: MAGICLEAP;USE_ML_OPENXR
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend:
@@ -858,14 +861,14 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: PseudoHaptics
+  metroPackageName: CogAr_pseudoHaptics
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: PseudoHaptics
+  metroApplicationDescription: CogAr_pseudoHaptics
   wsaImages: {}
   metroTileShortName: 
   metroTileShowName: 0
@@ -935,10 +938,10 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: 1cf0bc91-93dd-4af0-be57-8052332d0739
+  cloudProjectId: 26e4a2f4-b6ba-4e14-bd09-a85f9a58598b
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: PseudoHaptics 2026-04-22_12-10-47
+  projectName: CogAr_pseudoHaptics
   organizationId: ch_aretta
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
