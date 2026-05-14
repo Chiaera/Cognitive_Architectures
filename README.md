@@ -51,3 +51,5 @@ The goal is to understand how visual–proprioceptive conflicts can generate con
 - https://docs.manus-meta.com/2.4.0/Plugins/Unity/getting%20started/ UnityxMANUS
 - Download the MANUS SDK (https://docs.manus-meta.com/2.4.0/Products/Optitrack%20Metagloves/)
 - https://developer-docs.magicleap.cloud/docs/guides/developer-tools/ml-hub/magic-leap-hub/ Magic Leap 2 SDK -> download the Unity's packages from the ML Hub 2.0
+
+Qui https://developer-docs.magicleap.cloud/docs/guides/unity-openxr/getting-started/openxr-unity-getting-started/ c'è una guida pubblica che spiega tutti i passaggi per partire da zero e creare un progetto. Si può anche scaricare un progetto di esempio che mostra tutte le funzionalità del device. Io ho sempre programmato via script, da quel punto di vista online trovi tantissima documentazione per Unity in generale (e ora AI è ad un buon livello).
