@@ -41,19 +41,6 @@ namespace Manus
 		}
 
 		[System.Serializable]
-		public struct CommandResponse
-		{
-			public bool result;
-			public string message;
-
-			public CommandResponse( bool p_Result, string p_Message )
-			{
-				result = p_Result;
-				message = p_Message;
-			}
-		}
-
-		[System.Serializable]
 		public struct Landscape
 		{
 			public struct UserLandscapeData
@@ -136,11 +123,6 @@ namespace Manus
 		}
 
 		[System.Serializable]
-		public class RawDeviceDataEvent : UnityEvent<CoreSDK.RawData>
-		{
-		}
-
-		[System.Serializable]
 		public class GestureEvent : UnityEvent<CoreSDK.GestureStream>
 		{
 		}
@@ -150,7 +132,6 @@ namespace Manus
 		public SkeletonEvent onSkeletonData = new SkeletonEvent();
 		public TrackerEvent onTrackerData = new TrackerEvent();
 		public RawSkeletonEvent onRawSkeletonData = new RawSkeletonEvent();
-		public RawDeviceDataEvent onRawDeviceData = new RawDeviceDataEvent();
 		public GestureEvent onGestureData = new GestureEvent();
 
 		public UnityEvent onConnectedToCore = new UnityEvent();
@@ -348,12 +329,6 @@ namespace Manus
 			}
 
 			t_Result = CoreSDK.RegisterCallbackForRawSkeletonStream( OnRawSkeletonUpdate );
-			if( t_Result != CoreSDK.SDKReturnCode.Success )
-			{
-				Debug.LogError( $"MANUS-ERROR: {t_Result}, could not initialize SDK" );
-			}
-			
-			t_Result = CoreSDK.RegisterCallbackForRawDeviceDataStream( OnRawDeviceDataUpdate );
 			if( t_Result != CoreSDK.SDKReturnCode.Success )
 			{
 				Debug.LogError( $"MANUS-ERROR: {t_Result}, could not initialize SDK" );
@@ -1471,60 +1446,6 @@ namespace Manus
 			return p_Success;
 		}
 
-		/// <summary>
-		/// Set dongle license asynchroniously.
-		/// </summary>
-		/// <param name="p_DongleID">Dongle id</param>
-		/// <param name="p_LicenseString">license string</param>
-		public async Task<CommandResponse> SetLicenseAsync( uint p_DongleID, string p_LicenseString )
-		{
-			return await Task.Run( () =>
-			{
-				return SetLicense( p_DongleID, p_LicenseString );
-			} );
-		}
-
-		/// <summary>
-		/// Set dongle license
-		/// </summary>
-		/// <param name="p_DongleID">Dongle id</param>
-		/// <param name="p_LicenseString">license string</param>
-		public CommandResponse SetLicense( uint p_DongleID, string p_LicenseString )
-		{
-			CoreSDK.SDKReturnCode t_Result = CoreSDK.SetLicense( p_DongleID, p_LicenseString, out bool p_Result, out string p_Response);
-			if( t_Result != CoreSDK.SDKReturnCode.Success )
-			{
-				Debug.LogError( $"MANUS-ERROR: {t_Result}, could not set dongle license." );
-			}
-			return new CommandResponse(p_Result, p_Response);
-		}
-
-		/// <summary>
-		/// Update device firmware asynchroniously.
-		/// </summary>
-		/// <param name="p_GloveID">Glove id</param>
-		public async Task<CommandResponse> UpdateFirmwareAsync( uint p_DeviceId )
-		{
-			return await Task.Run( () =>
-			{
-				return UpdateFirmware( p_DeviceId );
-			} );
-		}
-
-		/// <summary>
-		/// Update device firmware 
-		/// </summary>
-		/// <param name="p_GloveID">Glove id</param>
-		public CommandResponse UpdateFirmware( uint p_DeviceId )
-		{
-			CoreSDK.SDKReturnCode t_Result = CoreSDK.UpdateFirmware( p_DeviceId, out bool p_Result, out string p_Response);
-			if( t_Result != CoreSDK.SDKReturnCode.Success )
-			{
-				Debug.LogError( $"MANUS-ERROR: {t_Result}, could not update device firmware." );
-			}
-			return new CommandResponse( p_Result, p_Response );
-		}
-
 
 		/// <summary>
 		/// Do we have haptics support on a specific hand given the skeleton id.
@@ -1758,15 +1679,6 @@ namespace Manus
 			m_RawSkeletonData = p_SkeletonStream;
 			UnityMainThreadDispatcher.instance?.Enqueue( () => onRawSkeletonData.Invoke( p_SkeletonStream ) );
 		}
-		
-		/// <summary>
-		/// This function gets called when raw device data is received.
-		/// </summary>
-		/// <param name="p_RawDeviceData">Raw device data from Manus Core</param>
-		protected void OnRawDeviceDataUpdate( CoreSDK.RawData p_RawDeviceData )
-		{
-			UnityMainThreadDispatcher.instance?.Enqueue( () => onRawDeviceData.Invoke( p_RawDeviceData ) );
-		}
 
 		/// <summary>
 		/// This function gets called when gesture data is received.
@@ -1854,7 +1766,7 @@ namespace Manus
 			while( t_NewSkeletonDataQueue.Count > 0 )
 			{
 				t_LatestSkeletonData = t_NewSkeletonDataQueue.Dequeue();
-				if( t_LatestSkeletonData.skeletons == null ) continue;
+				if(t_LatestSkeletonData.skeletons == null ) continue;
 
 				foreach( var t_SkeletonData in t_LatestSkeletonData.skeletons )
 				{
@@ -1876,7 +1788,7 @@ namespace Manus
 						}
 					}
 				}
-
+				
 			}
 		}
 
@@ -2153,109 +2065,6 @@ namespace Manus
 			}
 			return t_Complete;
 		}
-
-		#region Users
-		public static async Task<uint> AddUserAsync( string p_Name )
-		{
-			return await Task.Run( () => AddUser( p_Name ) );
-		}
-
-		public static uint AddUser( string p_Name )
-		{
-			CoreSDK.SDKReturnCode t_Result = CoreSDK.AddUser( p_Name, out uint t_User );
-			if( t_Result != CoreSDK.SDKReturnCode.Success )
-			{
-				Debug.LogError( $"MANUS-ERROR: {t_Result}, could add user." );
-			}
-			return t_User;
-		}
-
-		public static async Task<CoreSDK.SDKReturnCode> RemoveUserAsync( uint p_UserId )
-		{
-			return await Task.Run( () => RemoveUser( p_UserId ) );
-		}
-		public static CoreSDK.SDKReturnCode RemoveUser( uint p_UserId )
-		{
-			CoreSDK.SDKReturnCode t_Result = CoreSDK.RemoveUser( p_UserId );
-			if( t_Result != CoreSDK.SDKReturnCode.Success )
-			{
-				Debug.LogError( $"MANUS-ERROR: {t_Result}, could not remove user {p_UserId}." );
-			}
-			return t_Result;
-		}
-
-		public static async Task<CoreSDK.SDKReturnCode> SetUserNameAsync( uint p_UserID, string p_Name )
-		{
-			return await Task.Run( () => SetUserName( p_UserID, p_Name ) );
-		}
-
-		public static CoreSDK.SDKReturnCode SetUserName( uint p_UserID, string p_Name )
-		{
-			CoreSDK.SDKReturnCode t_Result = CoreSDK.SetUserName( p_UserID, p_Name );
-			if( t_Result != CoreSDK.SDKReturnCode.Success )
-			{
-				Debug.LogError( $"MANUS-ERROR: {t_Result}, could not set name {p_Name} of user {p_UserID}." );
-			}
-			return t_Result;
-		}
-
-		public static async Task<CoreSDK.SDKReturnCode> AssignDongleToUserAsync( uint p_UserID, uint p_DongleId )
-		{
-			return await Task.Run( () => AssignDongleToUser( p_UserID, p_DongleId ) );
-		}
-		public static CoreSDK.SDKReturnCode AssignDongleToUser( uint p_UserID, uint p_DongleId )
-		{
-			CoreSDK.SDKReturnCode t_Result = CoreSDK.AssignDongleToUser(p_UserID, p_DongleId);
-			if( t_Result != CoreSDK.SDKReturnCode.Success )
-			{
-				Debug.LogError( $"MANUS-ERROR: {t_Result}, could not assign dongle {p_DongleId} to user {p_UserID}." );
-			}
-			return t_Result;
-		}
-
-		public static async Task<CoreSDK.SDKReturnCode> AssignGloveToUserAsync( uint p_UserID, CoreSDK.Side p_HandOrientation, uint p_GloveId )
-		{
-			return await Task.Run( () => AssignGloveToUser( p_UserID, p_HandOrientation, p_GloveId ) );
-		}
-		public static CoreSDK.SDKReturnCode AssignGloveToUser( uint p_UserID, CoreSDK.Side p_HandOrientation, uint p_GloveId )
-		{
-			CoreSDK.SDKReturnCode t_Result = CoreSDK.AssignGloveToUser( p_UserID, p_GloveId, p_HandOrientation);
-			if( t_Result != CoreSDK.SDKReturnCode.Success )
-			{
-				Debug.LogError( $"MANUS-ERROR: {t_Result}, could not assign glove {p_GloveId} to user {p_UserID}." );
-			}
-			return t_Result;
-		}
-		public static async Task<bool> MoveUserUpAsync( uint p_UserID )
-		{
-			return await Task.Run( () => MoveUserUp( p_UserID ) );
-		}
-		public static bool MoveUserUp( uint p_UserID )
-		{
-			CoreSDK.SDKReturnCode t_Result = CoreSDK.MoveUserUp( p_UserID );
-			if( t_Result != CoreSDK.SDKReturnCode.Success )
-			{
-				Debug.LogError( $"MANUS-ERROR: {t_Result}, could not move user {p_UserID} up." );
-				return true;
-			}
-			return false;
-		}
-
-		public static async Task<bool> MoveUserDownAsync( uint p_UserId )
-		{
-			return await Task.Run( () => MoveUserDown( p_UserId ) );
-		}
-		public static bool MoveUserDown( uint p_UserId )
-		{
-			CoreSDK.SDKReturnCode t_Result = CoreSDK.MoveUserDown( p_UserId );
-			if( t_Result != CoreSDK.SDKReturnCode.Success )
-			{
-				Debug.LogError( $"MANUS-ERROR: {t_Result}, could not move user {p_UserId} down." );
-				return true;
-			}
-			return false;
-		}
-		#endregion
 
 		#region Connection handling async
 

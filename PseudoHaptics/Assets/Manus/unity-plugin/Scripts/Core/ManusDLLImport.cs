@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
-using System.Text;
 
 using AOT;
 
@@ -61,8 +60,6 @@ namespace Manus
 
 		private const int s_MaxNumCharsInSessionName = 256;
 
-		private const int s_MaxNumCharsInCommandResponse = 256;
-
 		public static List<int> listOfFunctions;
 
 		private static uint s_UninitalisedId = 0;
@@ -100,10 +97,6 @@ namespace Manus
 		public delegate void GestureStreamCallbackPtr( IntPtr p_GestureStreamPtr );
 		protected delegate void InternalGestureStreamCallback( GestureStreamInfo p_GestureStream );
 		protected delegate void InternalGestureStreamCallbackPtr( IntPtr p_GestureStreamPtr );
-		
-		public delegate void OnRawDeviceData( RawData p_RawDeviceData );
-		public delegate void OnInternalRawDeviceData( RawDeviceDataInfo p_RawDeviceDataInfo );
-
 
 		static OnConnectedToCore m_OnConnectedToCore = null;
 		static OnDisconnectFromCore m_OnDisconnectFromCore = null;
@@ -114,7 +107,6 @@ namespace Manus
 		static ErgonomicsStreamCallback m_OnErgonomics = null;
 		static SystemStreamCallback m_OnSystem = null;
 		static GestureStreamCallback m_OnGestureData = null;
-		static OnRawDeviceData m_OnRawDeviceData = null;
 
 		#region Wrapper startup and shutdown.
 
@@ -312,24 +304,6 @@ namespace Manus
 			return ManusDLLImport.CoreSdk_UnpairGlove( p_GloveId, out p_Success );
 		}
 
-		public static SDKReturnCode UpdateFirmware( uint p_DeviceId, out bool p_Result, out string p_Response )
-		{
-			StringBuilder t_ResponseBuilder = new StringBuilder(s_MaxNumCharsInCommandResponse);
-			var t_Res = ManusDLLImport.CoreSdk_UpdateFirmware( p_DeviceId, out p_Result, t_ResponseBuilder );
-			p_Response = t_ResponseBuilder.ToString();
-
-			return t_Res;
-		}
-
-		public static SDKReturnCode SetLicense( uint p_DongleId, string p_LicenseString, out bool p_Result, out string p_Response )
-		{
-			StringBuilder t_ResponseBuilder = new StringBuilder(s_MaxNumCharsInCommandResponse);
-			var t_Res = ManusDLLImport.CoreSdk_SetLicense( p_DongleId, p_LicenseString, (uint)p_LicenseString.Length, out p_Result, t_ResponseBuilder );
-			p_Response = t_ResponseBuilder.ToString();
-
-			return t_Res;
-		}
-
 		public static SDKReturnCode VibrateWristOfGlove( uint p_GloveId, float p_UnitStrength, ushort p_DurationInMilliseconds )
 		{
 			return ManusDLLImport.CoreSdk_VibrateWristOfGlove( p_GloveId, p_UnitStrength, p_DurationInMilliseconds );
@@ -417,38 +391,6 @@ namespace Manus
 
 		#endregion
 
-		#region Users
-		public static SDKReturnCode AddUser( string p_Name, out uint p_User )
-		{
-			p_User = 0;
-			return ManusDLLImport.CoreSdk_AddUser( p_Name, out p_User );
-		}
-		public static SDKReturnCode RemoveUser( uint p_UserId )
-		{
-			return ManusDLLImport.CoreSdk_RemoveUser( p_UserId );
-		}
-		public static SDKReturnCode SetUserName( uint p_Id, string p_Name )
-		{
-			return ManusDLLImport.CoreSdk_SetUserName( p_Id, p_Name );
-		}
-		public static SDKReturnCode AssignDongleToUser( uint p_Id, uint p_DongleId )
-		{
-			return ManusDLLImport.CoreSdk_AssignDongleToUser( p_Id, p_DongleId );
-		}
-		public static SDKReturnCode AssignGloveToUser( uint p_UserId, uint p_GloveId, Side p_Side )
-		{
-			return ManusDLLImport.CoreSdk_AssignGloveToUser( p_UserId, p_GloveId, p_Side );
-		}
-		public static SDKReturnCode MoveUserUp( uint p_UserId )
-		{
-			return ManusDLLImport.CoreSdk_MoveUserUp( p_UserId );
-		}
-		public static SDKReturnCode MoveUserDown( uint p_UserId )
-		{
-			return ManusDLLImport.CoreSdk_MoveUserDown( p_UserId );
-		}
-		#endregion
-
 		#region Polygon
 
 		public static SDKReturnCode GetNumberOfAvailableUsers( out uint p_NumberOfAvailableUsers )
@@ -484,7 +426,6 @@ namespace Manus
 		{
 			return ManusDLLImport.CoreSdk_GetRawSkeletonHandMotion( out p_HandMotion );
 		}
-
 		public static SDKReturnCode SetRawSkeletonPinchCompensationn( bool p_PinchCompensation )
 		{
 			return ManusDLLImport.CoreSdk_SetRawSkeletonPinchCompensation( p_PinchCompensation );
@@ -493,16 +434,6 @@ namespace Manus
 		{
 			p_PinchCompensation = false;
 			return ManusDLLImport.CoreSdk_GetRawSkeletonPinchCompensation( out p_PinchCompensation );
-		}
-
-		public static SDKReturnCode SetRawSkeletonCasingCompensationn( float p_FilterStrength )
-		{
-			return ManusDLLImport.CoreSdk_SetRawSkeletonCasingCompensation( p_FilterStrength );
-		}
-		public static SDKReturnCode GetRawSkeletonCasingCompensation( out float p_FilterStrength )
-		{
-			p_FilterStrength = 0.0f;
-			return ManusDLLImport.CoreSdk_GetRawSkeletonCasingCompensation( out p_FilterStrength );
 		}
 
 		public static SDKReturnCode GetRawSkeletonInfo( uint p_SkeletonIndex, out RawSkeletonInfo p_SkeletonInfo )
@@ -633,26 +564,9 @@ namespace Manus
 			return ManusDLLImport.CoreSdk_GetGloveCalibration( p_CalibrationBytes, t_Size );
 		}
 
-		public static SDKReturnCode GetGloveCalibrationForUser( uint p_UserID, Side p_Side, GloveProfileType p_ProfileType, out byte[] p_CalibrationBytes )
-		{
-			uint t_Size;
-			SDKReturnCode t_Result = ManusDLLImport.CoreSdk_GetGloveCalibrationSizeForUser(p_UserID, p_Side, p_ProfileType, out t_Size);
-			p_CalibrationBytes = new byte[t_Size];
-			if( t_Result != CoreSDK.SDKReturnCode.Success )
-			{
-				return t_Result;
-			}
-			return ManusDLLImport.CoreSdk_GetGloveCalibration( p_CalibrationBytes, t_Size );
-		}
-
 		public static SDKReturnCode SetGloveCalibration( uint p_GloveID, byte[] p_CalibrationBytes, out SetGloveCalibrationReturnCode p_Response )
 		{
-			return ManusDLLImport.CoreSdk_SetGloveCalibration( p_GloveID, p_CalibrationBytes, (uint)p_CalibrationBytes.Length, out p_Response );
-		}
-
-		public static SDKReturnCode SetGloveCalibrationForUser( uint p_UserID, byte[] p_CalibrationBytes, out SetGloveCalibrationReturnCode p_Response )
-		{
-			return ManusDLLImport.CoreSdk_SetGloveCalibrationForUser( p_UserID, p_CalibrationBytes, (uint)p_CalibrationBytes.Length, out p_Response );
+			return ManusDLLImport.CoreSdk_SetGloveCalibration( p_GloveID, p_CalibrationBytes, out p_Response );
 		}
 
 		#endregion
@@ -1005,34 +919,6 @@ namespace Manus
 			m_OnGestureData( t_AllData );
 		}
 		#endregion
-		
-		public static SDKReturnCode RegisterCallbackForRawDeviceDataStream( OnRawDeviceData p_RawDeviceData )
-		{
-			var t_Res = ManusDLLImport.CoreSdk_RegisterCallbackForRawDeviceDataStream( ProcessInternalCallbackForOnRawDeviceData );
-			if( t_Res != SDKReturnCode.Success ) return t_Res;
-
-			m_OnRawDeviceData = p_RawDeviceData;
-			return SDKReturnCode.Success;
-		}
-
-		private static void ProcessInternalCallbackForOnRawDeviceData( RawDeviceDataInfo p_RawDeviceDataInfo )
-		{
-			RawData t_RawData = new RawData()
-			{
-				publishTime = p_RawDeviceDataInfo.publishTime,
-				rawDeviceData = new List<RawDeviceData>( (int)p_RawDeviceDataInfo.rawDeviceDataCount )
-			};
-			
-			for( uint i = 0; i < p_RawDeviceDataInfo.rawDeviceDataCount; i++ )
-			{
-				RawDeviceData t_Data = new RawDeviceData();
-				var t_Res = ManusDLLImport.CoreSdk_GetRawDeviceData( i, out t_Data );
-				if (t_Res != SDKReturnCode.Success) break;
-				t_RawData.rawDeviceData.Add( t_Data );
-			}
-
-			m_OnRawDeviceData(t_RawData);
-		}
 
 		[StructLayout( LayoutKind.Sequential )]
 		[System.Serializable]
@@ -1088,14 +974,6 @@ namespace Manus
 		{
 			public ManusTimestamp publishTime;
 			public List<GestureProbabilities> gestureProbabilities;
-		}
-		
-		[System.Serializable]
-		[StructLayout( LayoutKind.Sequential )]
-		public struct RawData
-		{
-			public ManusTimestamp publishTime;
-			public List<RawDeviceData> rawDeviceData; 
 		}
 
 		protected partial class ManusDLLImport
@@ -1204,12 +1082,6 @@ namespace Manus
 			public static extern SDKReturnCode CoreSdk_UnpairGlove( uint p_GloveId, out bool p_Success );
 
 			[DllImport( s_DLLName, CallingConvention = s_ImportCallingConvention, CharSet = s_ImportCharSet )]
-			public static extern SDKReturnCode CoreSdk_SetLicense( uint p_DongleId, string p_LicenseString, uint p_LicenseStringSize, out bool p_Result, StringBuilder p_Response );
-
-			[DllImport( s_DLLName, CallingConvention = s_ImportCallingConvention, CharSet = s_ImportCharSet )]
-			public static extern SDKReturnCode CoreSdk_UpdateFirmware( uint p_DeviceID, out bool p_Result, StringBuilder p_Response);
-
-			[DllImport( s_DLLName, CallingConvention = s_ImportCallingConvention, CharSet = s_ImportCharSet )]
 			public static extern SDKReturnCode CoreSdk_VibrateWristOfGlove( uint p_GloveId, float p_UnitStrength, ushort p_DurationInMilliseconds );
 
 			[DllImport( s_DLLName, CallingConvention = s_ImportCallingConvention, CharSet = s_ImportCharSet )]
@@ -1269,20 +1141,6 @@ namespace Manus
 			public static extern SDKReturnCode CoreSdk_GetIdsOfAvailableUsers( [Out] uint[] p_IdsOfAvailablePolygonUsers,
 				uint p_NumberOfIdsThatFitInArray );
 
-			[DllImport( s_DLLName, CallingConvention = s_ImportCallingConvention, CharSet = s_ImportCharSet )]
-			public static extern SDKReturnCode CoreSdk_AddUser( string p_Name, out uint p_UserID );
-			[DllImport( s_DLLName, CallingConvention = s_ImportCallingConvention, CharSet = s_ImportCharSet )]
-			public static extern SDKReturnCode CoreSdk_RemoveUser( uint p_Id );
-			[DllImport( s_DLLName, CallingConvention = s_ImportCallingConvention, CharSet = s_ImportCharSet )]
-			public static extern SDKReturnCode CoreSdk_SetUserName( uint p_Id, string p_Name );
-			[DllImport( s_DLLName, CallingConvention = s_ImportCallingConvention, CharSet = s_ImportCharSet )]
-			public static extern SDKReturnCode CoreSdk_AssignDongleToUser( uint p_Id, uint p_DongleId );
-			[DllImport( s_DLLName, CallingConvention = s_ImportCallingConvention, CharSet = s_ImportCharSet )]
-			public static extern SDKReturnCode CoreSdk_AssignGloveToUser( uint p_UserId, uint p_GloveId, Side p_Side );
-			[DllImport( s_DLLName, CallingConvention = s_ImportCallingConvention, CharSet = s_ImportCharSet )]
-			public static extern SDKReturnCode CoreSdk_MoveUserUp( uint p_UserId );
-			[DllImport( s_DLLName, CallingConvention = s_ImportCallingConvention, CharSet = s_ImportCharSet )]
-			public static extern SDKReturnCode CoreSdk_MoveUserDown( uint p_UserId );
 			#endregion
 
 			#region Tracking
@@ -1350,18 +1208,11 @@ namespace Manus
 			public static extern SDKReturnCode CoreSdk_GetGloveCalibrationSize( uint p_GloveID, out uint p_Size );
 
 			[DllImport( s_DLLName, CallingConvention = s_ImportCallingConvention, CharSet = s_ImportCharSet )]
-			public static extern SDKReturnCode CoreSdk_GetGloveCalibrationSizeForUser( uint p_UserID, Side p_Side, GloveProfileType p_ProfileType, out uint p_Size );
-
-			[DllImport( s_DLLName, CallingConvention = s_ImportCallingConvention, CharSet = s_ImportCharSet )]
 			public static extern SDKReturnCode CoreSdk_GetGloveCalibration( [In, Out] byte[] p_CalibrationBytes, uint p_Size );
-
-			[DllImport( s_DLLName, CallingConvention = s_ImportCallingConvention, CharSet = s_ImportCharSet )]
-			public static extern SDKReturnCode CoreSdk_SetGloveCalibration( uint p_GloveID, byte[] p_CalibrationBytes, uint p_BytesLength, out SetGloveCalibrationReturnCode p_Response );
-
-			[DllImport( s_DLLName, CallingConvention = s_ImportCallingConvention, CharSet = s_ImportCharSet )]
-			public static extern SDKReturnCode CoreSdk_SetGloveCalibrationForUser( uint p_UserID, byte[] p_CalibrationBytes, uint p_BytesLength, out SetGloveCalibrationReturnCode p_Response );
-
 			#endregion
+
+			[DllImport( s_DLLName, CallingConvention = s_ImportCallingConvention, CharSet = s_ImportCharSet )]
+			public static extern SDKReturnCode CoreSdk_SetGloveCalibration( uint p_GloveID, byte[] p_CalibrationBytes, out SetGloveCalibrationReturnCode p_Response );
 
 			#region Skeletal System
 
@@ -1381,11 +1232,6 @@ namespace Manus
 			public static extern SDKReturnCode CoreSdk_SetRawSkeletonPinchCompensation( bool p_PinchCompensation );
 			[DllImport( s_DLLName, CallingConvention = s_ImportCallingConvention, CharSet = s_ImportCharSet )]
 			public static extern SDKReturnCode CoreSdk_GetRawSkeletonPinchCompensation( out bool p_PinchCompensation );
-
-			[DllImport( s_DLLName, CallingConvention = s_ImportCallingConvention, CharSet = s_ImportCharSet )]
-			public static extern SDKReturnCode CoreSdk_SetRawSkeletonCasingCompensation( float p_FilterStrength );
-			[DllImport( s_DLLName, CallingConvention = s_ImportCallingConvention, CharSet = s_ImportCharSet )]
-			public static extern SDKReturnCode CoreSdk_GetRawSkeletonCasingCompensation( out float p_FilterStrength );
 
 			[DllImport( s_DLLName, CallingConvention = s_ImportCallingConvention, CharSet = s_ImportCharSet )]
 			public static extern SDKReturnCode CoreSdk_GetRawSkeletonInfo( uint p_SkeletonIndex, out RawSkeletonInfo p_SklInfo );
@@ -1503,17 +1349,6 @@ namespace Manus
 			[DllImport( s_DLLName, CallingConvention = s_ImportCallingConvention, CharSet = s_ImportCharSet )]
 			public static extern SDKReturnCode CoreSdk_GetGestureStreamData( uint p_GestureStreamDataIndex, uint p_StartDataIndex, out GestureProbabilities p_GestureProbabilitiesCollection );
 			#endregion
-			
-			#region Raw Device Data (Metaglove pro)
-
-			[DllImport( s_DLLName, CallingConvention = s_ImportCallingConvention, CharSet = s_ImportCharSet )]
-			public static extern SDKReturnCode CoreSdk_GetRawDeviceData( uint p_RawDeviceDataIndex, out RawDeviceData p_RawDeviceData );
-			
-			[DllImport( s_DLLName, CallingConvention = s_ImportCallingConvention, CharSet = s_ImportCharSet )]
-			public static extern SDKReturnCode CoreSdk_RegisterCallbackForRawDeviceDataStream( OnInternalRawDeviceData p_OnRawDeviceData );
-
-			#endregion
-			
 		}
 	}
 }

@@ -200,15 +200,6 @@ namespace Manus.Utility
 			return t_Node;
 		}
 
-		public static bool IsUpdatingFirmware( this CoreSDK.UpdateStatusEnum p_UpdateStatus )
-		{
-			return p_UpdateStatus == CoreSDK.UpdateStatusEnum.UpdatingInitializing
-				|| p_UpdateStatus == CoreSDK.UpdateStatusEnum.UpdatingBootloader
-				|| p_UpdateStatus == CoreSDK.UpdateStatusEnum.UpdatingFirmware
-				|| p_UpdateStatus == CoreSDK.UpdateStatusEnum.UpdatingFinalizing
-				|| p_UpdateStatus == CoreSDK.UpdateStatusEnum.UpdatingFailed;
-		}
-
 		#region ChainSettings Default values
 
 		public static CoreSDK.ChainSettingsPelvis Default(this CoreSDK.ChainSettingsPelvis p_ChainSettingsPelvis)

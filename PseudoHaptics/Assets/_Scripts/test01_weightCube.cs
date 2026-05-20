@@ -16,7 +16,7 @@ public class test01_weightCube : MonoBehaviour, IGrabbable {
 
     void Start() {
         //check if Manus is connected
-        usingManus = ManusManager.communicationHub != null && ManusManager.communicationHub.isConnected;
+        usingManus = ManusManager.communicationHub != null && ManusManager.communicationHub.currentState == CommunicationHub.State.Connected;
 
         //check collider setup
         if (!usingManus) {

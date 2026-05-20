@@ -1,0 +1,6849 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &96061573858437772
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1276422632980517555}
+  m_Layer: 0
+  m_Name: clavicle_l
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1276422632980517555
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 96061573858437772}
+  m_LocalRotation: {x: 0.0881125, y: -0.8300906, z: 0.0125038745, w: 0.55048114}
+  m_LocalPosition: {x: -0.11952316, y: -0.030805873, z: -0.037586816}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 5510797703685308308}
+  m_Father: {fileID: 4174367211436724372}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &96105152400930611
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4174367211436724372}
+  m_Layer: 0
+  m_Name: spine_03
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4174367211436724372
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 96105152400930611}
+  m_LocalRotation: {x: 0.0000002383489, y: -0.000000005782224, z: -0.02425272, w: 0.9997059}
+  m_LocalPosition: {x: -0.13407318, y: 0.0042035007, z: 0.0000006103507}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1276422632980517555}
+  - {fileID: 5921267132997140207}
+  - {fileID: 7915036374145139131}
+  m_Father: {fileID: 7454528350098707458}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &188751739691000334
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4052379463032138047}
+  m_Layer: 0
+  m_Name: middle_tip_r
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4052379463032138047
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 188751739691000334}
+  m_LocalRotation: {x: 5.019428e-10, y: -0.0000000304678, z: 0.012652285, w: 0.99991995}
+  m_LocalPosition: {x: -0.025129737, y: -0.00000015258789, z: 0.0000000047683715}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1742073735474469446}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &367479033548935691
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6837889890793612094}
+  m_Layer: 0
+  m_Name: hand_r
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6837889890793612094
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367479033548935691}
+  m_LocalRotation: {x: -0.0000010424332, y: -0.7071068, z: 0.7071068, w: -0.00000030626614}
+  m_LocalPosition: {x: 0.2604896, y: -0.00002522707, z: 0.00019073486}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 8479586114155186423}
+  - {fileID: 4911934974352259642}
+  - {fileID: 93341458508283860}
+  - {fileID: 2980762784753109268}
+  - {fileID: 5265938798257041309}
+  m_Father: {fileID: 2332171215901295742}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &419454499488203868
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5921267132997140207}
+  m_Layer: 0
+  m_Name: clavicle_r
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5921267132997140207
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 419454499488203868}
+  m_LocalRotation: {x: 0.83009076, y: 0.08811313, z: 0.5504808, w: -0.012502826}
+  m_LocalPosition: {x: -0.11952331, y: -0.030805588, z: 0.037588045}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 6373080877695562373}
+  m_Father: {fileID: 4174367211436724372}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &680892230003493265
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6002049920470409863}
+  m_Layer: 0
+  m_Name: upperarm_twist_01_r
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6002049920470409863
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 680892230003493265}
+  m_LocalRotation: {x: 0.000000014901104, y: -3.5527005e-15, z: -0.0000002384186,
+    w: 1}
+  m_LocalPosition: {x: 0.0050001526, y: 0.00000005483627, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6373080877695562373}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &861156456774073312
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4084091807204637120}
+  m_Layer: 0
+  m_Name: index_01_l
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4084091807204637120
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 861156456774073312}
+  m_LocalRotation: {x: 0.000000019308892, y: 0.022354053, z: -0.054361764, w: 0.99827105}
+  m_LocalPosition: {x: -0.06142883, y: 0.00000015258789, z: 0}
+  m_LocalScale: {x: 1, y: 0.999999, z: 0.999999}
+  m_Children:
+  - {fileID: 6813172534742364243}
+  m_Father: {fileID: 6953225384698730736}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1061706865559492764
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6938975137835144917}
+  m_Layer: 0
+  m_Name: index_03_r
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6938975137835144917
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1061706865559492764}
+  m_LocalRotation: {x: 0.0000009548834, y: 0.0000021776018, z: 0.032531627, w: 0.9994707}
+  m_LocalPosition: {x: -0.027054671, y: 0.0000007629394, z: 0.0000001502037}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 3144964361861036371}
+  m_Father: {fileID: 6919611015724423615}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1075188621819617289
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 709936951885822353}
+  m_Layer: 0
+  m_Name: thigh_r
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &709936951885822353
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1075188621819617289}
+  m_LocalRotation: {x: 2.1794934e-10, y: 0.00000011920867, z: 0.99999833, w: 0.0018282682}
+  m_LocalPosition: {x: 0.01925003, y: 0.012911379, z: 0.09005723}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 3495433706932821427}
+  - {fileID: 4562075451666394541}
+  m_Father: {fileID: 7964578022499880643}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1307116760307517203
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3549431485321531531}
+  m_Layer: 0
+  m_Name: thumb_tip_l
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3549431485321531531
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307116760307517203}
+  m_LocalRotation: {x: 0.0003632463, y: -0.0012357758, z: -0.000017719365, w: 0.99999917}
+  m_LocalPosition: {x: -0.031227225, y: 0, z: 0.00000030517577}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4289627244706762326}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1357900224686816659
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 910977949801657825}
+  m_Layer: 0
+  m_Name: calf_twist_01_l
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &910977949801657825
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1357900224686816659}
+  m_LocalRotation: {x: 0.002808699, y: 0.0019330848, z: 0.0076127932, w: 0.99996525}
+  m_LocalPosition: {x: 0.20476793, y: -0.000000038146972, z: 0.0000001335144}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8010976472850512232}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1428002594602295513
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5989443241821941932}
+  m_Layer: 0
+  m_Name: pinky_02_l
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5989443241821941932
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1428002594602295513}
+  m_LocalRotation: {x: 0.00003123925, y: 0.00089346245, z: -0.032193728, w: 0.99948126}
+  m_LocalPosition: {x: -0.039672162, y: 0, z: 0.00007079124}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 841614951154514195}
+  m_Father: {fileID: 3631120115091367161}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1476149879871467538
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6450414839817785146}
+  m_Layer: 0
+  m_Name: head
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6450414839817785146
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1476149879871467538}
+  m_LocalRotation: {x: 0.00000023628311, y: -0.000000031839058, z: -0.13354279, w: 0.9910431}
+  m_LocalPosition: {x: -0.08960083, y: 0.016588517, z: 2.910383e-13}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7915036374145139131}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1613555022085802690
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 841614951154514195}
+  m_Layer: 0
+  m_Name: pinky_03_l
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &841614951154514195
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1613555022085802690}
+  m_LocalRotation: {x: -0.00018032527, y: -0.000004369168, z: -0.033069238, w: 0.99945307}
+  m_LocalPosition: {x: -0.020320892, y: -0.00013381957, z: -0.00000012397766}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 6804948837680684554}
+  m_Father: {fileID: 5989443241821941932}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1839886348321604203
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8987297602294036614}
+  - component: {fileID: 1880163684315847143}
+  m_Layer: 0
+  m_Name: mesh_body
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8987297602294036614
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1839886348321604203}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.0000000023841857, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7681909205609618320}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!137 &1880163684315847143
+SkinnedMeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1839886348321604203}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 3
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 3220246792556927468, guid: 384fa88c485068945bbe91e3efafb576, type: 3}
+  - {fileID: -5715856706806859714, guid: 384fa88c485068945bbe91e3efafb576, type: 3}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  serializedVersion: 2
+  m_Quality: 0
+  m_UpdateWhenOffscreen: 0
+  m_SkinnedMotionVectors: 1
+  m_Mesh: {fileID: -1446987672122476710, guid: 384fa88c485068945bbe91e3efafb576, type: 3}
+  m_Bones:
+  - {fileID: 7964578022499880643}
+  - {fileID: 709936951885822353}
+  - {fileID: 4738946040057625528}
+  - {fileID: 3495433706932821427}
+  - {fileID: 8010976472850512232}
+  - {fileID: 9171856857364368994}
+  - {fileID: 8234288954517360009}
+  - {fileID: 5985254377386241182}
+  - {fileID: 6703733438858377661}
+  - {fileID: 1318380315750579608}
+  - {fileID: 7454528350098707458}
+  - {fileID: 4174367211436724372}
+  - {fileID: 6373080877695562373}
+  - {fileID: 5510797703685308308}
+  - {fileID: 4323828018611515991}
+  - {fileID: 2332171215901295742}
+  - {fileID: 6450414839817785146}
+  - {fileID: 7915036374145139131}
+  m_BlendShapeWeights: []
+  m_RootBone: {fileID: 7964578022499880643}
+  m_AABB:
+    m_Center: {x: 0.053504616, y: -0.027469784, z: -0.00000014901161}
+    m_Extent: {x: 0.91478, y: 0.1761778, z: 0.71217537}
+  m_DirtyAABB: 0
+--- !u!1 &1957169932322018211
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7964578022499880643}
+  m_Layer: 0
+  m_Name: pelvis
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7964578022499880643
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1957169932322018211}
+  m_LocalRotation: {x: 0.001292594, y: 0.7071056, z: 0.0012927626, w: 0.70710564}
+  m_LocalPosition: {x: -1.353684e-30, y: 0.0105615305, z: 0.967506}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1318380315750579608}
+  - {fileID: 4738946040057625528}
+  - {fileID: 709936951885822353}
+  m_Father: {fileID: 3300833395669315486}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2042465641810733711
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8479586114155186423}
+  m_Layer: 0
+  m_Name: index_metacarpal_r
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8479586114155186423
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2042465641810733711}
+  m_LocalRotation: {x: 0.00024534797, y: -0.0048971665, z: -0.02442032, w: 0.99968976}
+  m_LocalPosition: {x: -0.05039291, y: -0.0024983215, z: -0.023101196}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 8243365849375771847}
+  m_Father: {fileID: 6837889890793612094}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2335368289576861609
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6574644048814111553}
+  m_Layer: 0
+  m_Name: heel_l
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6574644048814111553
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2335368289576861609}
+  m_LocalRotation: {x: -0.00000016858735, y: 0.00000016858743, z: 0.7071066, w: 0.70710695}
+  m_LocalPosition: {x: 0.054969028, y: 0.06733002, z: -0.0052718064}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5985254377386241182}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2385909143692817557
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 100356505806252397}
+  m_Layer: 0
+  m_Name: thumb_03_r
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &100356505806252397
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2385909143692817557}
+  m_LocalRotation: {x: -0.0036943506, y: 0.0022057167, z: 0.14249675, w: 0.98978597}
+  m_LocalPosition: {x: -0.04083172, y: -0.00000020980835, z: 0.0000007629394}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 3773728460992589941}
+  m_Father: {fileID: 1806555396712544971}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2445803987910199135
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8489377297369561217}
+  m_Layer: 0
+  m_Name: thumb_01_l
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8489377297369561217
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2445803987910199135}
+  m_LocalRotation: {x: 0.7043481, y: -0.3047697, z: 0.062409613, w: 0.6380551}
+  m_LocalPosition: {x: -0.036217194, y: -0.00050064083, z: -0.035199232}
+  m_LocalScale: {x: 0.999999, y: 1, z: 1}
+  m_Children:
+  - {fileID: 653428871467952622}
+  m_Father: {fileID: 808910430059007713}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2482846994281709267
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1428848456595497099}
+  m_Layer: 0
+  m_Name: ring_01_r
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1428848456595497099
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2482846994281709267}
+  m_LocalRotation: {x: -0.000000092581224, y: 0.02780514, z: 0.008932302, w: 0.99957347}
+  m_LocalPosition: {x: -0.055519562, y: -0.00000030517577, z: -0.00000021934508}
+  m_LocalScale: {x: 1.000001, y: 1.000001, z: 1.000001}
+  m_Children:
+  - {fileID: 5254436449290524076}
+  m_Father: {fileID: 2980762784753109268}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2527379894070632499
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5254436449290524076}
+  m_Layer: 0
+  m_Name: ring_02_r
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5254436449290524076
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2527379894070632499}
+  m_LocalRotation: {x: 0.0000033948766, y: 0.000008445595, z: 0.028980961, w: 0.99957997}
+  m_LocalPosition: {x: -0.049827956, y: 0.00000015258789, z: 0.000000019073486}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 8185589932789003452}
+  m_Father: {fileID: 1428848456595497099}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2624240102670574049
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7681909205609618320}
+  m_Layer: 0
+  m_Name: SK_Polygon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7681909205609618320
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2624240102670574049}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 8987297602294036614}
+  - {fileID: 1413868926334176558}
+  - {fileID: 3300833395669315486}
+  m_Father: {fileID: 6826331728834339869}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2933453807331302921
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3300833395669315486}
+  m_Layer: 0
+  m_Name: root
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3300833395669315486
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2933453807331302921}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 7964578022499880643}
+  m_Father: {fileID: 7681909205609618320}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2958911098516891006
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1413868926334176558}
+  - component: {fileID: 844132389755008711}
+  m_Layer: 0
+  m_Name: mesh_hands
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1413868926334176558
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2958911098516891006}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.0000000023841857, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7681909205609618320}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!137 &844132389755008711
+SkinnedMeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2958911098516891006}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 3
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 3220246792556927468, guid: 384fa88c485068945bbe91e3efafb576, type: 3}
+  - {fileID: -5715856706806859714, guid: 384fa88c485068945bbe91e3efafb576, type: 3}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  serializedVersion: 2
+  m_Quality: 0
+  m_UpdateWhenOffscreen: 0
+  m_SkinnedMotionVectors: 1
+  m_Mesh: {fileID: -6174231711302561788, guid: 384fa88c485068945bbe91e3efafb576, type: 3}
+  m_Bones:
+  - {fileID: 8243365849375771847}
+  - {fileID: 6919611015724423615}
+  - {fileID: 6938975137835144917}
+  - {fileID: 6837889890793612094}
+  - {fileID: 4371053415464322884}
+  - {fileID: 7058956416585737029}
+  - {fileID: 1742073735474469446}
+  - {fileID: 1428848456595497099}
+  - {fileID: 5254436449290524076}
+  - {fileID: 8185589932789003452}
+  - {fileID: 349000208975287777}
+  - {fileID: 850179939160179908}
+  - {fileID: 8130566845138263624}
+  - {fileID: 1361734198017627285}
+  - {fileID: 8479586114155186423}
+  - {fileID: 4911934974352259642}
+  - {fileID: 3144964361861036371}
+  - {fileID: 93341458508283860}
+  - {fileID: 2980762784753109268}
+  - {fileID: 6924369630697728650}
+  - {fileID: 4052379463032138047}
+  - {fileID: 1806555396712544971}
+  - {fileID: 100356505806252397}
+  - {fileID: 5265938798257041309}
+  - {fileID: 3773728460992589941}
+  - {fileID: 4084091807204637120}
+  - {fileID: 6813172534742364243}
+  - {fileID: 4124425380720321171}
+  - {fileID: 808910430059007713}
+  - {fileID: 4101454481546507556}
+  - {fileID: 6693836848162388187}
+  - {fileID: 1134486480994129847}
+  - {fileID: 3592585261964748448}
+  - {fileID: 468139200151079153}
+  - {fileID: 7875938985682441753}
+  - {fileID: 4242652437939343540}
+  - {fileID: 841614951154514195}
+  - {fileID: 6804948837680684554}
+  - {fileID: 5989443241821941932}
+  - {fileID: 3631120115091367161}
+  - {fileID: 6953225384698730736}
+  - {fileID: 8025527033890296506}
+  - {fileID: 8264294779611724685}
+  - {fileID: 2971124803070374454}
+  - {fileID: 2614698931796149602}
+  - {fileID: 1659077107948442070}
+  - {fileID: 653428871467952622}
+  - {fileID: 4289627244706762326}
+  - {fileID: 8489377297369561217}
+  - {fileID: 3549431485321531531}
+  m_BlendShapeWeights: []
+  m_RootBone: {fileID: 808910430059007713}
+  m_AABB:
+    m_Center: {x: 0.7140777, y: 0.010534889, z: -0.0072500817}
+    m_Extent: {x: 0.9394711, y: 0.039451607, z: 0.07253805}
+  m_DirtyAABB: 0
+--- !u!1 &3052452437037367923
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3495433706932821427}
+  m_Layer: 0
+  m_Name: calf_r
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3495433706932821427
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3052452437037367923}
+  m_LocalRotation: {x: -0.00000047683756, y: 0.0000000018626458, z: -0.00000000906705,
+    w: 1}
+  m_LocalPosition: {x: -0.42444697, y: -0.0000004172325, z: 0.0000017166137}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 439134939009383956}
+  - {fileID: 9171856857364368994}
+  m_Father: {fileID: 709936951885822353}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3102674522068129708
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6953225384698730736}
+  m_Layer: 0
+  m_Name: index_metacarpal_l
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6953225384698730736
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3102674522068129708}
+  m_LocalRotation: {x: -0.00024522096, y: -0.004897591, z: 0.024421433, w: 0.99968976}
+  m_LocalPosition: {x: -0.05039291, y: 0.002498474, z: -0.023101307}
+  m_LocalScale: {x: 0.999999, y: 1.000001, z: 1.000001}
+  m_Children:
+  - {fileID: 4084091807204637120}
+  m_Father: {fileID: 808910430059007713}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3280888901875257628
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 850179939160179908}
+  m_Layer: 0
+  m_Name: pinky_tip_r
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &850179939160179908
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3280888901875257628}
+  m_LocalRotation: {x: -0.0001134089, y: -0.0011941106, z: 0.009856624, w: 0.9999507}
+  m_LocalPosition: {x: -0.023054542, y: 0, z: 0.000000019073486}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 349000208975287777}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3465287646724515595
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4911934974352259642}
+  m_Layer: 0
+  m_Name: middle_metacarpal_r
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4911934974352259642
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3465287646724515595}
+  m_LocalRotation: {x: 0.0015808162, y: 0.013848068, z: 0.026101844, w: 0.99956214}
+  m_LocalPosition: {x: -0.049109038, y: 0.0034048462, z: -0.0027314757}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 7058956416585737029}
+  m_Father: {fileID: 6837889890793612094}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3531293281567902013
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4376890450610373885}
+  m_Layer: 0
+  m_Name: upperarm_twist_01_l
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4376890450610373885
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3531293281567902013}
+  m_LocalRotation: {x: 2.479982e-29, y: 1.1368685e-13, z: -2.181415e-16, w: 1}
+  m_LocalPosition: {x: -0.0050000763, y: -0.00000018596648, z: -0.00000045776366}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5510797703685308308}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3539267917425982875
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 349000208975287777}
+  m_Layer: 0
+  m_Name: pinky_03_r
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &349000208975287777
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3539267917425982875}
+  m_LocalRotation: {x: 0.00018029459, y: -0.0000044899084, z: 0.0330674, w: 0.9994531}
+  m_LocalPosition: {x: -0.020320816, y: 0.00013412476, z: 0.000000009536743}
+  m_LocalScale: {x: 1, y: 1, z: 0.999999}
+  m_Children:
+  - {fileID: 850179939160179908}
+  m_Father: {fileID: 8130566845138263624}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3722038757042052626
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4124425380720321171}
+  m_Layer: 0
+  m_Name: index_03_l
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4124425380720321171
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3722038757042052626}
+  m_LocalRotation: {x: -0.00000095314425, y: 0.0000023415182, z: -0.032529976, w: 0.9994708}
+  m_LocalPosition: {x: -0.027054595, y: -0.00000061035155, z: -0.0000000035762786}
+  m_LocalScale: {x: 1, y: 0.999999, z: 1}
+  m_Children:
+  - {fileID: 4101454481546507556}
+  m_Father: {fileID: 6813172534742364243}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3737348187693846717
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 93341458508283860}
+  m_Layer: 0
+  m_Name: pinky_metacarpal_r
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &93341458508283860
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3737348187693846717}
+  m_LocalRotation: {x: -0.0029741374, y: 0.1687325, z: 0.020399034, w: 0.9854463}
+  m_LocalPosition: {x: -0.048405606, y: 0.0022721863, z: 0.024538117}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1361734198017627285}
+  m_Father: {fileID: 6837889890793612094}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3975823336149033463
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2971124803070374454}
+  m_Layer: 0
+  m_Name: ring_metacarpal_l
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2971124803070374454
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3975823336149033463}
+  m_LocalRotation: {x: -0.00041801404, y: 0.076604515, z: -0.022987291, w: 0.9967965}
+  m_LocalPosition: {x: -0.04914711, y: -0.0030476379, z: 0.011110355}
+  m_LocalScale: {x: 0.999999, y: 1, z: 1.000001}
+  m_Children:
+  - {fileID: 468139200151079153}
+  m_Father: {fileID: 808910430059007713}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4150945325373442529
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6804948837680684554}
+  m_Layer: 0
+  m_Name: pinky_tip_l
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6804948837680684554
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4150945325373442529}
+  m_LocalRotation: {x: 0.000113466915, y: -0.0011939756, z: -0.009857348, w: 0.9999507}
+  m_LocalPosition: {x: -0.023054428, y: -0.00000030517577, z: 0.000000009536743}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 841614951154514195}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4292770763876971879
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5265938798257041309}
+  m_Layer: 0
+  m_Name: thumb_01_r
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5265938798257041309
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4292770763876971879}
+  m_LocalRotation: {x: -0.7043484, y: -0.30476862, z: -0.062410455, w: 0.63805515}
+  m_LocalPosition: {x: -0.03621727, y: 0.00050079345, z: -0.035199128}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1806555396712544971}
+  m_Father: {fileID: 6837889890793612094}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4302837806148666616
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3144964361861036371}
+  m_Layer: 0
+  m_Name: index_tip_r
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3144964361861036371
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4302837806148666616}
+  m_LocalRotation: {x: 0.00000024962867, y: 0.0000007174546, z: 0.009214749, w: 0.99995756}
+  m_LocalPosition: {x: -0.021552771, y: -0.00000030517577, z: -0.00000015258789}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6938975137835144917}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4308911698622598040
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1361734198017627285}
+  m_Layer: 0
+  m_Name: pinky_01_r
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1361734198017627285
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4308911698622598040}
+  m_LocalRotation: {x: -0.00000034923048, y: -0.054493506, z: 0.008229433, w: 0.9984802}
+  m_LocalPosition: {x: -0.045230176, y: 0.00000030517577, z: -0.00000019073485}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 8130566845138263624}
+  m_Father: {fileID: 93341458508283860}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4322504530124177357
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1318380315750579608}
+  m_Layer: 0
+  m_Name: spine_01
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1318380315750579608
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4322504530124177357}
+  m_LocalRotation: {x: -0.000000040898733, y: -0.00000004635332, z: 0.06238794, w: 0.998052}
+  m_LocalPosition: {x: -0.1080883, y: -0.00851487, z: 0.0000009918225}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 7454528350098707458}
+  m_Father: {fileID: 7964578022499880643}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4581690963346505695
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8025527033890296506}
+  m_Layer: 0
+  m_Name: middle_metacarpal_l
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8025527033890296506
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4581690963346505695}
+  m_LocalRotation: {x: -0.0015805748, y: 0.0138501655, z: -0.026102101, w: 0.9995621}
+  m_LocalPosition: {x: -0.049109038, y: -0.0034046934, z: -0.0027314972}
+  m_LocalScale: {x: 0.999999, y: 1, z: 1.000001}
+  m_Children:
+  - {fileID: 1134486480994129847}
+  m_Father: {fileID: 808910430059007713}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4710241135464997172
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8185589932789003452}
+  m_Layer: 0
+  m_Name: ring_03_r
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8185589932789003452
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4710241135464997172}
+  m_LocalRotation: {x: 0.0000012129424, y: -0.0000086529435, z: 0.03399884, w: 0.9994219}
+  m_LocalPosition: {x: -0.027972564, y: -0.00000045776366, z: -0.0000003147125}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 6924369630697728650}
+  m_Father: {fileID: 5254436449290524076}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4996928532684184013
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7915036374145139131}
+  m_Layer: 0
+  m_Name: neck_01
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7915036374145139131
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4996928532684184013}
+  m_LocalRotation: {x: -0.00000003388988, y: -0.000000051699296, z: 0.20371087, w: 0.9790311}
+  m_LocalPosition: {x: -0.15980361, y: -0.038195476, z: 0.0000001525884}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 6450414839817785146}
+  m_Father: {fileID: 4174367211436724372}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5113775724034667421
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4562075451666394541}
+  m_Layer: 0
+  m_Name: thigh_twist_01_r
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4562075451666394541
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5113775724034667421}
+  m_LocalRotation: {x: -0.047445346, y: -0.000021880682, z: 0.00049080787, w: 0.9988737}
+  m_LocalPosition: {x: -0.2209423, y: -0.00000007867813, z: 0.000000076293944}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 709936951885822353}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5125181037325111256
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 423191634390411903}
+  m_Layer: 0
+  m_Name: heel_r
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &423191634390411903
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5125181037325111256}
+  m_LocalRotation: {x: 0.000002632203, y: -0.000002632203, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: -0.05494857, y: -0.06734504, z: 0.0052693845}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 9171856857364368994}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5191519438495762530
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5919833293107863455}
+  m_Layer: 0
+  m_Name: toe_l
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5919833293107863455
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5191519438495762530}
+  m_LocalRotation: {x: -0.00000023841858, y: -4.0388405e-14, z: -9.629346e-21, w: 1}
+  m_LocalPosition: {x: -0.08644143, y: 0.0000013911724, z: 0.000000057220458}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6703733438858377661}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5270011206935589697
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1134486480994129847}
+  m_Layer: 0
+  m_Name: middle_01_l
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1134486480994129847
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5270011206935589697}
+  m_LocalRotation: {x: -0.0000001374444, y: 0.045966994, z: -0.004314544, w: 0.9989337}
+  m_LocalPosition: {x: -0.062313233, y: 0.00000015258789, z: -0.000000004172325}
+  m_LocalScale: {x: 1.000001, y: 1, z: 0.999999}
+  m_Children:
+  - {fileID: 6693836848162388187}
+  m_Father: {fileID: 8025527033890296506}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5335353659473985226
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3631120115091367161}
+  m_Layer: 0
+  m_Name: pinky_01_l
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3631120115091367161
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5335353659473985226}
+  m_LocalRotation: {x: 0.000000047023665, y: -0.05449768, z: -0.0082273865, w: 0.99848}
+  m_LocalPosition: {x: -0.04522987, y: 0.00000015258789, z: -0.0000004959106}
+  m_LocalScale: {x: 1.000002, y: 0.999998, z: 0.999999}
+  m_Children:
+  - {fileID: 5989443241821941932}
+  m_Father: {fileID: 8264294779611724685}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5446524141420536434
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4371053415464322884}
+  m_Layer: 0
+  m_Name: middle_02_r
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4371053415464322884
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5446524141420536434}
+  m_LocalRotation: {x: 0.000008758115, y: -0.000026405854, z: 0.026689459, w: 0.9996438}
+  m_LocalPosition: {x: -0.05633125, y: -0.0000009155273, z: -0.00000030517577}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1742073735474469446}
+  m_Father: {fileID: 7058956416585737029}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5556433451500083928
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7875938985682441753}
+  m_Layer: 0
+  m_Name: ring_02_l
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7875938985682441753
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5556433451500083928}
+  m_LocalRotation: {x: -0.0000034102047, y: 0.000008383203, z: -0.028979817, w: 0.99958}
+  m_LocalPosition: {x: -0.04982788, y: 0.00000015258789, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4242652437939343540}
+  m_Father: {fileID: 468139200151079153}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5621436503163181144
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8623450782865509834}
+  m_Layer: 0
+  m_Name: lowerarm_twist_01_l
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8623450782865509834
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5621436503163181144}
+  m_LocalRotation: {x: 0, y: 0, z: 3.6724096e-15, w: 1}
+  m_LocalPosition: {x: -0.1400002, y: 0.00000015258789, z: 0.00000030517577}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4323828018611515991}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5650248900743884693
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8234288954517360009}
+  m_Layer: 0
+  m_Name: ball_r
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8234288954517360009
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5650248900743884693}
+  m_LocalRotation: {x: 0.000002673362, y: -0.000002673362, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: -0.055002525, y: 0.12666021, z: 0.0052708434}
+  m_LocalScale: {x: 1, y: 1.000001, z: 1}
+  m_Children:
+  - {fileID: 4767420429494779746}
+  m_Father: {fileID: 9171856857364368994}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5752929772508737923
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2332171215901295742}
+  m_Layer: 0
+  m_Name: lowerarm_r
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2332171215901295742
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5752929772508737923}
+  m_LocalRotation: {x: 0.00000011920915, y: -0.00000006332997, z: -0.00000002980236,
+    w: 1}
+  m_LocalPosition: {x: 0.27308846, y: -0.0000005507469, z: 0.0000015258788}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 6837889890793612094}
+  - {fileID: 2004646832427067080}
+  m_Father: {fileID: 6373080877695562373}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5926049632409055642
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4242652437939343540}
+  m_Layer: 0
+  m_Name: ring_03_l
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4242652437939343540
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5926049632409055642}
+  m_LocalRotation: {x: -0.0000011692106, y: -0.000008626942, z: -0.03400092, w: 0.9994218}
+  m_LocalPosition: {x: -0.027972564, y: 0.00000015258789, z: -0.00000027656554}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2614698931796149602}
+  m_Father: {fileID: 7875938985682441753}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5926893981176707910
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2004646832427067080}
+  m_Layer: 0
+  m_Name: lowerarm_twist_01_r
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2004646832427067080
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5926893981176707910}
+  m_LocalRotation: {x: -0.11762718, y: 0.00000023676355, z: 0.000000028044497, w: 0.99305785}
+  m_LocalPosition: {x: 0.1400001, y: -0.000000076293944, z: -0.00000015258789}
+  m_LocalScale: {x: 1.000001, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2332171215901295742}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5957041334062931576
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 468139200151079153}
+  m_Layer: 0
+  m_Name: ring_01_l
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &468139200151079153
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5957041334062931576}
+  m_LocalRotation: {x: -0.000000087442594, y: 0.02780875, z: -0.00893334, w: 0.99957335}
+  m_LocalPosition: {x: -0.055519484, y: 0, z: 0.00000014781952}
+  m_LocalScale: {x: 1.000001, y: 1.000001, z: 0.999999}
+  m_Children:
+  - {fileID: 7875938985682441753}
+  m_Father: {fileID: 2971124803070374454}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6101475688947732170
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6693836848162388187}
+  m_Layer: 0
+  m_Name: middle_02_l
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6693836848162388187
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6101475688947732170}
+  m_LocalRotation: {x: -0.000008798681, y: -0.000026315005, z: -0.026690219, w: 0.99964374}
+  m_LocalPosition: {x: -0.056331098, y: 0.00000061035155, z: -0.00000044822693}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 3592585261964748448}
+  m_Father: {fileID: 1134486480994129847}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6178095321657179831
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4101454481546507556}
+  m_Layer: 0
+  m_Name: index_tip_l
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4101454481546507556
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6178095321657179831}
+  m_LocalRotation: {x: -0.00000017422339, y: 0.00000048149974, z: -0.009214973, w: 0.99995756}
+  m_LocalPosition: {x: -0.021552734, y: 0.00000015258789, z: -0.0000001502037}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4124425380720321171}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6359450688505340792
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5872566825207472385}
+  m_Layer: 0
+  m_Name: thigh_twist_01_l
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5872566825207472385
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6359450688505340792}
+  m_LocalRotation: {x: -0.04744345, y: -0.000021906519, z: 0.0004913715, w: 0.99887383}
+  m_LocalPosition: {x: 0.22094253, y: 0.000000035762785, z: 0.00000030517577}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4738946040057625528}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6381928869297125980
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7058956416585737029}
+  m_Layer: 0
+  m_Name: middle_01_r
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7058956416585737029
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6381928869297125980}
+  m_LocalRotation: {x: 0.00000017369878, y: 0.045969263, z: 0.004313135, w: 0.99893355}
+  m_LocalPosition: {x: -0.062313154, y: 0.00000030517577, z: 0.00000018775462}
+  m_LocalScale: {x: 1, y: 1.000002, z: 1.000001}
+  m_Children:
+  - {fileID: 4371053415464322884}
+  m_Father: {fileID: 4911934974352259642}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6389079303088895390
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8243365849375771847}
+  m_Layer: 0
+  m_Name: index_01_r
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8243365849375771847
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6389079303088895390}
+  m_LocalRotation: {x: -0.00000005396721, y: 0.022353904, z: 0.05435909, w: 0.9982712}
+  m_LocalPosition: {x: -0.06142883, y: 0, z: -0.00000015974044}
+  m_LocalScale: {x: 1.000001, y: 1, z: 1.000001}
+  m_Children:
+  - {fileID: 6919611015724423615}
+  m_Father: {fileID: 8479586114155186423}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6512253332178593742
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6919611015724423615}
+  m_Layer: 0
+  m_Name: index_02_r
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6919611015724423615
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6512253332178593742}
+  m_LocalRotation: {x: 0.000010931396, y: -0.0000006531225, z: 0.030605933, w: 0.9995315}
+  m_LocalPosition: {x: -0.050817642, y: -0.00000045776366, z: -0.00000015258789}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 6938975137835144917}
+  m_Father: {fileID: 8243365849375771847}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6826331728834050109
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6826331728834339869}
+  - component: {fileID: 6826331728834050108}
+  m_Layer: 0
+  m_Name: FullBodySkeleton-VR
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6826331728834339869
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6826331728834050109}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 7681909205609618320}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &6826331728834050108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6826331728834050109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6714c57ef888444dbcd902e23fc32c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skeletonData:
+    id: 0
+    name: FullBodySkeleton-VR
+    lastTimestamp:
+      time: 0
+    type: 3
+    nodes:
+    - name: '0: FullBodySkeleton-VR'
+      nodeName: FullBodySkeleton-VR
+      id: 0
+      type: 1
+      transform:
+        position: {x: 0, y: 0, z: 2}
+        rotation: {x: 0, y: 1, z: 0, w: 0}
+        scale: {x: 1, y: 1, z: 1}
+      parentID: 0
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 6826331728834339869}
+    - name: '1: SK_Polygon'
+      nodeName: SK_Polygon
+      id: 1
+      type: 1
+      transform:
+        position: {x: 0, y: 0, z: 0}
+        rotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+        scale: {x: 1, y: 1, z: 1}
+      parentID: 0
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 7681909205609618320}
+    - name: '2: mesh_body'
+      nodeName: mesh_body
+      id: 2
+      type: 2
+      transform:
+        position: {x: -0.0000000023841857, y: 0, z: 0}
+        rotation: {x: 0, y: -0, z: -0, w: 1}
+        scale: {x: 1, y: 1, z: 1}
+      parentID: 1
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 8987297602294036614}
+    - name: '3: mesh_hands'
+      nodeName: mesh_hands
+      id: 3
+      type: 2
+      transform:
+        position: {x: -0.0000000023841857, y: 0, z: 0}
+        rotation: {x: 0, y: -0, z: -0, w: 1}
+        scale: {x: 1, y: 1, z: 1}
+      parentID: 1
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 1413868926334176558}
+    - name: '4: root'
+      nodeName: root
+      id: 4
+      type: 1
+      transform:
+        position: {x: -0, y: 0, z: 0}
+        rotation: {x: 0, y: -0, z: -0, w: 1}
+        scale: {x: 1, y: 1, z: 1}
+      parentID: 1
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 3300833395669315486}
+    - name: '5: pelvis'
+      nodeName: pelvis
+      id: 5
+      type: 1
+      transform:
+        position: {x: -1.353684e-30, y: 0.0105615305, z: 0.967506}
+        rotation: {x: 0.001292594, y: 0.7071056, z: 0.0012927626, w: 0.70710564}
+        scale: {x: 1, y: 1, z: 1}
+      parentID: 4
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 7964578022499880643}
+    - name: '6: spine_01'
+      nodeName: spine_01
+      id: 6
+      type: 1
+      transform:
+        position: {x: -0.1080883, y: -0.00851487, z: 0.0000009918225}
+        rotation: {x: -0.000000040898733, y: -0.00000004635332, z: 0.06238794, w: 0.998052}
+        scale: {x: 1, y: 1, z: 1}
+      parentID: 5
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 1318380315750579608}
+    - name: '7: spine_02'
+      nodeName: spine_02
+      id: 7
+      type: 1
+      transform:
+        position: {x: -0.18875358, y: 0.03801362, z: -0.0000016021718}
+        rotation: {x: 0.00000023662577, y: -0.00000002918705, z: -0.12241936, w: 0.9924785}
+        scale: {x: 1, y: 1, z: 1}
+      parentID: 6
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 7454528350098707458}
+    - name: '8: spine_03'
+      nodeName: spine_03
+      id: 8
+      type: 1
+      transform:
+        position: {x: -0.13407318, y: 0.0042035007, z: 0.0000006103507}
+        rotation: {x: 0.0000002383489, y: -0.000000005782224, z: -0.02425272, w: 0.9997059}
+        scale: {x: 1, y: 1, z: 1}
+      parentID: 7
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 4174367211436724372}
+    - name: '9: clavicle_l'
+      nodeName: clavicle_l
+      id: 9
+      type: 1
+      transform:
+        position: {x: -0.11952316, y: -0.030805873, z: -0.037586816}
+        rotation: {x: 0.0881125, y: -0.8300906, z: 0.0125038745, w: 0.55048114}
+        scale: {x: 1, y: 1, z: 1}
+      parentID: 8
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 1276422632980517555}
+    - name: '10: upperarm_l'
+      nodeName: upperarm_l
+      id: 10
+      type: 1
+      transform:
+        position: {x: -0.1560019, y: -0.00000019073485, z: -0.00000030517577}
+        rotation: {x: 0.009763742, y: 0.20145406, z: 0.03694304, w: 0.9787524}
+        scale: {x: 1, y: 1, z: 1}
+      parentID: 9
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 5510797703685308308}
+    - name: '11: lowerarm_l'
+      nodeName: lowerarm_l
+      id: 11
+      type: 1
+      transform:
+        position: {x: -0.27308837, y: 0.00000079154967, z: -0.0000021362305}
+        rotation: {x: -0.000000007450579, y: -0.00000005960482, z: 0.000000029802312,
+          w: 1}
+        scale: {x: 1.000001, y: 1, z: 1}
+      parentID: 10
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 4323828018611515991}
+    - name: '12: hand_l'
+      nodeName: hand_l
+      id: 12
+      type: 1
+      transform:
+        position: {x: -0.26048958, y: 0.0000013160706, z: -0.0000038146973}
+        rotation: {x: -0.7071068, y: 0.0000000658543, z: 0.00000010536698, w: 0.7071067}
+        scale: {x: 1, y: 1, z: 1}
+      parentID: 11
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 808910430059007713}
+    - name: '13: index_metacarpal_l'
+      nodeName: index_metacarpal_l
+      id: 13
+      type: 1
+      transform:
+        position: {x: -0.05039291, y: 0.002498474, z: -0.023101307}
+        rotation: {x: -0.00024522096, y: -0.004897591, z: 0.024421433, w: 0.99968976}
+        scale: {x: 0.999999, y: 1.000001, z: 1.000001}
+      parentID: 12
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 6953225384698730736}
+    - name: '14: index_01_l'
+      nodeName: index_01_l
+      id: 14
+      type: 1
+      transform:
+        position: {x: -0.06142883, y: 0.00000015258789, z: 0}
+        rotation: {x: 0.000000019308892, y: 0.022354053, z: -0.054361764, w: 0.99827105}
+        scale: {x: 1, y: 0.999999, z: 0.999999}
+      parentID: 13
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 4084091807204637120}
+    - name: '15: index_02_l'
+      nodeName: index_02_l
+      id: 15
+      type: 1
+      transform:
+        position: {x: -0.050817642, y: 0.00000030517577, z: -0.0000000023841857}
+        rotation: {x: -0.000010978219, y: -0.0000005746869, z: -0.030606182, w: 0.9995315}
+        scale: {x: 1, y: 1, z: 1}
+      parentID: 14
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 6813172534742364243}
+    - name: '16: index_03_l'
+      nodeName: index_03_l
+      id: 16
+      type: 1
+      transform:
+        position: {x: -0.027054595, y: -0.00000061035155, z: -0.0000000035762786}
+        rotation: {x: -0.00000095314425, y: 0.0000023415182, z: -0.032529976, w: 0.9994708}
+        scale: {x: 1, y: 0.999999, z: 1}
+      parentID: 15
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 4124425380720321171}
+    - name: '17: index_tip_l'
+      nodeName: index_tip_l
+      id: 17
+      type: 1
+      transform:
+        position: {x: -0.021552734, y: 0.00000015258789, z: -0.0000001502037}
+        rotation: {x: -0.00000017422339, y: 0.00000048149974, z: -0.009214973, w: 0.99995756}
+        scale: {x: 1, y: 1, z: 1}
+      parentID: 16
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 4101454481546507556}
+    - name: '18: middle_metacarpal_l'
+      nodeName: middle_metacarpal_l
+      id: 18
+      type: 1
+      transform:
+        position: {x: -0.049109038, y: -0.0034046934, z: -0.0027314972}
+        rotation: {x: -0.0015805748, y: 0.0138501655, z: -0.026102101, w: 0.9995621}
+        scale: {x: 0.999999, y: 1, z: 1.000001}
+      parentID: 12
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 8025527033890296506}
+    - name: '19: middle_01_l'
+      nodeName: middle_01_l
+      id: 19
+      type: 1
+      transform:
+        position: {x: -0.062313233, y: 0.00000015258789, z: -0.000000004172325}
+        rotation: {x: -0.0000001374444, y: 0.045966994, z: -0.004314544, w: 0.9989337}
+        scale: {x: 1.000001, y: 1, z: 0.999999}
+      parentID: 18
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 1134486480994129847}
+    - name: '20: middle_02_l'
+      nodeName: middle_02_l
+      id: 20
+      type: 1
+      transform:
+        position: {x: -0.056331098, y: 0.00000061035155, z: -0.00000044822693}
+        rotation: {x: -0.000008798681, y: -0.000026315005, z: -0.026690219, w: 0.99964374}
+        scale: {x: 1, y: 1, z: 1}
+      parentID: 19
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 6693836848162388187}
+    - name: '21: middle_03_l'
+      nodeName: middle_03_l
+      id: 21
+      type: 1
+      transform:
+        position: {x: -0.030548248, y: 0.00027404784, z: 0.000001540184}
+        rotation: {x: 0.0000005361949, y: 0.00002256113, z: -0.03760409, w: 0.99929273}
+        scale: {x: 1, y: 1, z: 1}
+      parentID: 20
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 3592585261964748448}
+    - name: '22: middle_tip_l'
+      nodeName: middle_tip_l
+      id: 22
+      type: 1
+      transform:
+        position: {x: -0.025129814, y: 0, z: 0.00000015258789}
+        rotation: {x: 0.00000006278237, y: 0.00000024157265, z: -0.012651615, w: 0.99992}
+        scale: {x: 1, y: 1, z: 1}
+      parentID: 21
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 1659077107948442070}
+    - name: '23: pinky_metacarpal_l'
+      nodeName: pinky_metacarpal_l
+      id: 23
+      type: 1
+      transform:
+        position: {x: -0.04840553, y: -0.0022721863, z: 0.02453809}
+        rotation: {x: 0.0029745747, y: 0.16873656, z: -0.020401932, w: 0.98544556}
+        scale: {x: 0.999999, y: 1.000001, z: 1.000001}
+      parentID: 12
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 8264294779611724685}
+    - name: '24: pinky_01_l'
+      nodeName: pinky_01_l
+      id: 24
+      type: 1
+      transform:
+        position: {x: -0.04522987, y: 0.00000015258789, z: -0.0000004959106}
+        rotation: {x: 0.000000047023665, y: -0.05449768, z: -0.0082273865, w: 0.99848}
+        scale: {x: 1.000002, y: 0.999998, z: 0.999999}
+      parentID: 23
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 3631120115091367161}
+    - name: '25: pinky_02_l'
+      nodeName: pinky_02_l
+      id: 25
+      type: 1
+      transform:
+        position: {x: -0.039672162, y: 0, z: 0.00007079124}
+        rotation: {x: 0.00003123925, y: 0.00089346245, z: -0.032193728, w: 0.99948126}
+        scale: {x: 1, y: 1, z: 1}
+      parentID: 24
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 5989443241821941932}
+    - name: '26: pinky_03_l'
+      nodeName: pinky_03_l
+      id: 26
+      type: 1
+      transform:
+        position: {x: -0.020320892, y: -0.00013381957, z: -0.00000012397766}
+        rotation: {x: -0.00018032527, y: -0.000004369168, z: -0.033069238, w: 0.99945307}
+        scale: {x: 1, y: 1, z: 1}
+      parentID: 25
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 841614951154514195}
+    - name: '27: pinky_tip_l'
+      nodeName: pinky_tip_l
+      id: 27
+      type: 1
+      transform:
+        position: {x: -0.023054428, y: -0.00000030517577, z: 0.000000009536743}
+        rotation: {x: 0.000113466915, y: -0.0011939756, z: -0.009857348, w: 0.9999507}
+        scale: {x: 1, y: 1, z: 1}
+      parentID: 26
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 6804948837680684554}
+    - name: '28: ring_metacarpal_l'
+      nodeName: ring_metacarpal_l
+      id: 28
+      type: 1
+      transform:
+        position: {x: -0.04914711, y: -0.0030476379, z: 0.011110355}
+        rotation: {x: -0.00041801404, y: 0.076604515, z: -0.022987291, w: 0.9967965}
+        scale: {x: 0.999999, y: 1, z: 1.000001}
+      parentID: 12
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 2971124803070374454}
+    - name: '29: ring_01_l'
+      nodeName: ring_01_l
+      id: 29
+      type: 1
+      transform:
+        position: {x: -0.055519484, y: 0, z: 0.00000014781952}
+        rotation: {x: -0.000000087442594, y: 0.02780875, z: -0.00893334, w: 0.99957335}
+        scale: {x: 1.000001, y: 1.000001, z: 0.999999}
+      parentID: 28
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 468139200151079153}
+    - name: '30: ring_02_l'
+      nodeName: ring_02_l
+      id: 30
+      type: 1
+      transform:
+        position: {x: -0.04982788, y: 0.00000015258789, z: 0}
+        rotation: {x: -0.0000034102047, y: 0.000008383203, z: -0.028979817, w: 0.99958}
+        scale: {x: 1, y: 1, z: 1}
+      parentID: 29
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 7875938985682441753}
+    - name: '31: ring_03_l'
+      nodeName: ring_03_l
+      id: 31
+      type: 1
+      transform:
+        position: {x: -0.027972564, y: 0.00000015258789, z: -0.00000027656554}
+        rotation: {x: -0.0000011692106, y: -0.000008626942, z: -0.03400092, w: 0.9994218}
+        scale: {x: 1, y: 1, z: 1}
+      parentID: 30
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 4242652437939343540}
+    - name: '32: ring_tip_l'
+      nodeName: ring_tip_l
+      id: 32
+      type: 1
+      transform:
+        position: {x: -0.025432853, y: -0.00000015258789, z: 0.00000015258789}
+        rotation: {x: -0.0000000017554177, y: 0.0000000120069465, z: -0.008936302,
+          w: 0.99996006}
+        scale: {x: 1, y: 1, z: 1}
+      parentID: 31
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 2614698931796149602}
+    - name: '33: thumb_01_l'
+      nodeName: thumb_01_l
+      id: 33
+      type: 1
+      transform:
+        position: {x: -0.036217194, y: -0.00050064083, z: -0.035199232}
+        rotation: {x: 0.7043481, y: -0.3047697, z: 0.062409613, w: 0.6380551}
+        scale: {x: 0.999999, y: 1, z: 1}
+      parentID: 12
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 8489377297369561217}
+    - name: '34: thumb_02_l'
+      nodeName: thumb_02_l
+      id: 34
+      type: 1
+      transform:
+        position: {x: -0.047574766, y: -0.00000061035155, z: 0.00000045776366}
+        rotation: {x: 0.00025653845, y: 0.0012652947, z: -0.2001601, w: 0.9797624}
+        scale: {x: 1, y: 1, z: 1}
+      parentID: 33
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 653428871467952622}
+    - name: '35: thumb_03_l'
+      nodeName: thumb_03_l
+      id: 35
+      type: 1
+      transform:
+        position: {x: -0.040831793, y: 0.00000015258789, z: 0.00000030517577}
+        rotation: {x: 0.0036940682, y: 0.0022056957, z: -0.14249684, w: 0.9897859}
+        scale: {x: 1, y: 1, z: 1}
+      parentID: 34
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 4289627244706762326}
+    - name: '36: thumb_tip_l'
+      nodeName: thumb_tip_l
+      id: 36
+      type: 1
+      transform:
+        position: {x: -0.031227225, y: 0, z: 0.00000030517577}
+        rotation: {x: 0.0003632463, y: -0.0012357758, z: -0.000017719365, w: 0.99999917}
+        scale: {x: 1, y: 1, z: 1}
+      parentID: 35
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 3549431485321531531}
+    - name: '37: lowerarm_twist_01_l'
+      nodeName: lowerarm_twist_01_l
+      id: 37
+      type: 1
+      transform:
+        position: {x: -0.1400002, y: 0.00000015258789, z: 0.00000030517577}
+        rotation: {x: 0, y: 0, z: 3.6724096e-15, w: 1}
+        scale: {x: 1, y: 1, z: 1}
+      parentID: 11
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 8623450782865509834}
+    - name: '38: upperarm_twist_01_l'
+      nodeName: upperarm_twist_01_l
+      id: 38
+      type: 1
+      transform:
+        position: {x: -0.0050000763, y: -0.00000018596648, z: -0.00000045776366}
+        rotation: {x: 2.479982e-29, y: 1.1368685e-13, z: -2.181415e-16, w: 1}
+        scale: {x: 1, y: 1, z: 1}
+      parentID: 10
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 4376890450610373885}
+    - name: '39: clavicle_r'
+      nodeName: clavicle_r
+      id: 39
+      type: 1
+      transform:
+        position: {x: -0.11952331, y: -0.030805588, z: 0.037588045}
+        rotation: {x: 0.83009076, y: 0.08811313, z: 0.5504808, w: -0.012502826}
+        scale: {x: 1, y: 1, z: 1}
+      parentID: 8
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 5921267132997140207}
+    - name: '40: upperarm_r'
+      nodeName: upperarm_r
+      id: 40
+      type: 1
+      transform:
+        position: {x: 0.15600166, y: 0.0000003695488, z: -0.00000030517577}
+        rotation: {x: 0.009763734, y: 0.2014541, z: 0.036944155, w: 0.9787523}
+        scale: {x: 1, y: 1, z: 1}
+      parentID: 39
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 6373080877695562373}
+    - name: '41: lowerarm_r'
+      nodeName: lowerarm_r
+      id: 41
+      type: 1
+      transform:
+        position: {x: 0.27308846, y: -0.0000005507469, z: 0.0000015258788}
+        rotation: {x: 0.00000011920915, y: -0.00000006332997, z: -0.00000002980236,
+          w: 1}
+        scale: {x: 1, y: 1, z: 1}
+      parentID: 40
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 2332171215901295742}
+    - name: '42: hand_r'
+      nodeName: hand_r
+      id: 42
+      type: 1
+      transform:
+        position: {x: 0.2604896, y: -0.00002522707, z: 0.00019073486}
+        rotation: {x: -0.0000010424332, y: -0.7071068, z: 0.7071068, w: -0.00000030626614}
+        scale: {x: 1, y: 1, z: 1}
+      parentID: 41
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 6837889890793612094}
+    - name: '43: index_metacarpal_r'
+      nodeName: index_metacarpal_r
+      id: 43
+      type: 1
+      transform:
+        position: {x: -0.05039291, y: -0.0024983215, z: -0.023101196}
+        rotation: {x: 0.00024534797, y: -0.0048971665, z: -0.02442032, w: 0.99968976}
+        scale: {x: 1, y: 1, z: 1}
+      parentID: 42
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 8479586114155186423}
+    - name: '44: index_01_r'
+      nodeName: index_01_r
+      id: 44
+      type: 1
+      transform:
+        position: {x: -0.06142883, y: 0, z: -0.00000015974044}
+        rotation: {x: -0.00000005396721, y: 0.022353904, z: 0.05435909, w: 0.9982712}
+        scale: {x: 1.000001, y: 1, z: 1.000001}
+      parentID: 43
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 8243365849375771847}
+    - name: '45: index_02_r'
+      nodeName: index_02_r
+      id: 45
+      type: 1
+      transform:
+        position: {x: -0.050817642, y: -0.00000045776366, z: -0.00000015258789}
+        rotation: {x: 0.000010931396, y: -0.0000006531225, z: 0.030605933, w: 0.9995315}
+        scale: {x: 1, y: 1, z: 1}
+      parentID: 44
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 6919611015724423615}
+    - name: '46: index_03_r'
+      nodeName: index_03_r
+      id: 46
+      type: 1
+      transform:
+        position: {x: -0.027054671, y: 0.0000007629394, z: 0.0000001502037}
+        rotation: {x: 0.0000009548834, y: 0.0000021776018, z: 0.032531627, w: 0.9994707}
+        scale: {x: 1, y: 1, z: 1}
+      parentID: 45
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 6938975137835144917}
+    - name: '47: index_tip_r'
+      nodeName: index_tip_r
+      id: 47
+      type: 1
+      transform:
+        position: {x: -0.021552771, y: -0.00000030517577, z: -0.00000015258789}
+        rotation: {x: 0.00000024962867, y: 0.0000007174546, z: 0.009214749, w: 0.99995756}
+        scale: {x: 1, y: 1, z: 1}
+      parentID: 46
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 3144964361861036371}
+    - name: '48: middle_metacarpal_r'
+      nodeName: middle_metacarpal_r
+      id: 48
+      type: 1
+      transform:
+        position: {x: -0.049109038, y: 0.0034048462, z: -0.0027314757}
+        rotation: {x: 0.0015808162, y: 0.013848068, z: 0.026101844, w: 0.99956214}
+        scale: {x: 1, y: 1, z: 1}
+      parentID: 42
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 4911934974352259642}
+    - name: '49: middle_01_r'
+      nodeName: middle_01_r
+      id: 49
+      type: 1
+      transform:
+        position: {x: -0.062313154, y: 0.00000030517577, z: 0.00000018775462}
+        rotation: {x: 0.00000017369878, y: 0.045969263, z: 0.004313135, w: 0.99893355}
+        scale: {x: 1, y: 1.000002, z: 1.000001}
+      parentID: 48
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 7058956416585737029}
+    - name: '50: middle_02_r'
+      nodeName: middle_02_r
+      id: 50
+      type: 1
+      transform:
+        position: {x: -0.05633125, y: -0.0000009155273, z: -0.00000030517577}
+        rotation: {x: 0.000008758115, y: -0.000026405854, z: 0.026689459, w: 0.9996438}
+        scale: {x: 1, y: 1, z: 1}
+      parentID: 49
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 4371053415464322884}
+    - name: '51: middle_03_r'
+      nodeName: middle_03_r
+      id: 51
+      type: 1
+      transform:
+        position: {x: -0.03054802, y: -0.00027389525, z: 0.0000013637542}
+        rotation: {x: -0.0000004821565, y: 0.00002265123, z: 0.037604287, w: 0.99929273}
+        scale: {x: 1, y: 1, z: 1}
+      parentID: 50
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 1742073735474469446}
+    - name: '52: middle_tip_r'
+      nodeName: middle_tip_r
+      id: 52
+      type: 1
+      transform:
+        position: {x: -0.025129737, y: -0.00000015258789, z: 0.0000000047683715}
+        rotation: {x: 5.019428e-10, y: -0.0000000304678, z: 0.012652285, w: 0.99991995}
+        scale: {x: 1, y: 1, z: 1}
+      parentID: 51
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 4052379463032138047}
+    - name: '53: pinky_metacarpal_r'
+      nodeName: pinky_metacarpal_r
+      id: 53
+      type: 1
+      transform:
+        position: {x: -0.048405606, y: 0.0022721863, z: 0.024538117}
+        rotation: {x: -0.0029741374, y: 0.1687325, z: 0.020399034, w: 0.9854463}
+        scale: {x: 1, y: 1, z: 1}
+      parentID: 42
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 93341458508283860}
+    - name: '54: pinky_01_r'
+      nodeName: pinky_01_r
+      id: 54
+      type: 1
+      transform:
+        position: {x: -0.045230176, y: 0.00000030517577, z: -0.00000019073485}
+        rotation: {x: -0.00000034923048, y: -0.054493506, z: 0.008229433, w: 0.9984802}
+        scale: {x: 1, y: 1, z: 1}
+      parentID: 53
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 1361734198017627285}
+    - name: '55: pinky_02_r'
+      nodeName: pinky_02_r
+      id: 55
+      type: 1
+      transform:
+        position: {x: -0.039672088, y: 0, z: 0.00007078171}
+        rotation: {x: -0.00003117664, y: 0.0008937752, z: 0.032194767, w: 0.9994812}
+        scale: {x: 1, y: 1, z: 1}
+      parentID: 54
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 8130566845138263624}
+    - name: '56: pinky_03_r'
+      nodeName: pinky_03_r
+      id: 56
+      type: 1
+      transform:
+        position: {x: -0.020320816, y: 0.00013412476, z: 0.000000009536743}
+        rotation: {x: 0.00018029459, y: -0.0000044899084, z: 0.0330674, w: 0.9994531}
+        scale: {x: 1, y: 1, z: 0.999999}
+      parentID: 55
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 349000208975287777}
+    - name: '57: pinky_tip_r'
+      nodeName: pinky_tip_r
+      id: 57
+      type: 1
+      transform:
+        position: {x: -0.023054542, y: 0, z: 0.000000019073486}
+        rotation: {x: -0.0001134089, y: -0.0011941106, z: 0.009856624, w: 0.9999507}
+        scale: {x: 1, y: 1, z: 1}
+      parentID: 56
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 850179939160179908}
+    - name: '58: ring_metacarpal_r'
+      nodeName: ring_metacarpal_r
+      id: 58
+      type: 1
+      transform:
+        position: {x: -0.04914688, y: 0.0030480956, z: 0.011110372}
+        rotation: {x: 0.00041847833, y: 0.07660785, z: 0.022986975, w: 0.9967962}
+        scale: {x: 1, y: 1, z: 1}
+      parentID: 42
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 2980762784753109268}
+    - name: '59: ring_01_r'
+      nodeName: ring_01_r
+      id: 59
+      type: 1
+      transform:
+        position: {x: -0.055519562, y: -0.00000030517577, z: -0.00000021934508}
+        rotation: {x: -0.000000092581224, y: 0.02780514, z: 0.008932302, w: 0.99957347}
+        scale: {x: 1.000001, y: 1.000001, z: 1.000001}
+      parentID: 58
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 1428848456595497099}
+    - name: '60: ring_02_r'
+      nodeName: ring_02_r
+      id: 60
+      type: 1
+      transform:
+        position: {x: -0.049827956, y: 0.00000015258789, z: 0.000000019073486}
+        rotation: {x: 0.0000033948766, y: 0.000008445595, z: 0.028980961, w: 0.99957997}
+        scale: {x: 1, y: 1, z: 1}
+      parentID: 59
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 5254436449290524076}
+    - name: '61: ring_03_r'
+      nodeName: ring_03_r
+      id: 61
+      type: 1
+      transform:
+        position: {x: -0.027972564, y: -0.00000045776366, z: -0.0000003147125}
+        rotation: {x: 0.0000012129424, y: -0.0000086529435, z: 0.03399884, w: 0.9994219}
+        scale: {x: 1, y: 1, z: 1}
+      parentID: 60
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 8185589932789003452}
+    - name: '62: ring_tip_r'
+      nodeName: ring_tip_r
+      id: 62
+      type: 1
+      transform:
+        position: {x: -0.025432967, y: -0.00000015258789, z: 0}
+        rotation: {x: -6.667325e-10, y: -0.000000003556768, z: 0.008936778, w: 0.99996006}
+        scale: {x: 1, y: 1, z: 1}
+      parentID: 61
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 6924369630697728650}
+    - name: '63: thumb_01_r'
+      nodeName: thumb_01_r
+      id: 63
+      type: 1
+      transform:
+        position: {x: -0.03621727, y: 0.00050079345, z: -0.035199128}
+        rotation: {x: -0.7043484, y: -0.30476862, z: -0.062410455, w: 0.63805515}
+        scale: {x: 1, y: 1, z: 1}
+      parentID: 42
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 5265938798257041309}
+    - name: '64: thumb_02_r'
+      nodeName: thumb_02_r
+      id: 64
+      type: 1
+      transform:
+        position: {x: -0.047574766, y: 0.00000072479247, z: 0.00000045776366}
+        rotation: {x: -0.00025687495, y: 0.0012657125, z: 0.20016025, w: 0.9797624}
+        scale: {x: 1, y: 1.000001, z: 1}
+      parentID: 63
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 1806555396712544971}
+    - name: '65: thumb_03_r'
+      nodeName: thumb_03_r
+      id: 65
+      type: 1
+      transform:
+        position: {x: -0.04083172, y: -0.00000020980835, z: 0.0000007629394}
+        rotation: {x: -0.0036943506, y: 0.0022057167, z: 0.14249675, w: 0.98978597}
+        scale: {x: 1, y: 1, z: 1}
+      parentID: 64
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 100356505806252397}
+    - name: '66: thumb_tip_r'
+      nodeName: thumb_tip_r
+      id: 66
+      type: 1
+      transform:
+        position: {x: -0.031227225, y: -0.000000076293944, z: 0}
+        rotation: {x: -0.00036331377, y: -0.0012381672, z: 0.000017429702, w: 0.99999917}
+        scale: {x: 1, y: 1, z: 1}
+      parentID: 65
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 3773728460992589941}
+    - name: '67: lowerarm_twist_01_r'
+      nodeName: lowerarm_twist_01_r
+      id: 67
+      type: 1
+      transform:
+        position: {x: 0.1400001, y: -0.000000076293944, z: -0.00000015258789}
+        rotation: {x: -0.11762718, y: 0.00000023676355, z: 0.000000028044497, w: 0.99305785}
+        scale: {x: 1.000001, y: 1, z: 1}
+      parentID: 41
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 2004646832427067080}
+    - name: '68: upperarm_twist_01_r'
+      nodeName: upperarm_twist_01_r
+      id: 68
+      type: 1
+      transform:
+        position: {x: 0.0050001526, y: 0.00000005483627, z: 0}
+        rotation: {x: 0.000000014901104, y: -3.5527005e-15, z: -0.0000002384186, w: 1}
+        scale: {x: 1, y: 1, z: 1}
+      parentID: 40
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 6002049920470409863}
+    - name: '69: neck_01'
+      nodeName: neck_01
+      id: 69
+      type: 1
+      transform:
+        position: {x: -0.15980361, y: -0.038195476, z: 0.0000001525884}
+        rotation: {x: -0.00000003388988, y: -0.000000051699296, z: 0.20371087, w: 0.9790311}
+        scale: {x: 1, y: 1, z: 1}
+      parentID: 8
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 7915036374145139131}
+    - name: '70: head'
+      nodeName: head
+      id: 70
+      type: 1
+      transform:
+        position: {x: -0.08960083, y: 0.016588517, z: 2.910383e-13}
+        rotation: {x: 0.00000023628311, y: -0.000000031839058, z: -0.13354279, w: 0.9910431}
+        scale: {x: 1, y: 1, z: 1}
+      parentID: 69
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 6450414839817785146}
+    - name: '71: thigh_l'
+      nodeName: thigh_l
+      id: 71
+      type: 1
+      transform:
+        position: {x: 0.01925003, y: 0.0129114175, z: -0.090056285}
+        rotation: {x: -0.0000002384178, y: 4.3568657e-10, z: -0.0018273899, w: 0.99999833}
+        scale: {x: 1, y: 1, z: 1}
+      parentID: 5
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 4738946040057625528}
+    - name: '72: calf_l'
+      nodeName: calf_l
+      id: 72
+      type: 1
+      transform:
+        position: {x: 0.42444742, y: 0.00000040769575, z: -0.0000012969971}
+        rotation: {x: 0.000000353903, y: 0, z: -0, w: 1}
+        scale: {x: 1, y: 1, z: 1}
+      parentID: 71
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 8010976472850512232}
+    - name: '73: calf_twist_01_l'
+      nodeName: calf_twist_01_l
+      id: 73
+      type: 1
+      transform:
+        position: {x: 0.20476793, y: -0.000000038146972, z: 0.0000001335144}
+        rotation: {x: 0.002808699, y: 0.0019330848, z: 0.0076127932, w: 0.99996525}
+        scale: {x: 1, y: 1, z: 1}
+      parentID: 72
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 910977949801657825}
+    - name: '74: foot_l'
+      nodeName: foot_l
+      id: 74
+      type: 1
+      transform:
+        position: {x: 0.45457572, y: -0.00000053167344, z: -0.0000006580353}
+        rotation: {x: 0.00000025471667, y: 2.2268027e-14, z: 0.000000087422734, w: 1}
+        scale: {x: 1, y: 1, z: 1}
+      parentID: 72
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 5985254377386241182}
+    - name: '75: ball_l'
+      nodeName: ball_l
+      id: 75
+      type: 1
+      transform:
+        position: {x: 0.054967504, y: -0.12667559, z: -0.0052717305}
+        rotation: {x: 2.3445623e-14, y: 0.00000033717487, z: 0.7071069, w: 0.70710665}
+        scale: {x: 1, y: 1, z: 1}
+      parentID: 74
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 6703733438858377661}
+    - name: '76: toe_l'
+      nodeName: toe_l
+      id: 76
+      type: 1
+      transform:
+        position: {x: -0.08644143, y: 0.0000013911724, z: 0.000000057220458}
+        rotation: {x: -0.00000023841858, y: -4.0388405e-14, z: -9.629346e-21, w: 1}
+        scale: {x: 1, y: 1, z: 1}
+      parentID: 75
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 5919833293107863455}
+    - name: '77: heel_l'
+      nodeName: heel_l
+      id: 77
+      type: 1
+      transform:
+        position: {x: 0.054969028, y: 0.06733002, z: -0.0052718064}
+        rotation: {x: -0.00000016858735, y: 0.00000016858743, z: 0.7071066, w: 0.70710695}
+        scale: {x: 1, y: 1, z: 1}
+      parentID: 74
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 6574644048814111553}
+    - name: '78: thigh_twist_01_l'
+      nodeName: thigh_twist_01_l
+      id: 78
+      type: 1
+      transform:
+        position: {x: 0.22094253, y: 0.000000035762785, z: 0.00000030517577}
+        rotation: {x: -0.04744345, y: -0.000021906519, z: 0.0004913715, w: 0.99887383}
+        scale: {x: 1, y: 1, z: 1}
+      parentID: 71
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 5872566825207472385}
+    - name: '79: thigh_r'
+      nodeName: thigh_r
+      id: 79
+      type: 1
+      transform:
+        position: {x: 0.01925003, y: 0.012911379, z: 0.09005723}
+        rotation: {x: 2.1794934e-10, y: 0.00000011920867, z: 0.99999833, w: 0.0018282682}
+        scale: {x: 1, y: 1, z: 1}
+      parentID: 5
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 709936951885822353}
+    - name: '80: calf_r'
+      nodeName: calf_r
+      id: 80
+      type: 1
+      transform:
+        position: {x: -0.42444697, y: -0.0000004172325, z: 0.0000017166137}
+        rotation: {x: -0.00000047683756, y: 0.0000000018626458, z: -0.00000000906705,
+          w: 1}
+        scale: {x: 1, y: 1, z: 1}
+      parentID: 79
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 3495433706932821427}
+    - name: '81: calf_twist_01_r'
+      nodeName: calf_twist_01_r
+      id: 81
+      type: 1
+      transform:
+        position: {x: -0.20476922, y: 0.000000030994414, z: -0.000000019073486}
+        rotation: {x: 0.0028076086, y: 0.0019335527, z: 0.0076124365, w: 0.99996525}
+        scale: {x: 1, y: 1, z: 1}
+      parentID: 80
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 439134939009383956}
+    - name: '82: foot_r'
+      nodeName: foot_r
+      id: 82
+      type: 1
+      transform:
+        position: {x: -0.4545754, y: 0.00000044345856, z: 0.0000011253356}
+        rotation: {x: -0.00000008742277, y: -0.00000008742278, z: -0.0000000874228,
+          w: 1}
+        scale: {x: 1, y: 1, z: 1}
+      parentID: 80
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 9171856857364368994}
+    - name: '83: ball_r'
+      nodeName: ball_r
+      id: 83
+      type: 1
+      transform:
+        position: {x: -0.055002525, y: 0.12666021, z: 0.0052708434}
+        rotation: {x: 0.000002673362, y: -0.000002673362, z: 0.7071068, w: 0.7071068}
+        scale: {x: 1, y: 1.000001, z: 1}
+      parentID: 82
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 8234288954517360009}
+    - name: '84: toe_r'
+      nodeName: toe_r
+      id: 84
+      type: 1
+      transform:
+        position: {x: 0.086442344, y: 0.000021438598, z: 0.000000009536743}
+        rotation: {x: 0, y: -0.0000000018626176, z: -0, w: 1}
+        scale: {x: 1, y: 1, z: 1}
+      parentID: 83
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 4767420429494779746}
+    - name: '85: heel_r'
+      nodeName: heel_r
+      id: 85
+      type: 1
+      transform:
+        position: {x: -0.05494857, y: -0.06734504, z: 0.0052693845}
+        rotation: {x: 0.000002632203, y: -0.000002632203, z: 0.7071068, w: 0.7071068}
+        scale: {x: 1, y: 1, z: 1}
+      parentID: 82
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 423191634390411903}
+    - name: '86: thigh_twist_01_r'
+      nodeName: thigh_twist_01_r
+      id: 86
+      type: 1
+      transform:
+        position: {x: -0.2209423, y: -0.00000007867813, z: 0.000000076293944}
+        rotation: {x: -0.047445346, y: -0.000021880682, z: 0.00049080787, w: 0.9988737}
+        scale: {x: 1, y: 1, z: 1}
+      parentID: 79
+      settings:
+        usedSettings: 0
+        ik:
+          ikAim: 0
+        foot:
+          heightFromGround: 0
+        rotationOffset:
+          value:
+            w: 1
+            x: 0
+            y: 0
+            z: 0
+        leaf:
+          direction:
+            x: 0
+            y: 0
+            z: 0
+          length: 0
+      unityTransform: {fileID: 4562075451666394541}
+    chains:
+    - name: '1:Left-Hand '
+      id: 1
+      type: 13
+      appliedDataType: 13
+      dataIndex: 0
+      dataSide: 1
+      nodeIds: 0c000000
+      settings:
+        usedSettings: 0
+        pelvis:
+          hipHeight: 0
+          hipBendOffset: 0
+          thicknessMultiplier: 1
+        leg:
+          reverseKneeDirection: 0
+          kneeRotationOffset: 0
+          footForwardOffset: 0
+          footSideOffset: 0
+        spine:
+          spineBendOffset: 0
+        neck:
+          neckBendOffset: 0
+        head:
+          headPitchOffset: 0
+          headYawOffset: 0
+          headTiltOffset: 0
+          useLeafAtEnd: 0
+        arm:
+          armLengthMultiplier: 0
+          elbowRotationOffset: 0
+          armRotationOffset:
+            x: 0
+            y: 0
+            z: 0
+          positionMultiplier:
+            x: 0
+            y: 0
+            z: 0
+          positionOffset:
+            x: 0
+            y: 0
+            z: 0
+        shoulder:
+          forwardOffset: 0
+          shrugOffset: 0
+          forwardMultiplier: 0
+          shrugMultiplier: 0
+        finger:
+          useLeafAtEnd: 0
+          metacarpalBoneId: 0
+          handChainId: 0
+          fingerWidth: 0
+        hand:
+          fingerChainIds: 0200000003000000050000000400000006000000
+          fingerChainIdsUsed: 0
+          handMotion: 4
+        foot:
+          toeChainIds: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+          toeChainIdsUsed: 0
+        toe:
+          footChainId: 0
+          useLeafAtEnd: 0
+    - name: '2:Left-FingerIndex '
+      id: 2
+      type: 6
+      appliedDataType: 6
+      dataIndex: 0
+      dataSide: 1
+      nodeIds: 0d0000000e0000000f0000001000000011000000
+      settings:
+        usedSettings: 0
+        pelvis:
+          hipHeight: 0
+          hipBendOffset: 0
+          thicknessMultiplier: 1
+        leg:
+          reverseKneeDirection: 0
+          kneeRotationOffset: 0
+          footForwardOffset: 0
+          footSideOffset: 0
+        spine:
+          spineBendOffset: 0
+        neck:
+          neckBendOffset: 0
+        head:
+          headPitchOffset: 0
+          headYawOffset: 0
+          headTiltOffset: 0
+          useLeafAtEnd: 0
+        arm:
+          armLengthMultiplier: 0
+          elbowRotationOffset: 0
+          armRotationOffset:
+            x: 0
+            y: 0
+            z: 0
+          positionMultiplier:
+            x: 0
+            y: 0
+            z: 0
+          positionOffset:
+            x: 0
+            y: 0
+            z: 0
+        shoulder:
+          forwardOffset: 0
+          shrugOffset: 0
+          forwardMultiplier: 0
+          shrugMultiplier: 0
+        finger:
+          useLeafAtEnd: 0
+          metacarpalBoneId: 13
+          handChainId: 1
+          fingerWidth: 0
+        hand:
+          fingerChainIds: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+          fingerChainIdsUsed: 0
+          handMotion: 0
+        foot:
+          toeChainIds: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+          toeChainIdsUsed: 0
+        toe:
+          footChainId: 0
+          useLeafAtEnd: 0
+    - name: '3:Left-FingerMiddle '
+      id: 3
+      type: 7
+      appliedDataType: 7
+      dataIndex: 0
+      dataSide: 1
+      nodeIds: 1200000013000000140000001500000016000000
+      settings:
+        usedSettings: 0
+        pelvis:
+          hipHeight: 0
+          hipBendOffset: 0
+          thicknessMultiplier: 1
+        leg:
+          reverseKneeDirection: 0
+          kneeRotationOffset: 0
+          footForwardOffset: 0
+          footSideOffset: 0
+        spine:
+          spineBendOffset: 0
+        neck:
+          neckBendOffset: 0
+        head:
+          headPitchOffset: 0
+          headYawOffset: 0
+          headTiltOffset: 0
+          useLeafAtEnd: 0
+        arm:
+          armLengthMultiplier: 0
+          elbowRotationOffset: 0
+          armRotationOffset:
+            x: 0
+            y: 0
+            z: 0
+          positionMultiplier:
+            x: 0
+            y: 0
+            z: 0
+          positionOffset:
+            x: 0
+            y: 0
+            z: 0
+        shoulder:
+          forwardOffset: 0
+          shrugOffset: 0
+          forwardMultiplier: 0
+          shrugMultiplier: 0
+        finger:
+          useLeafAtEnd: 0
+          metacarpalBoneId: 18
+          handChainId: 1
+          fingerWidth: 0
+        hand:
+          fingerChainIds: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+          fingerChainIdsUsed: 0
+          handMotion: 0
+        foot:
+          toeChainIds: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+          toeChainIdsUsed: 0
+        toe:
+          footChainId: 0
+          useLeafAtEnd: 0
+    - name: '4:Left-FingerPinky '
+      id: 4
+      type: 9
+      appliedDataType: 9
+      dataIndex: 0
+      dataSide: 1
+      nodeIds: 1700000018000000190000001a0000001b000000
+      settings:
+        usedSettings: 0
+        pelvis:
+          hipHeight: 0
+          hipBendOffset: 0
+          thicknessMultiplier: 1
+        leg:
+          reverseKneeDirection: 0
+          kneeRotationOffset: 0
+          footForwardOffset: 0
+          footSideOffset: 0
+        spine:
+          spineBendOffset: 0
+        neck:
+          neckBendOffset: 0
+        head:
+          headPitchOffset: 0
+          headYawOffset: 0
+          headTiltOffset: 0
+          useLeafAtEnd: 0
+        arm:
+          armLengthMultiplier: 0
+          elbowRotationOffset: 0
+          armRotationOffset:
+            x: 0
+            y: 0
+            z: 0
+          positionMultiplier:
+            x: 0
+            y: 0
+            z: 0
+          positionOffset:
+            x: 0
+            y: 0
+            z: 0
+        shoulder:
+          forwardOffset: 0
+          shrugOffset: 0
+          forwardMultiplier: 0
+          shrugMultiplier: 0
+        finger:
+          useLeafAtEnd: 0
+          metacarpalBoneId: 23
+          handChainId: 1
+          fingerWidth: 0
+        hand:
+          fingerChainIds: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+          fingerChainIdsUsed: 0
+          handMotion: 0
+        foot:
+          toeChainIds: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+          toeChainIdsUsed: 0
+        toe:
+          footChainId: 0
+          useLeafAtEnd: 0
+    - name: '5:Left-FingerRing '
+      id: 5
+      type: 8
+      appliedDataType: 8
+      dataIndex: 0
+      dataSide: 1
+      nodeIds: 1c0000001d0000001e0000001f00000020000000
+      settings:
+        usedSettings: 0
+        pelvis:
+          hipHeight: 0
+          hipBendOffset: 0
+          thicknessMultiplier: 1
+        leg:
+          reverseKneeDirection: 0
+          kneeRotationOffset: 0
+          footForwardOffset: 0
+          footSideOffset: 0
+        spine:
+          spineBendOffset: 0
+        neck:
+          neckBendOffset: 0
+        head:
+          headPitchOffset: 0
+          headYawOffset: 0
+          headTiltOffset: 0
+          useLeafAtEnd: 0
+        arm:
+          armLengthMultiplier: 0
+          elbowRotationOffset: 0
+          armRotationOffset:
+            x: 0
+            y: 0
+            z: 0
+          positionMultiplier:
+            x: 0
+            y: 0
+            z: 0
+          positionOffset:
+            x: 0
+            y: 0
+            z: 0
+        shoulder:
+          forwardOffset: 0
+          shrugOffset: 0
+          forwardMultiplier: 0
+          shrugMultiplier: 0
+        finger:
+          useLeafAtEnd: 0
+          metacarpalBoneId: 28
+          handChainId: 1
+          fingerWidth: 0
+        hand:
+          fingerChainIds: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+          fingerChainIdsUsed: 0
+          handMotion: 0
+        foot:
+          toeChainIds: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+          toeChainIdsUsed: 0
+        toe:
+          footChainId: 0
+          useLeafAtEnd: 0
+    - name: '6:Left-FingerThumb '
+      id: 6
+      type: 5
+      appliedDataType: 5
+      dataIndex: 0
+      dataSide: 1
+      nodeIds: 21000000220000002300000024000000
+      settings:
+        usedSettings: 0
+        pelvis:
+          hipHeight: 0
+          hipBendOffset: 0
+          thicknessMultiplier: 1
+        leg:
+          reverseKneeDirection: 0
+          kneeRotationOffset: 0
+          footForwardOffset: 0
+          footSideOffset: 0
+        spine:
+          spineBendOffset: 0
+        neck:
+          neckBendOffset: 0
+        head:
+          headPitchOffset: 0
+          headYawOffset: 0
+          headTiltOffset: 0
+          useLeafAtEnd: 0
+        arm:
+          armLengthMultiplier: 0
+          elbowRotationOffset: 0
+          armRotationOffset:
+            x: 0
+            y: 0
+            z: 0
+          positionMultiplier:
+            x: 0
+            y: 0
+            z: 0
+          positionOffset:
+            x: 0
+            y: 0
+            z: 0
+        shoulder:
+          forwardOffset: 0
+          shrugOffset: 0
+          forwardMultiplier: 0
+          shrugMultiplier: 0
+        finger:
+          useLeafAtEnd: 0
+          metacarpalBoneId: -1
+          handChainId: 1
+          fingerWidth: 0
+        hand:
+          fingerChainIds: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+          fingerChainIdsUsed: 0
+          handMotion: 0
+        foot:
+          toeChainIds: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+          toeChainIdsUsed: 0
+        toe:
+          footChainId: 0
+          useLeafAtEnd: 0
+    - name: '7:Right-Hand '
+      id: 7
+      type: 13
+      appliedDataType: 13
+      dataIndex: 0
+      dataSide: 2
+      nodeIds: 2a000000
+      settings:
+        usedSettings: 0
+        pelvis:
+          hipHeight: 0
+          hipBendOffset: 0
+          thicknessMultiplier: 1
+        leg:
+          reverseKneeDirection: 0
+          kneeRotationOffset: 0
+          footForwardOffset: 0
+          footSideOffset: 0
+        spine:
+          spineBendOffset: 0
+        neck:
+          neckBendOffset: 0
+        head:
+          headPitchOffset: 0
+          headYawOffset: 0
+          headTiltOffset: 0
+          useLeafAtEnd: 0
+        arm:
+          armLengthMultiplier: 0
+          elbowRotationOffset: 0
+          armRotationOffset:
+            x: 0
+            y: 0
+            z: 0
+          positionMultiplier:
+            x: 0
+            y: 0
+            z: 0
+          positionOffset:
+            x: 0
+            y: 0
+            z: 0
+        shoulder:
+          forwardOffset: 0
+          shrugOffset: 0
+          forwardMultiplier: 0
+          shrugMultiplier: 0
+        finger:
+          useLeafAtEnd: 0
+          metacarpalBoneId: 0
+          handChainId: 0
+          fingerWidth: 0
+        hand:
+          fingerChainIds: 08000000090000000b0000000a0000000c000000
+          fingerChainIdsUsed: 0
+          handMotion: 4
+        foot:
+          toeChainIds: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+          toeChainIdsUsed: 0
+        toe:
+          footChainId: 0
+          useLeafAtEnd: 0
+    - name: '8:Right-FingerIndex '
+      id: 8
+      type: 6
+      appliedDataType: 6
+      dataIndex: 0
+      dataSide: 2
+      nodeIds: 2b0000002c0000002d0000002e0000002f000000
+      settings:
+        usedSettings: 0
+        pelvis:
+          hipHeight: 0
+          hipBendOffset: 0
+          thicknessMultiplier: 1
+        leg:
+          reverseKneeDirection: 0
+          kneeRotationOffset: 0
+          footForwardOffset: 0
+          footSideOffset: 0
+        spine:
+          spineBendOffset: 0
+        neck:
+          neckBendOffset: 0
+        head:
+          headPitchOffset: 0
+          headYawOffset: 0
+          headTiltOffset: 0
+          useLeafAtEnd: 0
+        arm:
+          armLengthMultiplier: 0
+          elbowRotationOffset: 0
+          armRotationOffset:
+            x: 0
+            y: 0
+            z: 0
+          positionMultiplier:
+            x: 0
+            y: 0
+            z: 0
+          positionOffset:
+            x: 0
+            y: 0
+            z: 0
+        shoulder:
+          forwardOffset: 0
+          shrugOffset: 0
+          forwardMultiplier: 0
+          shrugMultiplier: 0
+        finger:
+          useLeafAtEnd: 0
+          metacarpalBoneId: 43
+          handChainId: 7
+          fingerWidth: 0
+        hand:
+          fingerChainIds: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+          fingerChainIdsUsed: 0
+          handMotion: 0
+        foot:
+          toeChainIds: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+          toeChainIdsUsed: 0
+        toe:
+          footChainId: 0
+          useLeafAtEnd: 0
+    - name: '9:Right-FingerMiddle '
+      id: 9
+      type: 7
+      appliedDataType: 7
+      dataIndex: 0
+      dataSide: 2
+      nodeIds: 3000000031000000320000003300000034000000
+      settings:
+        usedSettings: 0
+        pelvis:
+          hipHeight: 0
+          hipBendOffset: 0
+          thicknessMultiplier: 1
+        leg:
+          reverseKneeDirection: 0
+          kneeRotationOffset: 0
+          footForwardOffset: 0
+          footSideOffset: 0
+        spine:
+          spineBendOffset: 0
+        neck:
+          neckBendOffset: 0
+        head:
+          headPitchOffset: 0
+          headYawOffset: 0
+          headTiltOffset: 0
+          useLeafAtEnd: 0
+        arm:
+          armLengthMultiplier: 0
+          elbowRotationOffset: 0
+          armRotationOffset:
+            x: 0
+            y: 0
+            z: 0
+          positionMultiplier:
+            x: 0
+            y: 0
+            z: 0
+          positionOffset:
+            x: 0
+            y: 0
+            z: 0
+        shoulder:
+          forwardOffset: 0
+          shrugOffset: 0
+          forwardMultiplier: 0
+          shrugMultiplier: 0
+        finger:
+          useLeafAtEnd: 0
+          metacarpalBoneId: 48
+          handChainId: 7
+          fingerWidth: 0
+        hand:
+          fingerChainIds: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+          fingerChainIdsUsed: 0
+          handMotion: 0
+        foot:
+          toeChainIds: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+          toeChainIdsUsed: 0
+        toe:
+          footChainId: 0
+          useLeafAtEnd: 0
+    - name: '10:Right-FingerPinky '
+      id: 10
+      type: 9
+      appliedDataType: 9
+      dataIndex: 0
+      dataSide: 2
+      nodeIds: 3500000036000000370000003800000039000000
+      settings:
+        usedSettings: 0
+        pelvis:
+          hipHeight: 0
+          hipBendOffset: 0
+          thicknessMultiplier: 1
+        leg:
+          reverseKneeDirection: 0
+          kneeRotationOffset: 0
+          footForwardOffset: 0
+          footSideOffset: 0
+        spine:
+          spineBendOffset: 0
+        neck:
+          neckBendOffset: 0
+        head:
+          headPitchOffset: 0
+          headYawOffset: 0
+          headTiltOffset: 0
+          useLeafAtEnd: 0
+        arm:
+          armLengthMultiplier: 0
+          elbowRotationOffset: 0
+          armRotationOffset:
+            x: 0
+            y: 0
+            z: 0
+          positionMultiplier:
+            x: 0
+            y: 0
+            z: 0
+          positionOffset:
+            x: 0
+            y: 0
+            z: 0
+        shoulder:
+          forwardOffset: 0
+          shrugOffset: 0
+          forwardMultiplier: 0
+          shrugMultiplier: 0
+        finger:
+          useLeafAtEnd: 0
+          metacarpalBoneId: 53
+          handChainId: 7
+          fingerWidth: 0
+        hand:
+          fingerChainIds: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+          fingerChainIdsUsed: 0
+          handMotion: 0
+        foot:
+          toeChainIds: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+          toeChainIdsUsed: 0
+        toe:
+          footChainId: 0
+          useLeafAtEnd: 0
+    - name: '11:Right-FingerRing '
+      id: 11
+      type: 8
+      appliedDataType: 8
+      dataIndex: 0
+      dataSide: 2
+      nodeIds: 3a0000003b0000003c0000003d0000003e000000
+      settings:
+        usedSettings: 0
+        pelvis:
+          hipHeight: 0
+          hipBendOffset: 0
+          thicknessMultiplier: 1
+        leg:
+          reverseKneeDirection: 0
+          kneeRotationOffset: 0
+          footForwardOffset: 0
+          footSideOffset: 0
+        spine:
+          spineBendOffset: 0
+        neck:
+          neckBendOffset: 0
+        head:
+          headPitchOffset: 0
+          headYawOffset: 0
+          headTiltOffset: 0
+          useLeafAtEnd: 0
+        arm:
+          armLengthMultiplier: 0
+          elbowRotationOffset: 0
+          armRotationOffset:
+            x: 0
+            y: 0
+            z: 0
+          positionMultiplier:
+            x: 0
+            y: 0
+            z: 0
+          positionOffset:
+            x: 0
+            y: 0
+            z: 0
+        shoulder:
+          forwardOffset: 0
+          shrugOffset: 0
+          forwardMultiplier: 0
+          shrugMultiplier: 0
+        finger:
+          useLeafAtEnd: 0
+          metacarpalBoneId: 58
+          handChainId: 7
+          fingerWidth: 0
+        hand:
+          fingerChainIds: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+          fingerChainIdsUsed: 0
+          handMotion: 0
+        foot:
+          toeChainIds: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+          toeChainIdsUsed: 0
+        toe:
+          footChainId: 0
+          useLeafAtEnd: 0
+    - name: '12:Right-FingerThumb '
+      id: 12
+      type: 5
+      appliedDataType: 5
+      dataIndex: 0
+      dataSide: 2
+      nodeIds: 3f000000400000004100000042000000
+      settings:
+        usedSettings: 0
+        pelvis:
+          hipHeight: 0
+          hipBendOffset: 0
+          thicknessMultiplier: 1
+        leg:
+          reverseKneeDirection: 0
+          kneeRotationOffset: 0
+          footForwardOffset: 0
+          footSideOffset: 0
+        spine:
+          spineBendOffset: 0
+        neck:
+          neckBendOffset: 0
+        head:
+          headPitchOffset: 0
+          headYawOffset: 0
+          headTiltOffset: 0
+          useLeafAtEnd: 0
+        arm:
+          armLengthMultiplier: 0
+          elbowRotationOffset: 0
+          armRotationOffset:
+            x: 0
+            y: 0
+            z: 0
+          positionMultiplier:
+            x: 0
+            y: 0
+            z: 0
+          positionOffset:
+            x: 0
+            y: 0
+            z: 0
+        shoulder:
+          forwardOffset: 0
+          shrugOffset: 0
+          forwardMultiplier: 0
+          shrugMultiplier: 0
+        finger:
+          useLeafAtEnd: 0
+          metacarpalBoneId: -1
+          handChainId: 7
+          fingerWidth: 0
+        hand:
+          fingerChainIds: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+          fingerChainIdsUsed: 0
+          handMotion: 0
+        foot:
+          toeChainIds: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+          toeChainIdsUsed: 0
+        toe:
+          footChainId: 0
+          useLeafAtEnd: 0
+    - name: '13:Center-Pelvis '
+      id: 13
+      type: 10
+      appliedDataType: 10
+      dataIndex: 0
+      dataSide: 3
+      nodeIds: 05000000
+      settings:
+        usedSettings: 0
+        pelvis:
+          hipHeight: 1
+          hipBendOffset: 0
+          thicknessMultiplier: 1
+        leg:
+          reverseKneeDirection: 0
+          kneeRotationOffset: 0
+          footForwardOffset: 0
+          footSideOffset: 0
+        spine:
+          spineBendOffset: 0
+        neck:
+          neckBendOffset: 0
+        head:
+          headPitchOffset: 0
+          headYawOffset: 0
+          headTiltOffset: 0
+          useLeafAtEnd: 0
+        arm:
+          armLengthMultiplier: 0
+          elbowRotationOffset: 0
+          armRotationOffset:
+            x: 0
+            y: 0
+            z: 0
+          positionMultiplier:
+            x: 0
+            y: 0
+            z: 0
+          positionOffset:
+            x: 0
+            y: 0
+            z: 0
+        shoulder:
+          forwardOffset: 0
+          shrugOffset: 0
+          forwardMultiplier: 0
+          shrugMultiplier: 0
+        finger:
+          useLeafAtEnd: 0
+          metacarpalBoneId: 0
+          handChainId: 0
+          fingerWidth: 0
+        hand:
+          fingerChainIds: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+          fingerChainIdsUsed: 0
+          handMotion: 0
+        foot:
+          toeChainIds: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+          toeChainIdsUsed: 0
+        toe:
+          footChainId: 0
+          useLeafAtEnd: 0
+    - name: '14:Left-Leg '
+      id: 14
+      type: 2
+      appliedDataType: 2
+      dataIndex: 0
+      dataSide: 1
+      nodeIds: 47000000480000004a000000
+      settings:
+        usedSettings: 0
+        pelvis:
+          hipHeight: 0
+          hipBendOffset: 0
+          thicknessMultiplier: 1
+        leg:
+          reverseKneeDirection: 0
+          kneeRotationOffset: 0
+          footForwardOffset: 0
+          footSideOffset: 0
+        spine:
+          spineBendOffset: 0
+        neck:
+          neckBendOffset: 0
+        head:
+          headPitchOffset: 0
+          headYawOffset: 0
+          headTiltOffset: 0
+          useLeafAtEnd: 0
+        arm:
+          armLengthMultiplier: 0
+          elbowRotationOffset: 0
+          armRotationOffset:
+            x: 0
+            y: 0
+            z: 0
+          positionMultiplier:
+            x: 0
+            y: 0
+            z: 0
+          positionOffset:
+            x: 0
+            y: 0
+            z: 0
+        shoulder:
+          forwardOffset: 0
+          shrugOffset: 0
+          forwardMultiplier: 0
+          shrugMultiplier: 0
+        finger:
+          useLeafAtEnd: 0
+          metacarpalBoneId: 0
+          handChainId: 0
+          fingerWidth: 0
+        hand:
+          fingerChainIds: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+          fingerChainIdsUsed: 0
+          handMotion: 0
+        foot:
+          toeChainIds: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+          toeChainIdsUsed: 0
+        toe:
+          footChainId: 0
+          useLeafAtEnd: 0
+    - name: '15:Left-Foot '
+      id: 15
+      type: 14
+      appliedDataType: 14
+      dataIndex: 0
+      dataSide: 1
+      nodeIds: 4a000000
+      settings:
+        usedSettings: 0
+        pelvis:
+          hipHeight: 0
+          hipBendOffset: 0
+          thicknessMultiplier: 1
+        leg:
+          reverseKneeDirection: 0
+          kneeRotationOffset: 0
+          footForwardOffset: 0
+          footSideOffset: 0
+        spine:
+          spineBendOffset: 0
+        neck:
+          neckBendOffset: 0
+        head:
+          headPitchOffset: 0
+          headYawOffset: 0
+          headTiltOffset: 0
+          useLeafAtEnd: 0
+        arm:
+          armLengthMultiplier: 0
+          elbowRotationOffset: 0
+          armRotationOffset:
+            x: 0
+            y: 0
+            z: 0
+          positionMultiplier:
+            x: 0
+            y: 0
+            z: 0
+          positionOffset:
+            x: 0
+            y: 0
+            z: 0
+        shoulder:
+          forwardOffset: 0
+          shrugOffset: 0
+          forwardMultiplier: 0
+          shrugMultiplier: 0
+        finger:
+          useLeafAtEnd: 0
+          metacarpalBoneId: 0
+          handChainId: 0
+          fingerWidth: 0
+        hand:
+          fingerChainIds: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+          fingerChainIdsUsed: 0
+          handMotion: 0
+        foot:
+          toeChainIds: 
+          toeChainIdsUsed: 0
+        toe:
+          footChainId: 0
+          useLeafAtEnd: 0
+    - name: '16:Right-Leg '
+      id: 16
+      type: 2
+      appliedDataType: 2
+      dataIndex: 0
+      dataSide: 2
+      nodeIds: 4f0000005000000052000000
+      settings:
+        usedSettings: 0
+        pelvis:
+          hipHeight: 0
+          hipBendOffset: 0
+          thicknessMultiplier: 1
+        leg:
+          reverseKneeDirection: 0
+          kneeRotationOffset: 0
+          footForwardOffset: 0
+          footSideOffset: 0
+        spine:
+          spineBendOffset: 0
+        neck:
+          neckBendOffset: 0
+        head:
+          headPitchOffset: 0
+          headYawOffset: 0
+          headTiltOffset: 0
+          useLeafAtEnd: 0
+        arm:
+          armLengthMultiplier: 0
+          elbowRotationOffset: 0
+          armRotationOffset:
+            x: 0
+            y: 0
+            z: 0
+          positionMultiplier:
+            x: 0
+            y: 0
+            z: 0
+          positionOffset:
+            x: 0
+            y: 0
+            z: 0
+        shoulder:
+          forwardOffset: 0
+          shrugOffset: 0
+          forwardMultiplier: 0
+          shrugMultiplier: 0
+        finger:
+          useLeafAtEnd: 0
+          metacarpalBoneId: 0
+          handChainId: 0
+          fingerWidth: 0
+        hand:
+          fingerChainIds: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+          fingerChainIdsUsed: 0
+          handMotion: 0
+        foot:
+          toeChainIds: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+          toeChainIdsUsed: 0
+        toe:
+          footChainId: 0
+          useLeafAtEnd: 0
+    - name: '17:Right-Foot '
+      id: 17
+      type: 14
+      appliedDataType: 14
+      dataIndex: 0
+      dataSide: 2
+      nodeIds: 52000000
+      settings:
+        usedSettings: 0
+        pelvis:
+          hipHeight: 0
+          hipBendOffset: 0
+          thicknessMultiplier: 1
+        leg:
+          reverseKneeDirection: 0
+          kneeRotationOffset: 0
+          footForwardOffset: 0
+          footSideOffset: 0
+        spine:
+          spineBendOffset: 0
+        neck:
+          neckBendOffset: 0
+        head:
+          headPitchOffset: 0
+          headYawOffset: 0
+          headTiltOffset: 0
+          useLeafAtEnd: 0
+        arm:
+          armLengthMultiplier: 0
+          elbowRotationOffset: 0
+          armRotationOffset:
+            x: 0
+            y: 0
+            z: 0
+          positionMultiplier:
+            x: 0
+            y: 0
+            z: 0
+          positionOffset:
+            x: 0
+            y: 0
+            z: 0
+        shoulder:
+          forwardOffset: 0
+          shrugOffset: 0
+          forwardMultiplier: 0
+          shrugMultiplier: 0
+        finger:
+          useLeafAtEnd: 0
+          metacarpalBoneId: 0
+          handChainId: 0
+          fingerWidth: 0
+        hand:
+          fingerChainIds: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+          fingerChainIdsUsed: 0
+          handMotion: 0
+        foot:
+          toeChainIds: 
+          toeChainIdsUsed: 0
+        toe:
+          footChainId: 0
+          useLeafAtEnd: 0
+    - name: '18:Center-Spine '
+      id: 18
+      type: 4
+      appliedDataType: 4
+      dataIndex: 0
+      dataSide: 3
+      nodeIds: 0500000006000000070000000800000045000000
+      settings:
+        usedSettings: 0
+        pelvis:
+          hipHeight: 0
+          hipBendOffset: 0
+          thicknessMultiplier: 1
+        leg:
+          reverseKneeDirection: 0
+          kneeRotationOffset: 0
+          footForwardOffset: 0
+          footSideOffset: 0
+        spine:
+          spineBendOffset: 0
+        neck:
+          neckBendOffset: 0
+        head:
+          headPitchOffset: 0
+          headYawOffset: 0
+          headTiltOffset: 0
+          useLeafAtEnd: 0
+        arm:
+          armLengthMultiplier: 0
+          elbowRotationOffset: 0
+          armRotationOffset:
+            x: 0
+            y: 0
+            z: 0
+          positionMultiplier:
+            x: 0
+            y: 0
+            z: 0
+          positionOffset:
+            x: 0
+            y: 0
+            z: 0
+        shoulder:
+          forwardOffset: 0
+          shrugOffset: 0
+          forwardMultiplier: 0
+          shrugMultiplier: 0
+        finger:
+          useLeafAtEnd: 0
+          metacarpalBoneId: 0
+          handChainId: 0
+          fingerWidth: 0
+        hand:
+          fingerChainIds: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+          fingerChainIdsUsed: 0
+          handMotion: 0
+        foot:
+          toeChainIds: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+          toeChainIdsUsed: 0
+        toe:
+          footChainId: 0
+          useLeafAtEnd: 0
+    - name: '19:Center-Neck '
+      id: 19
+      type: 3
+      appliedDataType: 3
+      dataIndex: 0
+      dataSide: 3
+      nodeIds: 4500000046000000
+      settings:
+        usedSettings: 0
+        pelvis:
+          hipHeight: 0
+          hipBendOffset: 0
+          thicknessMultiplier: 1
+        leg:
+          reverseKneeDirection: 0
+          kneeRotationOffset: 0
+          footForwardOffset: 0
+          footSideOffset: 0
+        spine:
+          spineBendOffset: 0
+        neck:
+          neckBendOffset: 0
+        head:
+          headPitchOffset: 0
+          headYawOffset: 0
+          headTiltOffset: 0
+          useLeafAtEnd: 0
+        arm:
+          armLengthMultiplier: 0
+          elbowRotationOffset: 0
+          armRotationOffset:
+            x: 0
+            y: 0
+            z: 0
+          positionMultiplier:
+            x: 0
+            y: 0
+            z: 0
+          positionOffset:
+            x: 0
+            y: 0
+            z: 0
+        shoulder:
+          forwardOffset: 0
+          shrugOffset: 0
+          forwardMultiplier: 0
+          shrugMultiplier: 0
+        finger:
+          useLeafAtEnd: 0
+          metacarpalBoneId: 0
+          handChainId: 0
+          fingerWidth: 0
+        hand:
+          fingerChainIds: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+          fingerChainIdsUsed: 0
+          handMotion: 0
+        foot:
+          toeChainIds: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+          toeChainIdsUsed: 0
+        toe:
+          footChainId: 0
+          useLeafAtEnd: 0
+    - name: '20:Center-Head '
+      id: 20
+      type: 11
+      appliedDataType: 11
+      dataIndex: 0
+      dataSide: 3
+      nodeIds: 46000000
+      settings:
+        usedSettings: 0
+        pelvis:
+          hipHeight: 0
+          hipBendOffset: 0
+          thicknessMultiplier: 1
+        leg:
+          reverseKneeDirection: 0
+          kneeRotationOffset: 0
+          footForwardOffset: 0
+          footSideOffset: 0
+        spine:
+          spineBendOffset: 0
+        neck:
+          neckBendOffset: 0
+        head:
+          headPitchOffset: 0
+          headYawOffset: 0
+          headTiltOffset: 0
+          useLeafAtEnd: 0
+        arm:
+          armLengthMultiplier: 0
+          elbowRotationOffset: 0
+          armRotationOffset:
+            x: 0
+            y: 0
+            z: 0
+          positionMultiplier:
+            x: 0
+            y: 0
+            z: 0
+          positionOffset:
+            x: 0
+            y: 0
+            z: 0
+        shoulder:
+          forwardOffset: 0
+          shrugOffset: 0
+          forwardMultiplier: 0
+          shrugMultiplier: 0
+        finger:
+          useLeafAtEnd: 0
+          metacarpalBoneId: 0
+          handChainId: 0
+          fingerWidth: 0
+        hand:
+          fingerChainIds: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+          fingerChainIdsUsed: 0
+          handMotion: 0
+        foot:
+          toeChainIds: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+          toeChainIdsUsed: 0
+        toe:
+          footChainId: 0
+          useLeafAtEnd: 0
+    - name: '21:Left-Shoulder '
+      id: 21
+      type: 12
+      appliedDataType: 12
+      dataIndex: 0
+      dataSide: 1
+      nodeIds: 090000000a000000
+      settings:
+        usedSettings: 0
+        pelvis:
+          hipHeight: 0
+          hipBendOffset: 0
+          thicknessMultiplier: 1
+        leg:
+          reverseKneeDirection: 0
+          kneeRotationOffset: 0
+          footForwardOffset: 0
+          footSideOffset: 0
+        spine:
+          spineBendOffset: 0
+        neck:
+          neckBendOffset: 0
+        head:
+          headPitchOffset: 0
+          headYawOffset: 0
+          headTiltOffset: 0
+          useLeafAtEnd: 0
+        arm:
+          armLengthMultiplier: 0
+          elbowRotationOffset: 0
+          armRotationOffset:
+            x: 0
+            y: 0
+            z: 0
+          positionMultiplier:
+            x: 0
+            y: 0
+            z: 0
+          positionOffset:
+            x: 0
+            y: 0
+            z: 0
+        shoulder:
+          forwardOffset: 0
+          shrugOffset: 0
+          forwardMultiplier: 1
+          shrugMultiplier: 1
+        finger:
+          useLeafAtEnd: 0
+          metacarpalBoneId: 0
+          handChainId: 0
+          fingerWidth: 0
+        hand:
+          fingerChainIds: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+          fingerChainIdsUsed: 0
+          handMotion: 0
+        foot:
+          toeChainIds: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+          toeChainIdsUsed: 0
+        toe:
+          footChainId: 0
+          useLeafAtEnd: 0
+    - name: '22:Left-Arm '
+      id: 22
+      type: 1
+      appliedDataType: 1
+      dataIndex: 0
+      dataSide: 1
+      nodeIds: 0a0000000b0000000c000000
+      settings:
+        usedSettings: 0
+        pelvis:
+          hipHeight: 0
+          hipBendOffset: 0
+          thicknessMultiplier: 1
+        leg:
+          reverseKneeDirection: 0
+          kneeRotationOffset: 0
+          footForwardOffset: 0
+          footSideOffset: 0
+        spine:
+          spineBendOffset: 0
+        neck:
+          neckBendOffset: 0
+        head:
+          headPitchOffset: 0
+          headYawOffset: 0
+          headTiltOffset: 0
+          useLeafAtEnd: 0
+        arm:
+          armLengthMultiplier: 1
+          elbowRotationOffset: 0
+          armRotationOffset:
+            x: 0
+            y: 0
+            z: 0
+          positionMultiplier:
+            x: 1
+            y: 1
+            z: 1
+          positionOffset:
+            x: 0
+            y: 0
+            z: 0
+        shoulder:
+          forwardOffset: 0
+          shrugOffset: 0
+          forwardMultiplier: 0
+          shrugMultiplier: 0
+        finger:
+          useLeafAtEnd: 0
+          metacarpalBoneId: 0
+          handChainId: 0
+          fingerWidth: 0
+        hand:
+          fingerChainIds: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+          fingerChainIdsUsed: 0
+          handMotion: 0
+        foot:
+          toeChainIds: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+          toeChainIdsUsed: 0
+        toe:
+          footChainId: 0
+          useLeafAtEnd: 0
+    - name: '23:Right-Shoulder '
+      id: 23
+      type: 12
+      appliedDataType: 12
+      dataIndex: 0
+      dataSide: 2
+      nodeIds: 2700000028000000
+      settings:
+        usedSettings: 0
+        pelvis:
+          hipHeight: 0
+          hipBendOffset: 0
+          thicknessMultiplier: 1
+        leg:
+          reverseKneeDirection: 0
+          kneeRotationOffset: 0
+          footForwardOffset: 0
+          footSideOffset: 0
+        spine:
+          spineBendOffset: 0
+        neck:
+          neckBendOffset: 0
+        head:
+          headPitchOffset: 0
+          headYawOffset: 0
+          headTiltOffset: 0
+          useLeafAtEnd: 0
+        arm:
+          armLengthMultiplier: 0
+          elbowRotationOffset: 0
+          armRotationOffset:
+            x: 0
+            y: 0
+            z: 0
+          positionMultiplier:
+            x: 0
+            y: 0
+            z: 0
+          positionOffset:
+            x: 0
+            y: 0
+            z: 0
+        shoulder:
+          forwardOffset: 0
+          shrugOffset: 0
+          forwardMultiplier: 1
+          shrugMultiplier: 1
+        finger:
+          useLeafAtEnd: 0
+          metacarpalBoneId: 0
+          handChainId: 0
+          fingerWidth: 0
+        hand:
+          fingerChainIds: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+          fingerChainIdsUsed: 0
+          handMotion: 0
+        foot:
+          toeChainIds: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+          toeChainIdsUsed: 0
+        toe:
+          footChainId: 0
+          useLeafAtEnd: 0
+    - name: '24:Right-Arm '
+      id: 24
+      type: 1
+      appliedDataType: 1
+      dataIndex: 0
+      dataSide: 2
+      nodeIds: 28000000290000002a000000
+      settings:
+        usedSettings: 0
+        pelvis:
+          hipHeight: 0
+          hipBendOffset: 0
+          thicknessMultiplier: 1
+        leg:
+          reverseKneeDirection: 0
+          kneeRotationOffset: 0
+          footForwardOffset: 0
+          footSideOffset: 0
+        spine:
+          spineBendOffset: 0
+        neck:
+          neckBendOffset: 0
+        head:
+          headPitchOffset: 0
+          headYawOffset: 0
+          headTiltOffset: 0
+          useLeafAtEnd: 0
+        arm:
+          armLengthMultiplier: 1
+          elbowRotationOffset: 0
+          armRotationOffset:
+            x: 0
+            y: 0
+            z: 0
+          positionMultiplier:
+            x: 1
+            y: 1
+            z: 1
+          positionOffset:
+            x: 0
+            y: 0
+            z: 0
+        shoulder:
+          forwardOffset: 0
+          shrugOffset: 0
+          forwardMultiplier: 0
+          shrugMultiplier: 0
+        finger:
+          useLeafAtEnd: 0
+          metacarpalBoneId: 0
+          handChainId: 0
+          fingerWidth: 0
+        hand:
+          fingerChainIds: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+          fingerChainIdsUsed: 0
+          handMotion: 0
+        foot:
+          toeChainIds: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+          toeChainIdsUsed: 0
+        toe:
+          footChainId: 0
+          useLeafAtEnd: 0
+    colliders: []
+    meshes: []
+    settings:
+      scaleToTarget: 1
+      useEndPointApproximations: 1
+      collisionType: 0
+      targetType: 2
+      skeletonTargetUserData:
+        userID: 0
+      skeletonTargetUserIndexData:
+        userIndex: 0
+      skeletonTargetAnimationData:
+        id: 
+      skeletonGloveData:
+        gloveID: 0
+  isLocalPlayer: 1
+  enableHaptics: 0
+  debugAnimatedSkeleton: 1
+  debugColliders: 0
+--- !u!1 &6877748881161320924
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9171856857364368994}
+  m_Layer: 0
+  m_Name: foot_r
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9171856857364368994
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6877748881161320924}
+  m_LocalRotation: {x: -0.00000008742277, y: -0.00000008742278, z: -0.0000000874228,
+    w: 1}
+  m_LocalPosition: {x: -0.4545754, y: 0.00000044345856, z: 0.0000011253356}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 8234288954517360009}
+  - {fileID: 423191634390411903}
+  m_Father: {fileID: 3495433706932821427}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6942509280641240903
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1742073735474469446}
+  m_Layer: 0
+  m_Name: middle_03_r
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1742073735474469446
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6942509280641240903}
+  m_LocalRotation: {x: -0.0000004821565, y: 0.00002265123, z: 0.037604287, w: 0.99929273}
+  m_LocalPosition: {x: -0.03054802, y: -0.00027389525, z: 0.0000013637542}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4052379463032138047}
+  m_Father: {fileID: 4371053415464322884}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7012549709493281789
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2980762784753109268}
+  m_Layer: 0
+  m_Name: ring_metacarpal_r
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2980762784753109268
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7012549709493281789}
+  m_LocalRotation: {x: 0.00041847833, y: 0.07660785, z: 0.022986975, w: 0.9967962}
+  m_LocalPosition: {x: -0.04914688, y: 0.0030480956, z: 0.011110372}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1428848456595497099}
+  m_Father: {fileID: 6837889890793612094}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7032760870266236715
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5510797703685308308}
+  m_Layer: 0
+  m_Name: upperarm_l
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5510797703685308308
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7032760870266236715}
+  m_LocalRotation: {x: 0.009763742, y: 0.20145406, z: 0.03694304, w: 0.9787524}
+  m_LocalPosition: {x: -0.1560019, y: -0.00000019073485, z: -0.00000030517577}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4323828018611515991}
+  - {fileID: 4376890450610373885}
+  m_Father: {fileID: 1276422632980517555}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7059047529178469830
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8264294779611724685}
+  m_Layer: 0
+  m_Name: pinky_metacarpal_l
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8264294779611724685
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7059047529178469830}
+  m_LocalRotation: {x: 0.0029745747, y: 0.16873656, z: -0.020401932, w: 0.98544556}
+  m_LocalPosition: {x: -0.04840553, y: -0.0022721863, z: 0.02453809}
+  m_LocalScale: {x: 0.999999, y: 1.000001, z: 1.000001}
+  m_Children:
+  - {fileID: 3631120115091367161}
+  m_Father: {fileID: 808910430059007713}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7129044554920521751
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8010976472850512232}
+  m_Layer: 0
+  m_Name: calf_l
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8010976472850512232
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7129044554920521751}
+  m_LocalRotation: {x: 0.000000353903, y: 0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.42444742, y: 0.00000040769575, z: -0.0000012969971}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 910977949801657825}
+  - {fileID: 5985254377386241182}
+  m_Father: {fileID: 4738946040057625528}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7140651610852077194
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8130566845138263624}
+  m_Layer: 0
+  m_Name: pinky_02_r
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8130566845138263624
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7140651610852077194}
+  m_LocalRotation: {x: -0.00003117664, y: 0.0008937752, z: 0.032194767, w: 0.9994812}
+  m_LocalPosition: {x: -0.039672088, y: 0, z: 0.00007078171}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 349000208975287777}
+  m_Father: {fileID: 1361734198017627285}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7234175408177117734
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2614698931796149602}
+  m_Layer: 0
+  m_Name: ring_tip_l
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2614698931796149602
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7234175408177117734}
+  m_LocalRotation: {x: -0.0000000017554177, y: 0.0000000120069465, z: -0.008936302,
+    w: 0.99996006}
+  m_LocalPosition: {x: -0.025432853, y: -0.00000015258789, z: 0.00000015258789}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4242652437939343540}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7281234654321496513
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6373080877695562373}
+  m_Layer: 0
+  m_Name: upperarm_r
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6373080877695562373
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7281234654321496513}
+  m_LocalRotation: {x: 0.009763734, y: 0.2014541, z: 0.036944155, w: 0.9787523}
+  m_LocalPosition: {x: 0.15600166, y: 0.0000003695488, z: -0.00000030517577}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2332171215901295742}
+  - {fileID: 6002049920470409863}
+  m_Father: {fileID: 5921267132997140207}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7505056327265612187
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7454528350098707458}
+  m_Layer: 0
+  m_Name: spine_02
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7454528350098707458
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7505056327265612187}
+  m_LocalRotation: {x: 0.00000023662577, y: -0.00000002918705, z: -0.12241936, w: 0.9924785}
+  m_LocalPosition: {x: -0.18875358, y: 0.03801362, z: -0.0000016021718}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4174367211436724372}
+  m_Father: {fileID: 1318380315750579608}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7644824446268100596
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3773728460992589941}
+  m_Layer: 0
+  m_Name: thumb_tip_r
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3773728460992589941
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644824446268100596}
+  m_LocalRotation: {x: -0.00036331377, y: -0.0012381672, z: 0.000017429702, w: 0.99999917}
+  m_LocalPosition: {x: -0.031227225, y: -0.000000076293944, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 100356505806252397}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7722574608106003292
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6813172534742364243}
+  m_Layer: 0
+  m_Name: index_02_l
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6813172534742364243
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7722574608106003292}
+  m_LocalRotation: {x: -0.000010978219, y: -0.0000005746869, z: -0.030606182, w: 0.9995315}
+  m_LocalPosition: {x: -0.050817642, y: 0.00000030517577, z: -0.0000000023841857}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4124425380720321171}
+  m_Father: {fileID: 4084091807204637120}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7780833333211621370
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4323828018611515991}
+  m_Layer: 0
+  m_Name: lowerarm_l
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4323828018611515991
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7780833333211621370}
+  m_LocalRotation: {x: -0.000000007450579, y: -0.00000005960482, z: 0.000000029802312,
+    w: 1}
+  m_LocalPosition: {x: -0.27308837, y: 0.00000079154967, z: -0.0000021362305}
+  m_LocalScale: {x: 1.000001, y: 1, z: 1}
+  m_Children:
+  - {fileID: 808910430059007713}
+  - {fileID: 8623450782865509834}
+  m_Father: {fileID: 5510797703685308308}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7791964493824669546
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5985254377386241182}
+  m_Layer: 0
+  m_Name: foot_l
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5985254377386241182
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7791964493824669546}
+  m_LocalRotation: {x: 0.00000025471667, y: 2.2268027e-14, z: 0.000000087422734, w: 1}
+  m_LocalPosition: {x: 0.45457572, y: -0.00000053167344, z: -0.0000006580353}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 6703733438858377661}
+  - {fileID: 6574644048814111553}
+  m_Father: {fileID: 8010976472850512232}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7836821489468604273
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4738946040057625528}
+  m_Layer: 0
+  m_Name: thigh_l
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4738946040057625528
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7836821489468604273}
+  m_LocalRotation: {x: -0.0000002384178, y: 4.3568657e-10, z: -0.0018273899, w: 0.99999833}
+  m_LocalPosition: {x: 0.01925003, y: 0.0129114175, z: -0.090056285}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 8010976472850512232}
+  - {fileID: 5872566825207472385}
+  m_Father: {fileID: 7964578022499880643}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8357967474071923984
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6924369630697728650}
+  m_Layer: 0
+  m_Name: ring_tip_r
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6924369630697728650
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8357967474071923984}
+  m_LocalRotation: {x: -6.667325e-10, y: -0.000000003556768, z: 0.008936778, w: 0.99996006}
+  m_LocalPosition: {x: -0.025432967, y: -0.00000015258789, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8185589932789003452}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8403958045908459678
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 653428871467952622}
+  m_Layer: 0
+  m_Name: thumb_02_l
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &653428871467952622
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8403958045908459678}
+  m_LocalRotation: {x: 0.00025653845, y: 0.0012652947, z: -0.2001601, w: 0.9797624}
+  m_LocalPosition: {x: -0.047574766, y: -0.00000061035155, z: 0.00000045776366}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4289627244706762326}
+  m_Father: {fileID: 8489377297369561217}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8437339239866739649
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3592585261964748448}
+  m_Layer: 0
+  m_Name: middle_03_l
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3592585261964748448
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8437339239866739649}
+  m_LocalRotation: {x: 0.0000005361949, y: 0.00002256113, z: -0.03760409, w: 0.99929273}
+  m_LocalPosition: {x: -0.030548248, y: 0.00027404784, z: 0.000001540184}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1659077107948442070}
+  m_Father: {fileID: 6693836848162388187}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8460307076688139235
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1659077107948442070}
+  m_Layer: 0
+  m_Name: middle_tip_l
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1659077107948442070
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8460307076688139235}
+  m_LocalRotation: {x: 0.00000006278237, y: 0.00000024157265, z: -0.012651615, w: 0.99992}
+  m_LocalPosition: {x: -0.025129814, y: 0, z: 0.00000015258789}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3592585261964748448}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8481502269090311245
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 808910430059007713}
+  m_Layer: 0
+  m_Name: hand_l
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &808910430059007713
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8481502269090311245}
+  m_LocalRotation: {x: -0.7071068, y: 0.0000000658543, z: 0.00000010536698, w: 0.7071067}
+  m_LocalPosition: {x: -0.26048958, y: 0.0000013160706, z: -0.0000038146973}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 6953225384698730736}
+  - {fileID: 8025527033890296506}
+  - {fileID: 8264294779611724685}
+  - {fileID: 2971124803070374454}
+  - {fileID: 8489377297369561217}
+  m_Father: {fileID: 4323828018611515991}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8592936778388680248
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4767420429494779746}
+  m_Layer: 0
+  m_Name: toe_r
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4767420429494779746
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8592936778388680248}
+  m_LocalRotation: {x: 0, y: -0.0000000018626176, z: -0, w: 1}
+  m_LocalPosition: {x: 0.086442344, y: 0.000021438598, z: 0.000000009536743}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8234288954517360009}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8679408082844429157
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 439134939009383956}
+  m_Layer: 0
+  m_Name: calf_twist_01_r
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &439134939009383956
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8679408082844429157}
+  m_LocalRotation: {x: 0.0028076086, y: 0.0019335527, z: 0.0076124365, w: 0.99996525}
+  m_LocalPosition: {x: -0.20476922, y: 0.000000030994414, z: -0.000000019073486}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3495433706932821427}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &9019067969317605450
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4289627244706762326}
+  m_Layer: 0
+  m_Name: thumb_03_l
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4289627244706762326
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9019067969317605450}
+  m_LocalRotation: {x: 0.0036940682, y: 0.0022056957, z: -0.14249684, w: 0.9897859}
+  m_LocalPosition: {x: -0.040831793, y: 0.00000015258789, z: 0.00000030517577}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 3549431485321531531}
+  m_Father: {fileID: 653428871467952622}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &9028084725630106941
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1806555396712544971}
+  m_Layer: 0
+  m_Name: thumb_02_r
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1806555396712544971
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9028084725630106941}
+  m_LocalRotation: {x: -0.00025687495, y: 0.0012657125, z: 0.20016025, w: 0.9797624}
+  m_LocalPosition: {x: -0.047574766, y: 0.00000072479247, z: 0.00000045776366}
+  m_LocalScale: {x: 1, y: 1.000001, z: 1}
+  m_Children:
+  - {fileID: 100356505806252397}
+  m_Father: {fileID: 5265938798257041309}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &9043932411387194236
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6703733438858377661}
+  m_Layer: 0
+  m_Name: ball_l
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6703733438858377661
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9043932411387194236}
+  m_LocalRotation: {x: 2.3445623e-14, y: 0.00000033717487, z: 0.7071069, w: 0.70710665}
+  m_LocalPosition: {x: 0.054967504, y: -0.12667559, z: -0.0052717305}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 5919833293107863455}
+  m_Father: {fileID: 5985254377386241182}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

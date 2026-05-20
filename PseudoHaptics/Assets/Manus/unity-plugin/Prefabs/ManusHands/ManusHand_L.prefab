@@ -799,6 +799,8 @@ GameObject:
   - component: {fileID: 7716306555060984587}
   - component: {fileID: 2657205568576335960}
   - component: {fileID: 1346985422924559831}
+  - component: {fileID: 896052352377096593}
+  - component: {fileID: 7748848219663576974}
   - component: {fileID: 7770515051742952089}
   m_Layer: 0
   m_Name: ManusHand_L
@@ -2062,6 +2064,30 @@ MonoBehaviour:
   enableHaptics: 1
   debugAnimatedSkeleton: 1
   debugColliders: 0
+--- !u!114 &896052352377096593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7716306555060984581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65109ac7e59b0164cb8a64df723c7c83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7748848219663576974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7716306555060984581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b3c8f5d78ae9a7468fb5c8128c3ae77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &7770515051742952089
 MonoBehaviour:
   m_ObjectHideFlags: 0

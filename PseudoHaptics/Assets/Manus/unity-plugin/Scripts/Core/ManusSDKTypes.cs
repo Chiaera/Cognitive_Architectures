@@ -152,10 +152,9 @@ namespace Manus
             Prime3 = 5,
             Virtual = 6,
             MetaglovePro = 7,
-            MetagloveProPrecision = 8,
-            MetagloveProHaptics = 9,
-            MetagloveProPrecisionHaptics = 10
-        }
+			MetagloveProPrecision = 8
+
+		}
 
         /// <summary>Describes the different types of profile used during the calibration.</summary>
         public enum ProfileType
@@ -163,13 +162,6 @@ namespace Manus
             Hands = 0,
             FullBody = 1,
             MAX_SIZE = 2
-        }
-
-        public enum GloveProfileType
-        {
-            Invalid = 0,
-            Metaglove = 1,
-            MetaglovePro = 2
         }
 
         /// <summary>The different types of body measurements used for the polygon calibration.</summary>
@@ -215,9 +207,7 @@ namespace Manus
             RightUpperArmTrackerToElbow = 11,
             LeftUpperArmTrackerToShoulder = 12,
             RightUpperArmTrackerToShoulder = 13,
-            LeftHandTrackerToCasing = 14,
-            RightHandTrackerToCasing = 15,
-            MAX_SIZE = 16
+            MAX_SIZE = 14
         }
 
         /// <summary>Describes the different types of extra tracker offsets.</summary>
@@ -254,11 +244,7 @@ namespace Manus
             NoUpdateAvailable = 1,
             UpdateAvailable = 2,
             MandatoryUpdateAvailable = 3,
-            UpdatingInitializing = 4,
-            UpdatingBootloader = 5,
-            UpdatingFirmware = 6,
-            UpdatingFinalizing = 7,
-            UpdatingFailed = 8
+            Updating = 4
         }
 
         /// <summary>Describes the different skeleton types.</summary>
@@ -420,9 +406,7 @@ namespace Manus
             SessionConnectionVersionMismatch = 15,
             TemporarySkeletonModified = 16,
             SessionRefusedDueToLicenseIssue = 17,
-            LaunchDevTools = 18,
-            MaxSeatMixing = 19,
-            DeprecatedLicense = 20
+            LaunchDevTools = 18
         }
 
         /// <summary>Describes the possible types for the ergonomics data.</summary>
@@ -1030,10 +1014,9 @@ namespace Manus
             public uint rightGloveID;
             public LicenseType licenseLevel;
             public ManusTimestamp licenseExpiration;
-            public uint licenseMaxNumberOfGlovePairs;
             public uint netDeviceID;
 
-            public DongleLandscapeData(uint p_Id,DeviceClassType p_ClassType,DeviceFamilyType p_FamilyType,bool p_IsHaptics,Version p_HardwareVersion,Version p_FirmwareVersion,ManusTimestamp p_FirmwareTimestamp,uint p_ChargingState,int p_Channel,UpdateStatusEnum p_UpdateStatus,string p_LicenseType,ManusTimestamp p_LastSeen,uint p_LeftGloveID,uint p_RightGloveID,LicenseType p_LicenseLevel,ManusTimestamp p_LicenseExpiration,uint p_LicenseMaxNumberOfGlovePairs,uint p_NetDeviceID)
+            public DongleLandscapeData(uint p_Id,DeviceClassType p_ClassType,DeviceFamilyType p_FamilyType,bool p_IsHaptics,Version p_HardwareVersion,Version p_FirmwareVersion,ManusTimestamp p_FirmwareTimestamp,uint p_ChargingState,int p_Channel,UpdateStatusEnum p_UpdateStatus,string p_LicenseType,ManusTimestamp p_LastSeen,uint p_LeftGloveID,uint p_RightGloveID,LicenseType p_LicenseLevel,ManusTimestamp p_LicenseExpiration,uint p_NetDeviceID)
             {
                 id = p_Id;
                 classType = p_ClassType;
@@ -1051,7 +1034,6 @@ namespace Manus
                 rightGloveID = p_RightGloveID;
                 licenseLevel = p_LicenseLevel;
                 licenseExpiration = p_LicenseExpiration;
-                licenseMaxNumberOfGlovePairs = p_LicenseMaxNumberOfGlovePairs;
                 netDeviceID = p_NetDeviceID;
             }
         }
@@ -1190,7 +1172,7 @@ namespace Manus
         }
 
         public const int USERPROFILELANDSCAPEDATA_MEASUREMENTS_ARRAY_SIZE = 20;
-        public const int USERPROFILELANDSCAPEDATA_TRACKEROFFSETS_ARRAY_SIZE = 16;
+        public const int USERPROFILELANDSCAPEDATA_TRACKEROFFSETS_ARRAY_SIZE = 14;
         public const int USERPROFILELANDSCAPEDATA_EXTRATRACKEROFFSETS_ARRAY_SIZE = 4;
 
         /// <summary>Stores all the received user profile data.</summary>
@@ -1201,21 +1183,17 @@ namespace Manus
             public ProfileType profileType;
             [MarshalAs( UnmanagedType.ByValArray, SizeConst = 20 )]
             public Measurement[] measurements;
-            [MarshalAs( UnmanagedType.ByValArray, SizeConst = 16 )]
+            [MarshalAs( UnmanagedType.ByValArray, SizeConst = 14 )]
             public TrackerOffset[] trackerOffsets;
             [MarshalAs( UnmanagedType.ByValArray, SizeConst = 4 )]
             public ExtraTrackerOffset[] extraTrackerOffsets;
-            public ManusTimestamp leftGloveCalibrationTimestamp;
-            public ManusTimestamp rightGloveCalibrationTimestamp;
 
-            public UserProfileLandscapeData(ProfileType p_ProfileType,Measurement[] p_Measurements,TrackerOffset[] p_TrackerOffsets,ExtraTrackerOffset[] p_ExtraTrackerOffsets,ManusTimestamp p_LeftGloveCalibrationTimestamp,ManusTimestamp p_RightGloveCalibrationTimestamp)
+            public UserProfileLandscapeData(ProfileType p_ProfileType,Measurement[] p_Measurements,TrackerOffset[] p_TrackerOffsets,ExtraTrackerOffset[] p_ExtraTrackerOffsets)
             {
                 profileType = p_ProfileType;
                 measurements = p_Measurements;
                 trackerOffsets = p_TrackerOffsets;
                 extraTrackerOffsets = p_ExtraTrackerOffsets;
-                leftGloveCalibrationTimestamp = p_LeftGloveCalibrationTimestamp;
-                rightGloveCalibrationTimestamp = p_RightGloveCalibrationTimestamp;
             }
         }
 
@@ -1227,16 +1205,18 @@ namespace Manus
             public uint id;
             [MarshalAs( UnmanagedType.ByValTStr, SizeConst = 64 )]
             public string name;
+            public Color color;
             public uint dongleID;
             public uint leftGloveID;
             public uint rightGloveID;
             public UserProfileLandscapeData profile;
             public uint userIndex;
 
-            public UserLandscapeData(uint p_Id,string p_Name,uint p_DongleID,uint p_LeftGloveID,uint p_RightGloveID,UserProfileLandscapeData p_Profile,uint p_UserIndex)
+            public UserLandscapeData(uint p_Id,string p_Name,Color p_Color,uint p_DongleID,uint p_LeftGloveID,uint p_RightGloveID,UserProfileLandscapeData p_Profile,uint p_UserIndex)
             {
                 id = p_Id;
                 name = p_Name;
+                color = p_Color;
                 dongleID = p_DongleID;
                 leftGloveID = p_LeftGloveID;
                 rightGloveID = p_RightGloveID;
@@ -1399,12 +1379,8 @@ namespace Manus
             public bool worldVizSession;
             [MarshalAs( UnmanagedType.I1 )]
             public bool noraxonSession;
-            [MarshalAs( UnmanagedType.I1 )]
-            public bool noitomSession;
-            [MarshalAs( UnmanagedType.I1 )]
-            public bool abletonSession;
 
-            public LicenseInfo(uint p_MaxGlovePairs,bool p_Recording,bool p_Exporting,bool p_AdvancedExporting,bool p_UnitySession,bool p_UnrealSession,bool p_OpenXRSession,bool p_Sdk,bool p_Raw,bool p_MobuSession,bool p_XsensSession,bool p_OptitrackSession,bool p_QualisysSession,bool p_ViconSession,bool p_NokovSession,bool p_IcidoSession,bool p_SiemensSession,bool p_VredSession,bool p_Integrated,bool p_CortexSession,bool p_FzMotionSession,bool p_WorldVizSession,bool p_NoraxonSession,bool p_NoitomSession,bool p_AbletonSession)
+            public LicenseInfo(uint p_MaxGlovePairs,bool p_Recording,bool p_Exporting,bool p_AdvancedExporting,bool p_UnitySession,bool p_UnrealSession,bool p_OpenXRSession,bool p_Sdk,bool p_Raw,bool p_MobuSession,bool p_XsensSession,bool p_OptitrackSession,bool p_QualisysSession,bool p_ViconSession,bool p_NokovSession,bool p_IcidoSession,bool p_SiemensSession,bool p_VredSession,bool p_Integrated,bool p_CortexSession,bool p_FzMotionSession,bool p_WorldVizSession,bool p_NoraxonSession)
             {
                 maxGlovePairs = p_MaxGlovePairs;
                 recording = p_Recording;
@@ -1429,8 +1405,6 @@ namespace Manus
                 fzMotionSession = p_FzMotionSession;
                 worldVizSession = p_WorldVizSession;
                 noraxonSession = p_NoraxonSession;
-                noitomSession = p_NoitomSession;
-                abletonSession = p_AbletonSession;
             }
         }
 
@@ -2424,51 +2398,6 @@ namespace Manus
                 y = p_Y;
                 z = p_Z;
                 unitScale = p_UnitScale;
-            }
-        }
-
-        /// <summary>ONLY USED INTERNALLY</summary>
-        /// <remarks>Stores orientation of trackers for polygon.</remarks>
-        [System.Serializable]
-        [StructLayout(LayoutKind.Sequential)]
-        public struct TrackerDirection
-        {
-            public TrackerOffsetType type;
-            public ManusVec3 side;
-            public ManusVec3 up;
-            public ManusVec3 forward;
-
-            public TrackerDirection(TrackerOffsetType p_Type,ManusVec3 p_Side,ManusVec3 p_Up,ManusVec3 p_Forward)
-            {
-                type = p_Type;
-                side = p_Side;
-                up = p_Up;
-                forward = p_Forward;
-            }
-        }
-
-        public const int CALIBRATIONPROFILE_TRACKEROFFSETS_ARRAY_SIZE = 16;
-        public const int CALIBRATIONPROFILE_TRACKERDIRECTIONS_ARRAY_SIZE = 16;
-        public const int CALIBRATIONPROFILE_MEASUREMENTS_ARRAY_SIZE = 20;
-
-        /// <summary>Stores values for the CalibrationProfile.</summary>
-        /// <remarks>Currently only the trackerOffsets are used in CoreLite.</remarks>
-        [System.Serializable]
-        [StructLayout(LayoutKind.Sequential)]
-        public struct CalibrationProfile
-        {
-            [MarshalAs( UnmanagedType.ByValArray, SizeConst = 16 )]
-            public TrackerOffset[] trackerOffsets;
-            [MarshalAs( UnmanagedType.ByValArray, SizeConst = 16 )]
-            public TrackerDirection[] trackerDirections;
-            [MarshalAs( UnmanagedType.ByValArray, SizeConst = 20 )]
-            public Measurement[] measurements;
-
-            public CalibrationProfile(TrackerOffset[] p_TrackerOffsets,TrackerDirection[] p_TrackerDirections,Measurement[] p_Measurements)
-            {
-                trackerOffsets = p_TrackerOffsets;
-                trackerDirections = p_TrackerDirections;
-                measurements = p_Measurements;
             }
         }
     }
