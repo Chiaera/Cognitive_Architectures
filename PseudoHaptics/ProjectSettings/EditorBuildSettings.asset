@@ -14,9 +14,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/_Scenes/ml2_receiver.unity
     guid: cea1233dca7af574ebf0a70eb190f39f
-  - enabled: 1
-    path: Assets/_Scenes/_ML2.unity
+  - enabled: 0
+    path: Assets/_Scenes/ML2.unity
     guid: 6d9f9de36bdea4743a0f5bd9ba0f38f4
+  - enabled: 1
+    path: Assets/_Scenes/_ML2_XRHands.unity
+    guid: 6bcbcecefa779fd4190db75213aee062
   m_configObjects:
     com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: d4b674ec1145a394e83048d5775b6a48,
       type: 2}
