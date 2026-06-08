@@ -11,124 +11,142 @@ public class SqueezeCalibrationFlow : MonoBehaviour {
     public bool calibrationDone = false;
 
     IEnumerator Start() {
+        yield return RunCalibration();
+    }
+
+    IEnumerator RunCalibration() {
         if (detector == null || instructionText == null) {
-            Debug.LogError("[CalibrationFlow] Missing references in the Inspector!");
             yield break;
         }
 
         calibrationDone = false;
-        yield return new WaitForSeconds(1f); 
+        yield return new WaitForSeconds(1.5f); 
 
-        // raise hand
-        instructionText.text = "Raise your hand to start";
+        // 1. Initial Hand Check
+        instructionText.text = "Please raise your hand into view";
         while (!detector.IsHandTracked) {
             yield return null;
         }
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1.5f);
 
-        // OPEN hand
-        instructionText.text = "Open your hand with your palm facing down";
+        // 2. Open Hand Phase
+        instructionText.text = "Open your hand fully with palm facing down";
         
-        // Blocks progression until the hand is genuinely open
         bool handIsOpenWide = false;
         while (!handIsOpenWide) {
             if (detector.IsHandTracked) {
-                float currentDist = detector.GetAverageFingerToPalmDistance();
-                if (currentDist > 0.095f) {
+                // Check if the hand distance reaches an acceptable open state baseline
+                if (detector.GetAverageFingerToPalmDistance() > 0.085f) {
                     handIsOpenWide = true;
-                } else {
-                    instructionText.text = "Open your hand wider (palm down)";
                 }
             }
             yield return null;
         }
 
-        instructionText.text = "Open your hand with your palm facing down";
+        // 3. Open Hand Stability Timer
+        instructionText.text = "Hold your hand open and perfectly still";
         yield return WaitForHandStability(stabilityDuration, checkOpen: true, 0f);
         
         detector.CalibrateOpen();
         float capturedOpen = detector.openDistance;
-        Debug.Log($"[Calibration] Captured Open Distance: {capturedOpen}m");
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1.5f);
 
-        // CLOSE hand
-        instructionText.text = "Close your hand, always keep your palm facing down";
+        // 4. Close Hand Phase
+        instructionText.text = "Close your hand into a tight fist";
 
-        // Blocks progression until the user actively shrinks their hand
         bool motionDetected = false;
         while (!motionDetected) {
             if (detector.IsHandTracked) {
                 float currentDist = detector.GetAverageFingerToPalmDistance();
-                if (currentDist > 0 && currentDist < (capturedOpen - 0.025f)) {
+                // Advance only if the hand is actively closing compared to the open calibration
+                if (currentDist > 0 && currentDist < (capturedOpen - 0.02f)) {
                     motionDetected = true;
                 }
             }
             yield return null; 
         }
 
-        instructionText.text = "Hold your fist closed still";
+        // 5. Closed Hand Stability Timer
+        instructionText.text = "Hold your fist closed and perfectly still";
         yield return WaitForHandStability(stabilityDuration, checkOpen: false, capturedOpen);
         
         detector.CalibrateClosed();
-        Debug.Log($"[Calibration] Captured Closed Distance: {detector.closedDistance}m");
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1.5f);
 
-        // FINAL CHECK
+        // 6. Validation Check
         float delta = detector.openDistance - detector.closedDistance;
-        if (delta < 0.025f) { 
-            instructionText.text = "Calibration error: insufficient movement! Restarting";
+        if (delta < 0.02f) { 
+            instructionText.text = "Calibration failed: insufficient movement range! Restarting";
             yield return new WaitForSeconds(3f);
-            StartCoroutine(Start()); 
+            StartCoroutine(RunCalibration());
             yield break;
         }
 
-        instructionText.text = "Calibration completed successfully";
+        instructionText.text = "Calibration completed successfully!";
         calibrationDone = true;
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(2.5f);
         instructionText.text = "";
     }
 
-    // Check that the hand remains in correct position
     IEnumerator WaitForHandStability(float duration, bool checkOpen, float referenceOpenDistance) {
         float elapsed = 0f;
-        string baseText = instructionText.text;
+        string currentActionText = instructionText.text;
+        int lastSecondsLeft = -1;
 
         while (elapsed < duration) {
-            if (!detector.IsHandTracked) { //tracking hand
-                instructionText.text = "Hand lost! Please reposition your hand";
+            if (!detector.IsHandTracked) {
+                if (instructionText.text != "Hand lost! Please look at your hand") {
+                    instructionText.text = "Hand lost! Please look at your hand";
+                }
                 elapsed = 0f; 
                 yield return null;
                 continue;
             }
 
-            // position correct
             float currentDist = detector.GetAverageFingerToPalmDistance();
+            bool isStable = true;
             
             if (checkOpen) {
-                if (currentDist < 0.095f) {
-                    instructionText.text = "Do not close your hand! Keep it open";
-                    elapsed = 0f;
-                    yield return null;
-                    continue;
+                // If checking open hand, ensure it doesn't accidentally drop back into a closed posture
+                if (currentDist < 0.08f) {
+                    if (instructionText.text != "Do not close your hand! Keep it extended") {
+                        instructionText.text = "Do not close your hand! Keep it extended";
+                    }
+                    isStable = false;
                 }
             } else {
-                if (currentDist > (referenceOpenDistance - 0.02f)) {
-                    instructionText.text = "Do not open your hand! Keep it closed";
-                    elapsed = 0f;
-                    yield return null;
-                    continue;
+                // If checking closed hand, ensure it doesn't open past a safe fraction of the captured open distance
+                if (currentDist > (referenceOpenDistance - 0.03f)) {
+                    if (instructionText.text != "Do not open your hand! Keep a tight fist") {
+                        instructionText.text = "Do not open your hand! Keep a tight fist";
+                    }
+                    isStable = false;
                 }
             }
 
-            // position correct, update timer
-            instructionText.text = baseText;
+            if (!isStable) {
+                elapsed = 0f; // Reset the countdown timer upon breaking posture rules
+                yield return null;
+                continue;
+            }
+
+            // If execution reaches this point, the posture is valid -> restore description and advance timer
+            if (instructionText.text != currentActionText && elapsed == 0f) {
+                instructionText.text = currentActionText;
+            }
+
             elapsed += Time.deltaTime;
             int secondsLeft = Mathf.CeilToInt(duration - elapsed);
-            instructionText.text = instructionText.text + $" ({secondsLeft})";
+            
+            if (secondsLeft != lastSecondsLeft) {
+                instructionText.text = $"{currentActionText} ({secondsLeft})";
+                lastSecondsLeft = secondsLeft;
+            }
+            
             yield return null;
         }
     }
