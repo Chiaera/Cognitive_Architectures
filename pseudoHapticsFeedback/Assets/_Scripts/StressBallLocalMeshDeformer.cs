@@ -10,19 +10,38 @@ public class StressBallLocalMeshDeformer : MonoBehaviour {
     [Tooltip("The mesh filter of the visual stress ball")]
     public MeshFilter ballMeshFilter;
 
+    [Header("Surface Projection")]
+    [Tooltip("Keep contact deformation anchored to the virtual ball surface")]
+    public bool useSurfaceProjection = true;
+
+    [Tooltip("Manual visual radius of the ball in meters")]
+    public float ballRadiusMeters = 0.045f;
+
+    [Tooltip("Small offset from the surface to keep indentations visually stable")]
+    public float surfaceOffsetMeters = 0.001f;
+
     [Header("Local Deformation")]
     [Tooltip("World-space radius around each contact point affected by the indentation")]
-    public float indentationRadiusMeters = 0.035f;
+    public float indentationRadiusMeters = 0.030f;
 
     [Tooltip("World-space maximum indentation depth applied by each finger")]
-    public float indentationDepthMeters = 0.018f;
+    public float indentationDepthMeters = 0.020f;
 
     [Tooltip("Global mismatch gain applied to local deformation")]
-    public float deformationGain = 1f;
+    public float deformationGain = 1.8f;
 
     [Tooltip("Minimum finger pressure required to create a local indentation")]
     [Range(0f, 1f)]
-    public float pressureActivationThreshold = 0.05f;
+    public float pressureActivationThreshold = 0.04f;
+
+    [Header("Pressure Clamp")]
+    [Tooltip("Maximum effective pressure used for mesh deformation")]
+    [Range(0f, 1f)]
+    public float maxEffectivePressure = 0.70f;
+
+    [Tooltip("Softens high pressure values to avoid excessive squishy deformation")]
+    [Range(0.1f, 2f)]
+    public float pressureResponseCurve = 0.75f;
 
     [Header("Elastic Return")]
     [Tooltip("How fast the mesh moves toward the target deformation")]
@@ -128,13 +147,15 @@ public class StressBallLocalMeshDeformer : MonoBehaviour {
                 continue;
             }
 
+            float effectivePressure = GetEffectivePressure(pressure);
+
             ApplyFingerIndentation(
                 fingerPositions[fingerIndex],
                 fingerDirections[fingerIndex],
-                pressure
+                effectivePressure
             );
 
-            totalPressure += pressure;
+            totalPressure += effectivePressure;
             activeFingerCount++;
         }
 
@@ -143,17 +164,29 @@ public class StressBallLocalMeshDeformer : MonoBehaviour {
         }
     }
 
+    float GetEffectivePressure(float rawPressure) {
+        // Clamp and soften pressure to avoid excessive squishy deformation
+        float clampedPressure = Mathf.Clamp(rawPressure, 0f, maxEffectivePressure);
+        float normalizedPressure = clampedPressure / Mathf.Max(maxEffectivePressure, 0.0001f);
+
+        float curvedPressure = Mathf.Pow(normalizedPressure, pressureResponseCurve);
+
+        return Mathf.Clamp01(curvedPressure * maxEffectivePressure);
+    }
+
     void ApplyFingerIndentation(Vector3 fingerWorldPosition, Vector3 pressureWorldDirection, float pressure) {
-        // Convert finger position and pressure direction into the local space of the visual mesh
+        // Convert contact point and pressure direction into the local space of the visual mesh
         Transform visualTransform = ballMeshFilter.transform;
 
-        Vector3 localFingerPosition = visualTransform.InverseTransformPoint(fingerWorldPosition);
+        Vector3 contactWorldPosition = GetContactWorldPosition(fingerWorldPosition);
+
+        Vector3 localContactPosition = visualTransform.InverseTransformPoint(contactWorldPosition);
         Vector3 localPressureDirection = visualTransform.InverseTransformDirection(pressureWorldDirection).normalized;
 
         float appliedDepth = localIndentationDepth * pressure * deformationGain;
 
         for (int i = 0; i < targetVertices.Length; i++) {
-            float distance = Vector3.Distance(originalVertices[i], localFingerPosition);
+            float distance = Vector3.Distance(originalVertices[i], localContactPosition);
 
             if (distance > localIndentationRadius) {
                 continue;
@@ -167,6 +200,25 @@ public class StressBallLocalMeshDeformer : MonoBehaviour {
             targetVertices[i] += indentationOffset;
             affectedVertices++;
         }
+    }
+
+    Vector3 GetContactWorldPosition(Vector3 fingerWorldPosition) {
+        // Project the fingertip onto the virtual ball surface to prevent internal dragging
+        if (!useSurfaceProjection) {
+            return fingerWorldPosition;
+        }
+
+        Vector3 ballCenter = transform.position;
+        Vector3 centerToFinger = fingerWorldPosition - ballCenter;
+
+        if (centerToFinger.sqrMagnitude < 0.0001f) {
+            return fingerWorldPosition;
+        }
+
+        Vector3 surfaceDirection = centerToFinger.normalized;
+        float projectedRadius = ballRadiusMeters + surfaceOffsetMeters;
+
+        return ballCenter + surfaceDirection * projectedRadius;
     }
 
     void ApplyElasticMeshUpdate() {

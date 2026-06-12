@@ -122,6 +122,40 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &58842561
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 58842562}
+  m_Layer: 0
+  m_Name: SphereSupport
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &58842562
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 58842561}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 733555577}
+  - {fileID: 276470415}
+  - {fileID: 1383508002}
+  m_Father: {fileID: 1901067595}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &236994218
 GameObject:
   m_ObjectHideFlags: 0
@@ -175,6 +209,111 @@ MonoBehaviour:
   minimumRange: 0.02
   closedRelativeThreshold: 0.75
   maxDistanceVariation: 0.015
+--- !u!1 &276470414
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 276470415}
+  - component: {fileID: 276470418}
+  - component: {fileID: 276470417}
+  - component: {fileID: 276470416}
+  m_Layer: 0
+  m_Name: ConnectorRing
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &276470415
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 276470414}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.035, z: 0}
+  m_LocalScale: {x: 0.025, y: 0.025, z: 0.025}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 58842562}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &276470416
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 276470414}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &276470417
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 276470414}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: cbfbc3fb2373a0e45b256cfb2bc42930, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &276470418
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 276470414}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!137 &357007700 stripped
 SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: 1785337192100647894, guid: b3ed8a0a703ebd34a9e44ed3d9f1fcf6,
@@ -504,6 +643,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6627571522594998540, guid: b3ed8a0a703ebd34a9e44ed3d9f1fcf6,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6627571522594998540, guid: b3ed8a0a703ebd34a9e44ed3d9f1fcf6,
+        type: 3}
       propertyPath: m_HideMeshWhenTrackingIsLost
       value: 0
       objectReference: {fileID: 0}
@@ -728,6 +872,113 @@ MonoBehaviour:
   middleClosedDistance: 0.04
   ringClosedDistance: 0.04
   littleClosedDistance: 0.04
+--- !u!1 &733555576
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 733555577}
+  - component: {fileID: 733555580}
+  - component: {fileID: 733555579}
+  - component: {fileID: 733555578}
+  m_Layer: 0
+  m_Name: SupportSphere
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &733555577
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 733555576}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.02, z: 0}
+  m_LocalScale: {x: 0.008, y: 1, z: 0.008}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 58842562}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &733555578
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 733555576}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5000001
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!23 &733555579
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 733555576}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: cbfbc3fb2373a0e45b256cfb2bc42930, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &733555580
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 733555576}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!137 &773190231 stripped
 SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: 1317669517487522681, guid: 3f7511fbc40ae7a4b89c3298a3de199d,
@@ -838,7 +1089,7 @@ Transform:
   m_LocalScale: {x: 0.09, y: 0.09, z: 0.09}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 1901067595}
+  m_Father: {fileID: 1726005710}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &810206440
 MonoBehaviour:
@@ -1069,7 +1320,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_XRHandTrackingEvents: {fileID: 831535030}
   m_HandMeshRenderer: {fileID: 357007700}
-  m_ShowMeshWhenTrackingIsAcquired: 1
+  m_ShowMeshWhenTrackingIsAcquired: 0
   m_HideMeshWhenTrackingIsLost: 0
 --- !u!1 &832575517
 GameObject:
@@ -1498,6 +1749,217 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1383508001
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1383508002}
+  - component: {fileID: 1383508005}
+  - component: {fileID: 1383508004}
+  - component: {fileID: 1383508003}
+  m_Layer: 0
+  m_Name: ConnectorShadow
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1383508002
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383508001}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.0045, y: 0.039, z: -0.005}
+  m_LocalScale: {x: 0.02, y: 0.02, z: 0.022}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 58842562}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &1383508003
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383508001}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1383508004
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383508001}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 238cf5eb12b3dc843b884affca13fab3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1383508005
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383508001}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1726005709
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1726005710}
+  - component: {fileID: 1726005712}
+  - component: {fileID: 1726005711}
+  m_Layer: 0
+  m_Name: BallDeformationPivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1726005710
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1726005709}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 810206439}
+  m_Father: {fileID: 1901067595}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1726005711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1726005709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60a5ecb8b1c800d4393a357303fdcdf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pressureAnalyzer: {fileID: 1901067591}
+  squeezeDetector: {fileID: 1919710774}
+  deformationPivot: {fileID: 1726005710}
+  ballVisual: {fileID: 810206439}
+  minimumActiveFingers: 3
+  squeezeActivationThreshold: 0.3
+  pressureActivationThreshold: 0.06
+  maxAxisCompression: 0.09
+  maxSideBulge: 0.018
+  deformationGain: 0.085
+  responseCurve: 1.1
+  maxEffectiveSqueeze: 0.85
+  maxEffectivePressure: 0.65
+  deformationSpeed: 14
+  returnSpeed: 8
+  axisFollowSpeed: 10
+  currentSqueeze: 0
+  currentPressure: 0
+  currentActiveFingers: 0
+  currentDeformation: 0
+  targetDeformation: 0
+  currentAxis: {x: 0, y: 0, z: 1}
+  targetAxis: {x: 0, y: 0, z: 1}
+--- !u!114 &1726005712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1726005709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42c48d9e2a3718a4389951324520b563, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  squeezeDetector: {fileID: 0}
+  ballVisualRenderer: {fileID: 0}
+  useAutomaticRadius: 1
+  manualBallRadius: 0.06
+  outerContactTolerance: 0.012
+  maxPenetrationDepth: 0.04
+  deformationGain: 1
+  squeezeAmplification: 0.3
+  debugText: {fileID: 0}
+  showRuntimeDebug: 1
+  currentBallRadius: 0
+  interactionLimit: 0
+  activeFingerCount: 0
+  averagePressure: 0
+  averagePressureDirection: {x: 0, y: 0, z: 0}
+  thumbPressure: 0
+  indexPressure: 0
+  middlePressure: 0
+  ringPressure: 0
+  littlePressure: 0
+  thumbDistance: 0
+  indexDistance: 0
+  middleDistance: 0
+  ringDistance: 0
+  littleDistance: 0
 --- !u!1 &1765809142
 GameObject:
   m_ObjectHideFlags: 0
@@ -1577,12 +2039,16 @@ GameObject:
   - component: {fileID: 1901067595}
   - component: {fileID: 1901067591}
   - component: {fileID: 1901067597}
+  - component: {fileID: 1901067600}
   - component: {fileID: 1901067594}
   - component: {fileID: 1901067593}
   - component: {fileID: 1901067592}
   - component: {fileID: 1901067596}
   - component: {fileID: 1901067598}
   - component: {fileID: 1901067599}
+  - component: {fileID: 1901067601}
+  - component: {fileID: 1901067602}
+  - component: {fileID: 1901067603}
   m_Layer: 0
   m_Name: StressBall
   m_TagString: Untagged
@@ -1723,7 +2189,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 810206439}
+  - {fileID: 1726005710}
+  - {fileID: 58842562}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1901067596
@@ -1756,17 +2223,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1901067590}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c8fe05d8f7f1198468f11274473cebcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pressureAnalyzer: {fileID: 1901067591}
   ballMeshFilter: {fileID: 810206438}
-  indentationRadiusMeters: 0.035
-  indentationDepthMeters: 0.018
-  deformationGain: 2
-  pressureActivationThreshold: 0.03
+  useSurfaceProjection: 1
+  ballRadiusMeters: 0.045
+  surfaceOffsetMeters: 0.001
+  indentationRadiusMeters: 0.03
+  indentationDepthMeters: 0.02
+  deformationGain: 1.8
+  pressureActivationThreshold: 0.04
+  maxEffectivePressure: 0.7
+  pressureResponseCurve: 0.75
   deformationSpeed: 18
   returnSpeed: 10
   affectedVertices: 0
@@ -1821,6 +2293,146 @@ MonoBehaviour:
   constrainingFingerCount: 0
   averageFingerPenetration: 0
   visualOffsetWorld: {x: 0, y: 0, z: 0}
+--- !u!114 &1901067600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1901067590}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 599533dc1882575419ac2bc1f7208f2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  squeezeDetector: {fileID: 1919710774}
+  pressureAnalyzer: {fileID: 1901067591}
+  ballVisual: {fileID: 810206439}
+  contactCueMaterial: {fileID: 2100000, guid: 43287ece9538c884abe65773e3af5242, type: 2}
+  ballRadius: 0.045
+  surfaceOffset: 0.002
+  pressureActivationThreshold: 0.04
+  minCueSize: 0.01
+  maxCueSize: 0.028
+  cueThickness: 0.001
+  appearSpeed: 16
+  disappearSpeed: 12
+  cueObjects:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+--- !u!114 &1901067601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1901067590}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73e3da6a2cf1d7c4f9163a2b9f4bfadb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pressureAnalyzer: {fileID: 1901067591}
+  squeezeDetector: {fileID: 1919710774}
+  ballMeshFilter: {fileID: 810206438}
+  ballRadiusMeters: 0.045
+  useSurfaceProjection: 1
+  surfaceOffsetMeters: 0.001
+  globalCompressionDepthMeters: 0.01
+  globalBulgeAmountMeters: 0.004
+  globalSqueezeActivationThreshold: 0.45
+  maxEffectiveSqueeze: 0.9
+  localIndentationRadiusMeters: 0.024
+  localIndentationDepthMeters: 0.012
+  localPressureActivationThreshold: 0.04
+  maxEffectiveFingerPressure: 0.6
+  maxActiveLocalContacts: 3
+  pressureResponseCurve: 0.85
+  globalDeformationGain: 1
+  localDeformationGain: 1
+  deformationSpeed: 18
+  returnSpeed: 10
+  activeFingerCount: 0
+  currentSqueeze: 0
+  currentGlobalAmount: 0
+  affectedVertices: 0
+  localIndentationRadius: 0
+  localIndentationDepth: 0
+  globalCompressionDepth: 0
+  globalBulgeAmount: 0
+--- !u!114 &1901067602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1901067590}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76b47460abc18e24c8899c7e0d6d6044, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  squeezeDetector: {fileID: 1919710774}
+  ballCenter: {fileID: 1901067595}
+  ballRadiusMeters: 0.045
+  surfaceOffsetMeters: 0.001
+  proxyMaterial: {fileID: 2100000, guid: b96adae01d99abd45ac393e08ef5fb93, type: 2}
+  fingertipProxySize: 0.007
+  showPalmProxy: 0
+  palmProxySize: 0.025
+  constrainInsideBall: 1
+  followSpeed: 40
+  fingertipProxyObjects:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  palmProxyObject: {fileID: 0}
+  thumbPenetration: 0
+  indexPenetration: 0
+  middlePenetration: 0
+  ringPenetration: 0
+  littlePenetration: 0
+  averagePenetration: 0
+--- !u!114 &1901067603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1901067590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b46583bade7ad744ba472c622bc4c2f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pressureAnalyzer: {fileID: 1901067591}
+  squeezeDetector: {fileID: 1919710774}
+  ballVisual: {fileID: 810206439}
+  ballMeshFilter: {fileID: 810206438}
+  minimumActiveFingers: 3
+  squeezeActivationThreshold: 0.35
+  pressureActivationThreshold: 0.08
+  maxCompression: 0.18
+  maxBulge: 0.08
+  deformationGain: 1
+  responseCurve: 0.8
+  maxEffectiveSqueeze: 0.85
+  maxEffectivePressure: 0.65
+  deformationSpeed: 14
+  returnSpeed: 8
+  useSubtleMeshIndentation: 1
+  subtleIndentationDepthMeters: 0.006
+  subtleIndentationRadiusMeters: 0.035
+  currentSqueeze: 0
+  currentPressure: 0
+  currentActiveFingers: 0
+  targetDeformation: 0
+  currentCompressionAxis: {x: 0, y: 0, z: 1}
 --- !u!1 &1919710771
 GameObject:
   m_ObjectHideFlags: 0

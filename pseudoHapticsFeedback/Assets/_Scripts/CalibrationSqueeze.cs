@@ -67,7 +67,7 @@ public class CalibrationSqueeze : MonoBehaviour {
 
         yield return new WaitForSeconds(1.5f);
 
-        instructionText.text = "Please raise your hand into view";
+        instructionText.text = "Please raise your LEFT hand into view";
 
         while (!detector.IsHandTracked) {
             yield return null;
