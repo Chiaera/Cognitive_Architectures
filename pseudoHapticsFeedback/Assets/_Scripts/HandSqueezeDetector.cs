@@ -1,413 +1,388 @@
 using UnityEngine;
 using UnityEngine.XR.Hands;
-using TMPro;
+using UnityEngine.XR.Management;
 
 public class HandSqueezeDetector : MonoBehaviour {
-    public enum SqueezeMode {
-        AverageAllFingers,
-        StrongestTwoFingers,
-        StrongestFinger
-    }
+    [Header("Hand Selection")]
+    [Tooltip("Use the left hand for the squeeze interaction")]
+    public bool useLeftHand = true;
 
-    public XRHandTrackingEvents handTrackingEvents;
-
-    [Header("Squeeze Mode")]
-    [Tooltip("Controls how the final squeeze value is computed")]
-    public SqueezeMode squeezeMode = SqueezeMode.StrongestTwoFingers;
-
-    [Header("Finger Positions Debug")]
-    public Vector3 palmPosition;
-    public Vector3 thumbTipPosition;
-    public Vector3 indexTipPosition;
-    public Vector3 middleTipPosition;
-    public Vector3 ringTipPosition;
-    public Vector3 littleTipPosition;
-
-    [Header("Per-Finger Squeeze Debug")]
-    [Range(0f, 1f)] public float indexSqueeze = 0f;
-    [Range(0f, 1f)] public float middleSqueeze = 0f;
-    [Range(0f, 1f)] public float ringSqueeze = 0f;
-    [Range(0f, 1f)] public float littleSqueeze = 0f;
-
-    [Header("Debug Settings")]
-    public bool enableFrameLogs = false;
-
-    [Header("Runtime Debug UI")]
-    public TextMeshProUGUI debugText;
-    public bool showRuntimeDebug = false;
-
-    [Header("Output")]
-    public float rawAverageDistance;
-    [Range(0f, 1f)] public float squeezeAmount = 0f;
-    [Range(0f, 1f)] public float squeezeNormalized = 0f;
-
-    [Header("Smoothing")]
-    [Range(0f, 20f)]
-    public float smoothingSpeed = 8f;
-
-    [Header("Global Calibration")]
+    [Header("Calibration")]
+    [Tooltip("Average open hand distance from fingertips to palm")]
     public float openDistance = 0.12f;
+
+    [Tooltip("Average closed hand distance from fingertips to palm")]
     public float closedDistance = 0.04f;
 
-    [Header("Per-Finger Calibration")]
+    [Header("Per-Finger Open Calibration")]
+    public float thumbOpenDistance = 0.10f;
     public float indexOpenDistance = 0.12f;
     public float middleOpenDistance = 0.12f;
-    public float ringOpenDistance = 0.12f;
-    public float littleOpenDistance = 0.12f;
+    public float ringOpenDistance = 0.11f;
+    public float littleOpenDistance = 0.10f;
 
+    [Header("Per-Finger Closed Calibration")]
+    public float thumbClosedDistance = 0.04f;
     public float indexClosedDistance = 0.04f;
     public float middleClosedDistance = 0.04f;
     public float ringClosedDistance = 0.04f;
     public float littleClosedDistance = 0.04f;
 
+    [Header("Smoothing")]
+    [Tooltip("Smoothing speed for the global squeeze value")]
+    public float smoothingSpeed = 8f;
+
+    [Tooltip("Smoothing speed for per-finger pressure values")]
+    public float fingerSmoothingSpeed = 10f;
+
+    [Header("Output")]
+    [Range(0f, 1f)]
+    public float squeezeNormalized = 0f;
+
+    [Range(0f, 1f)]
+    public float thumbPressure = 0f;
+
+    [Range(0f, 1f)]
+    public float indexPressure = 0f;
+
+    [Range(0f, 1f)]
+    public float middlePressure = 0f;
+
+    [Range(0f, 1f)]
+    public float ringPressure = 0f;
+
+    [Range(0f, 1f)]
+    public float littlePressure = 0f;
+
+    [Header("Debug")]
+    public bool isHandTracked = false;
+    public float currentAverageDistance = 0f;
+    public float currentThumbDistance = 0f;
+    public float currentIndexDistance = 0f;
+    public float currentMiddleDistance = 0f;
+    public float currentRingDistance = 0f;
+    public float currentLittleDistance = 0f;
+
+    private XRHandSubsystem handSubsystem;
     private XRHand currentHand;
-    private bool isHandTracked = false;
-    private float smoothedSqueeze = 0f;
 
-    public bool IsHandTracked => isHandTracked && currentHand.isTracked;
+    private Vector3 palmPosition;
+    private Vector3[] fingertipPositions = new Vector3[5];
 
-    public bool CalibrateOpen() {
-        // Store global and per-finger open distances
-        float d = GetAverageFingerToPalmDistance();
+    private bool hasPalmPosition = false;
+    private bool hasFingerPositions = false;
 
-        if (d <= 0f) {
-            return false;
-        }
-
-        openDistance = d;
-
-        TryGetFingerToPalmDistance(XRHandJointID.IndexTip, out indexOpenDistance);
-        TryGetFingerToPalmDistance(XRHandJointID.MiddleTip, out middleOpenDistance);
-        TryGetFingerToPalmDistance(XRHandJointID.RingTip, out ringOpenDistance);
-        TryGetFingerToPalmDistance(XRHandJointID.LittleTip, out littleOpenDistance);
-
-        Debug.Log("Open calibration value set to " + d.ToString("F3"));
-
-        return true;
+    public bool IsHandTracked {
+        get { return isHandTracked; }
     }
 
-    public bool CalibrateClosed() {
-        // Store global and per-finger closed distances
-        float d = GetAverageFingerToPalmDistance();
+    void Start() {
+        TryInitializeHandSubsystem();
 
-        if (d <= 0f) {
-            return false;
-        }
-
-        closedDistance = d;
-
-        TryGetFingerToPalmDistance(XRHandJointID.IndexTip, out indexClosedDistance);
-        TryGetFingerToPalmDistance(XRHandJointID.MiddleTip, out middleClosedDistance);
-        TryGetFingerToPalmDistance(XRHandJointID.RingTip, out ringClosedDistance);
-        TryGetFingerToPalmDistance(XRHandJointID.LittleTip, out littleClosedDistance);
-
-        Debug.Log("Closed calibration value set to " + d.ToString("F3"));
-
-        return true;
-    }
-
-    public bool TryGetFingerToPalmDistances(out float indexDistance, out float middleDistance, out float ringDistance, out float littleDistance) {
-        // Return the current distance from each fingertip to the palm
-        indexDistance = -1f;
-        middleDistance = -1f;
-        ringDistance = -1f;
-        littleDistance = -1f;
-
-        bool indexFound = TryGetFingerToPalmDistance(XRHandJointID.IndexTip, out indexDistance);
-        bool middleFound = TryGetFingerToPalmDistance(XRHandJointID.MiddleTip, out middleDistance);
-        bool ringFound = TryGetFingerToPalmDistance(XRHandJointID.RingTip, out ringDistance);
-        bool littleFound = TryGetFingerToPalmDistance(XRHandJointID.LittleTip, out littleDistance);
-
-        return indexFound && middleFound && ringFound && littleFound;
-    }
-
-    void OnEnable() {
-        if (handTrackingEvents != null) {
-            handTrackingEvents.jointsUpdated.AddListener(OnJointsUpdated);
-            handTrackingEvents.trackingLost.AddListener(OnTrackingLost);
-        }
-    }
-
-    void OnDisable() {
-        if (handTrackingEvents != null) {
-            handTrackingEvents.jointsUpdated.RemoveListener(OnJointsUpdated);
-            handTrackingEvents.trackingLost.RemoveListener(OnTrackingLost);
-        }
-    }
-
-    void OnJointsUpdated(XRHandJointsUpdatedEventArgs args) {
-        currentHand = args.hand;
-        isHandTracked = true;
-    }
-
-    void OnTrackingLost() {
-        isHandTracked = false;
+        Debug.Log("Hand squeeze detector initialized");
     }
 
     void Update() {
-        if (!IsHandTracked) {
+        if (handSubsystem == null) {
+            TryInitializeHandSubsystem();
+        }
+
+        UpdateHandData();
+    }
+
+    void TryInitializeHandSubsystem() {
+        if (XRGeneralSettings.Instance == null) {
             return;
         }
 
-        UpdateDebugJointPositions();
+        if (XRGeneralSettings.Instance.Manager == null) {
+            return;
+        }
+
+        XRLoader loader = XRGeneralSettings.Instance.Manager.activeLoader;
+
+        if (loader == null) {
+            return;
+        }
+
+        handSubsystem = loader.GetLoadedSubsystem<XRHandSubsystem>();
+    }
+
+    void UpdateHandData() {
+        isHandTracked = false;
+        hasPalmPosition = false;
+        hasFingerPositions = false;
+
+        if (handSubsystem == null || !handSubsystem.running) {
+            ResetOutputs();
+            return;
+        }
+
+        currentHand = useLeftHand ? handSubsystem.leftHand : handSubsystem.rightHand;
+
+        if (!currentHand.isTracked) {
+            ResetOutputs();
+            return;
+        }
+
+        isHandTracked = true;
+
+        bool palmFound = TryReadPalmPosition(currentHand, out palmPosition);
+        bool fingersFound = TryReadFingertipPositions(currentHand, fingertipPositions);
+
+        hasPalmPosition = palmFound;
+        hasFingerPositions = fingersFound;
+
+        if (!palmFound || !fingersFound) {
+            ResetOutputs();
+            return;
+        }
+
+        UpdateDistances();
         UpdateSqueezeValues();
-        UpdateRuntimeDebugUI();
+    }
+
+    bool TryReadPalmPosition(XRHand hand, out Vector3 position) {
+        position = Vector3.zero;
+
+        XRHandJoint palmJoint = hand.GetJoint(XRHandJointID.Palm);
+
+        if (!palmJoint.TryGetPose(out Pose palmPose)) {
+            return false;
+        }
+
+        position = palmPose.position;
+        return true;
+    }
+
+    bool TryReadFingertipPositions(XRHand hand, Vector3[] positions) {
+        if (positions == null || positions.Length < 5) {
+            return false;
+        }
+
+        bool thumbFound = TryReadJointPosition(hand, XRHandJointID.ThumbTip, out positions[0]);
+        bool indexFound = TryReadJointPosition(hand, XRHandJointID.IndexTip, out positions[1]);
+        bool middleFound = TryReadJointPosition(hand, XRHandJointID.MiddleTip, out positions[2]);
+        bool ringFound = TryReadJointPosition(hand, XRHandJointID.RingTip, out positions[3]);
+        bool littleFound = TryReadJointPosition(hand, XRHandJointID.LittleTip, out positions[4]);
+
+        return thumbFound && indexFound && middleFound && ringFound && littleFound;
+    }
+
+    bool TryReadJointPosition(XRHand hand, XRHandJointID jointId, out Vector3 position) {
+        position = Vector3.zero;
+
+        XRHandJoint joint = hand.GetJoint(jointId);
+
+        if (!joint.TryGetPose(out Pose pose)) {
+            return false;
+        }
+
+        position = pose.position;
+        return true;
+    }
+
+    void UpdateDistances() {
+        currentThumbDistance = Vector3.Distance(fingertipPositions[0], palmPosition);
+        currentIndexDistance = Vector3.Distance(fingertipPositions[1], palmPosition);
+        currentMiddleDistance = Vector3.Distance(fingertipPositions[2], palmPosition);
+        currentRingDistance = Vector3.Distance(fingertipPositions[3], palmPosition);
+        currentLittleDistance = Vector3.Distance(fingertipPositions[4], palmPosition);
+
+        currentAverageDistance = (
+            currentThumbDistance +
+            currentIndexDistance +
+            currentMiddleDistance +
+            currentRingDistance +
+            currentLittleDistance
+        ) / 5f;
     }
 
     void UpdateSqueezeValues() {
-        // Update global average distance for calibration and debug
-        float avg = GetAverageFingerToPalmDistance();
-
-        if (avg < 0f) {
-            return;
-        }
-
-        rawAverageDistance = avg;
-
-        // Compute per-finger squeeze values independently
-        indexSqueeze = GetNormalizedFingerSqueeze(
-            XRHandJointID.IndexTip,
-            indexOpenDistance,
-            indexClosedDistance
+        float targetSqueeze = DistanceToPressure(
+            currentAverageDistance,
+            openDistance,
+            closedDistance
         );
 
-        middleSqueeze = GetNormalizedFingerSqueeze(
-            XRHandJointID.MiddleTip,
-            middleOpenDistance,
-            middleClosedDistance
-        );
-
-        ringSqueeze = GetNormalizedFingerSqueeze(
-            XRHandJointID.RingTip,
-            ringOpenDistance,
-            ringClosedDistance
-        );
-
-        littleSqueeze = GetNormalizedFingerSqueeze(
-            XRHandJointID.LittleTip,
-            littleOpenDistance,
-            littleClosedDistance
-        );
-
-        float targetSqueeze = GetSelectedSqueezeAmount();
-
-        smoothedSqueeze = Mathf.Lerp(
-            smoothedSqueeze,
+        squeezeNormalized = Mathf.Lerp(
+            squeezeNormalized,
             targetSqueeze,
             Time.deltaTime * smoothingSpeed
         );
 
-        squeezeAmount = Mathf.Clamp01(smoothedSqueeze);
-
-        // Keep the same normalized output used by the other scripts
-        squeezeNormalized = Mathf.Clamp01(
-            Mathf.InverseLerp(0.15f, 1.0f, squeezeAmount)
+        thumbPressure = SmoothFingerPressure(
+            thumbPressure,
+            DistanceToPressure(currentThumbDistance, thumbOpenDistance, thumbClosedDistance)
         );
 
-        if (enableFrameLogs) {
-            Debug.Log(
-                "RAW=" + rawAverageDistance.ToString("F3") + "  " +
-                "INDEX=" + indexSqueeze.ToString("F2") + "  " +
-                "MIDDLE=" + middleSqueeze.ToString("F2") + "  " +
-                "RING=" + ringSqueeze.ToString("F2") + "  " +
-                "LITTLE=" + littleSqueeze.ToString("F2") + "  " +
-                "SQUEEZE=" + squeezeNormalized.ToString("F2")
-            );
-        }
+        indexPressure = SmoothFingerPressure(
+            indexPressure,
+            DistanceToPressure(currentIndexDistance, indexOpenDistance, indexClosedDistance)
+        );
+
+        middlePressure = SmoothFingerPressure(
+            middlePressure,
+            DistanceToPressure(currentMiddleDistance, middleOpenDistance, middleClosedDistance)
+        );
+
+        ringPressure = SmoothFingerPressure(
+            ringPressure,
+            DistanceToPressure(currentRingDistance, ringOpenDistance, ringClosedDistance)
+        );
+
+        littlePressure = SmoothFingerPressure(
+            littlePressure,
+            DistanceToPressure(currentLittleDistance, littleOpenDistance, littleClosedDistance)
+        );
     }
 
-    public void ApplyOpenCalibration(float averageDistance, float indexDistance, float middleDistance, float ringDistance, float littleDistance) {
-        // Store the open hand calibration values
-        openDistance = averageDistance;
-
-        indexOpenDistance = indexDistance;
-        middleOpenDistance = middleDistance;
-        ringOpenDistance = ringDistance;
-        littleOpenDistance = littleDistance;
-
-        Debug.Log("Open calibration values applied");
+    float SmoothFingerPressure(float currentValue, float targetValue) {
+        return Mathf.Lerp(
+            currentValue,
+            targetValue,
+            Time.deltaTime * fingerSmoothingSpeed
+        );
     }
 
-    public void ApplyClosedCalibration(float averageDistance, float indexDistance, float middleDistance, float ringDistance, float littleDistance) {
-        // Store the closed hand calibration values
-        closedDistance = averageDistance;
+    float DistanceToPressure(float currentDistance, float openValue, float closedValue) {
+        float range = openValue - closedValue;
 
-        indexClosedDistance = indexDistance;
-        middleClosedDistance = middleDistance;
-        ringClosedDistance = ringDistance;
-        littleClosedDistance = littleDistance;
-
-        Debug.Log("Closed calibration values applied");
-    }
-
-
-    float GetSelectedSqueezeAmount() {
-        // Select how the final squeeze value should be computed
-        if (squeezeMode == SqueezeMode.AverageAllFingers) {
-            return (indexSqueeze + middleSqueeze + ringSqueeze + littleSqueeze) / 4f;
-        }
-
-        if (squeezeMode == SqueezeMode.StrongestFinger) {
-            return Mathf.Max(indexSqueeze, middleSqueeze, ringSqueeze, littleSqueeze);
-        }
-
-        return GetStrongestTwoFingerAverage();
-    }
-
-    float GetStrongestTwoFingerAverage() {
-        // Compute the average of the two strongest finger squeeze values
-        float first = 0f;
-        float second = 0f;
-
-        UpdateTopTwo(indexSqueeze, ref first, ref second);
-        UpdateTopTwo(middleSqueeze, ref first, ref second);
-        UpdateTopTwo(ringSqueeze, ref first, ref second);
-        UpdateTopTwo(littleSqueeze, ref first, ref second);
-
-        return (first + second) / 2f;
-    }
-
-    void UpdateTopTwo(float value, ref float first, ref float second) {
-        // Keep track of the two highest values
-        if (value > first) {
-            second = first;
-            first = value;
-            return;
-        }
-
-        if (value > second) {
-            second = value;
-        }
-    }
-
-    float GetNormalizedFingerSqueeze(
-        XRHandJointID fingerTip,
-        float openValue,
-        float closedValue
-    ) {
-        // Convert one finger-to-palm distance into a normalized squeeze value
-        if (!TryGetFingerToPalmDistance(fingerTip, out float currentDistance)) {
+        if (Mathf.Abs(range) < 0.0001f) {
             return 0f;
         }
 
-        if (Mathf.Abs(openValue - closedValue) < 0.001f) {
-            return 0f;
-        }
-
-        float value = 1f - Mathf.InverseLerp(closedValue, openValue, currentDistance);
-
-        return Mathf.Clamp01(value);
+        float pressure = Mathf.InverseLerp(openValue, closedValue, currentDistance);
+        return Mathf.Clamp01(pressure);
     }
 
-    bool TryGetFingerToPalmDistance(XRHandJointID fingerTip, out float distance) {
-        // Measure the distance between a fingertip and the palm
-        distance = -1f;
+    void ResetOutputs() {
+        squeezeNormalized = Mathf.Lerp(
+            squeezeNormalized,
+            0f,
+            Time.deltaTime * smoothingSpeed
+        );
 
-        if (!TryGetJointPosition(XRHandJointID.Palm, out Vector3 palm)) {
-            return false;
-        }
+        thumbPressure = SmoothFingerPressure(thumbPressure, 0f);
+        indexPressure = SmoothFingerPressure(indexPressure, 0f);
+        middlePressure = SmoothFingerPressure(middlePressure, 0f);
+        ringPressure = SmoothFingerPressure(ringPressure, 0f);
+        littlePressure = SmoothFingerPressure(littlePressure, 0f);
 
-        if (!TryGetJointPosition(fingerTip, out Vector3 tip)) {
-            return false;
-        }
-
-        distance = Vector3.Distance(tip, palm);
-
-        return true;
-    }
-
-    void UpdateDebugJointPositions() {
-        // Update joint positions shown in the Inspector for debugging
-        TryGetJointPosition(XRHandJointID.Palm, out palmPosition);
-        TryGetJointPosition(XRHandJointID.ThumbTip, out thumbTipPosition);
-        TryGetJointPosition(XRHandJointID.IndexTip, out indexTipPosition);
-        TryGetJointPosition(XRHandJointID.MiddleTip, out middleTipPosition);
-        TryGetJointPosition(XRHandJointID.RingTip, out ringTipPosition);
-        TryGetJointPosition(XRHandJointID.LittleTip, out littleTipPosition);
-    }
-
-    void UpdateRuntimeDebugUI() {
-        // Show tracking and squeeze values directly inside the headset
-        if (!showRuntimeDebug || debugText == null) {
-            return;
-        }
-
-        debugText.text =
-            "Tracking: " + IsHandTracked + "\n" +
-            "Mode: " + squeezeMode + "\n" +
-            "Index squeeze: " + indexSqueeze.ToString("F2") + "\n" +
-            "Middle squeeze: " + middleSqueeze.ToString("F2") + "\n" +
-            "Ring squeeze: " + ringSqueeze.ToString("F2") + "\n" +
-            "Little squeeze: " + littleSqueeze.ToString("F2") + "\n" +
-            "Final squeeze: " + squeezeNormalized.ToString("F2");
-    }
-
-    public float GetAverageFingerToPalmDistance() {
-        // Compute the average distance between the four main fingertips and the palm
-        if (!IsHandTracked) {
-            return -1f;
-        }
-
-        if (!currentHand.GetJoint(XRHandJointID.Palm).TryGetPose(out Pose palmPose)) {
-            return -1f;
-        }
-
-        XRHandJointID[] tips = {
-            XRHandJointID.IndexTip,
-            XRHandJointID.MiddleTip,
-            XRHandJointID.RingTip,
-            XRHandJointID.LittleTip
-        };
-
-        float total = 0f;
-        int count = 0;
-
-        foreach (var tipID in tips) {
-            if (currentHand.GetJoint(tipID).TryGetPose(out Pose tipPose)) {
-                total += Vector3.Distance(tipPose.position, palmPose.position);
-                count++;
-            }
-        }
-
-        return count > 0 ? total / count : -1f;
-    }
-
-    bool TryGetJointPosition(XRHandJointID jointID, out Vector3 position) {
-        // Try to read a tracked hand joint position
-        position = Vector3.zero;
-
-        if (!IsHandTracked) {
-            return false;
-        }
-
-        if (!currentHand.GetJoint(jointID).TryGetPose(out Pose jointPose)) {
-            return false;
-        }
-
-        position = jointPose.position;
-
-        return true;
-    }
-
-    public bool TryGetFingerTipPositions(out Vector3[] fingerTipPositions) {
-        // Return all fingertip positions used for ball contact detection
-        fingerTipPositions = new Vector3[5];
-
-        if (!IsHandTracked) {
-            return false;
-        }
-
-        bool thumbFound = TryGetJointPosition(XRHandJointID.ThumbTip, out fingerTipPositions[0]);
-        bool indexFound = TryGetJointPosition(XRHandJointID.IndexTip, out fingerTipPositions[1]);
-        bool middleFound = TryGetJointPosition(XRHandJointID.MiddleTip, out fingerTipPositions[2]);
-        bool ringFound = TryGetJointPosition(XRHandJointID.RingTip, out fingerTipPositions[3]);
-        bool littleFound = TryGetJointPosition(XRHandJointID.LittleTip, out fingerTipPositions[4]);
-
-        return thumbFound || indexFound || middleFound || ringFound || littleFound;
+        currentAverageDistance = 0f;
+        currentThumbDistance = 0f;
+        currentIndexDistance = 0f;
+        currentMiddleDistance = 0f;
+        currentRingDistance = 0f;
+        currentLittleDistance = 0f;
     }
 
     public bool TryGetPalmPosition(out Vector3 position) {
-        // Return the palm position used for global hand-ball interaction
-        return TryGetJointPosition(XRHandJointID.Palm, out position);
+        position = Vector3.zero;
+
+        if (!isHandTracked || !hasPalmPosition) {
+            return false;
+        }
+
+        position = palmPosition;
+        return true;
+    }
+
+    public bool TryGetFingerTipPositions(out Vector3[] positions) {
+        positions = null;
+
+        if (!isHandTracked || !hasFingerPositions) {
+            return false;
+        }
+
+        positions = new Vector3[5];
+
+        for (int i = 0; i < fingertipPositions.Length; i++) {
+            positions[i] = fingertipPositions[i];
+        }
+
+        return true;
+    }
+
+    public float GetAverageFingerToPalmDistance() {
+        if (!isHandTracked || !hasFingerPositions || !hasPalmPosition) {
+            return 0f;
+        }
+
+        return currentAverageDistance;
+    }
+
+    public float GetFingerToPalmDistance(int fingerIndex) {
+        if (!isHandTracked || !hasFingerPositions || !hasPalmPosition) {
+            return 0f;
+        }
+
+        switch (fingerIndex) {
+            case 0:
+                return currentThumbDistance;
+
+            case 1:
+                return currentIndexDistance;
+
+            case 2:
+                return currentMiddleDistance;
+
+            case 3:
+                return currentRingDistance;
+
+            case 4:
+                return currentLittleDistance;
+
+            default:
+                return 0f;
+        }
+    }
+
+    public float[] GetAllFingerPressures() {
+        return new float[] {
+            thumbPressure,
+            indexPressure,
+            middlePressure,
+            ringPressure,
+            littlePressure
+        };
+    }
+
+    public void ApplyOpenCalibration(
+        float average,
+        float index,
+        float middle,
+        float ring,
+        float little
+    ) {
+        openDistance = Mathf.Max(average, 0.001f);
+
+        indexOpenDistance = Mathf.Max(index, 0.001f);
+        middleOpenDistance = Mathf.Max(middle, 0.001f);
+        ringOpenDistance = Mathf.Max(ring, 0.001f);
+        littleOpenDistance = Mathf.Max(little, 0.001f);
+
+        thumbOpenDistance = openDistance;
+
+        Debug.Log("Open hand calibration applied");
+    }
+
+    public void ApplyClosedCalibration(
+        float average,
+        float index,
+        float middle,
+        float ring,
+        float little
+    ) {
+        closedDistance = Mathf.Max(average, 0.001f);
+
+        indexClosedDistance = Mathf.Max(index, 0.001f);
+        middleClosedDistance = Mathf.Max(middle, 0.001f);
+        ringClosedDistance = Mathf.Max(ring, 0.001f);
+        littleClosedDistance = Mathf.Max(little, 0.001f);
+
+        thumbClosedDistance = closedDistance;
+
+        Debug.Log("Closed hand calibration applied");
     }
 }

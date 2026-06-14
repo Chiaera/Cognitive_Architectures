@@ -185,7 +185,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.04, y: 0.024, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1458941885}
@@ -207,7 +207,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -464,7 +464,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.055, y: 0.032, z: 0.006}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 685128196}
@@ -510,7 +510,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: a5ade080c12c51949bc372b64cab8fd4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -674,7 +674,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.028, y: 0.02, z: 0.028}
+  m_LocalScale: {x: 0.012, y: 0.012, z: 0.012}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1682615163}
@@ -891,7 +891,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &465603559
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1038,7 +1038,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.03, y: 0.01, z: 0.04}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 685128196}
@@ -1084,7 +1084,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: a5ade080c12c51949bc372b64cab8fd4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1503,6 +1503,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 685128196}
+  - component: {fileID: 685128197}
   m_Layer: 0
   m_Name: VisualBlockers
   m_TagString: Untagged
@@ -1518,7 +1519,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 685128195}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1528,6 +1529,47 @@ Transform:
   - {fileID: 608108766}
   m_Father: {fileID: 1901067595}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &685128197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 685128195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6f4c8c5715aea64f9c48fca982d6d41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ballCenter: {fileID: 1901067595}
+  squeezeDetector: {fileID: 1919710774}
+  contactVolumeController: {fileID: 1682615164}
+  palmProxy: {fileID: 327299698}
+  palmVisualBlocker: {fileID: 252902953}
+  thumbVisualBlocker: {fileID: 2000267038}
+  littleVisualBlocker: {fileID: 608108766}
+  ballRadiusMeters: 0.065
+  surfaceOffsetMeters: 0.003
+  usePalmBlocker: 1
+  palmWidthMeters: 0.045
+  palmHeightMeters: 0.026
+  palmThicknessMeters: 0.004
+  useThumbBlocker: 1
+  thumbWidthMeters: 0.026
+  thumbHeightMeters: 0.01
+  thumbThicknessMeters: 0.003
+  useLittleBlocker: 1
+  littleWidthMeters: 0.03
+  littleHeightMeters: 0.01
+  littleThicknessMeters: 0.004
+  squeezeActivationThreshold: 0.18
+  minimumVisibleScale: 0.15
+  squeezeScaleContribution: 0.35
+  followSpeed: 22
+  scaleSpeed: 14
+  palmBlockerActive: 0
+  thumbBlockerActive: 0
+  littleBlockerActive: 0
 --- !u!1 &733555576
 GameObject:
   m_ObjectHideFlags: 0
@@ -1702,7 +1744,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f9bff4ca42fded944914c941f0aac572, type: 2}
+  - {fileID: 2100000, guid: 7c0ec7ce4c34ae448ba2176eb7393e53, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2434,7 +2476,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.026, y: 0.008, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1458941885}
@@ -2456,7 +2498,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -2645,7 +2687,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.014, y: 0.014, z: 0.014}
+  m_LocalScale: {x: 0.008, y: 0.008, z: 0.008}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1682615163}
@@ -2781,11 +2823,11 @@ MonoBehaviour:
   palmShadowHeightMeters: 0.024
   palmShadowMinDistance: 0.08
   useThumbShadow: 1
-  thumbShadowWidthMeters: 0.01
-  thumbShadowHeightMeters: 0.01
-  useLittleShadow: 1
-  littleShadowWidthMeters: 0.032
-  littleShadowHeightMeters: 0.011
+  thumbShadowWidthMeters: 0.026
+  thumbShadowHeightMeters: 0.008
+  useLittleShadow: 0
+  littleShadowWidthMeters: 0.03
+  littleShadowHeightMeters: 0.01
   hideWhenInactive: 1
   alphaMultiplier: 0.15
   followSpeed: 18
@@ -2819,7 +2861,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.03, y: 0.01, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1458941885}
@@ -2841,7 +2883,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -2950,15 +2992,15 @@ MonoBehaviour:
   littleProxy: {fileID: 1390498095}
   thumbContactVolume: {fileID: 219472763}
   littleContactVolume: {fileID: 658620507}
-  thumbVolumeRadiusMeters: 0.006
-  thumbExtraLengthMeters: 0
-  littleVolumeRadiusMeters: 0.005
-  littleExtraLengthMeters: 0
+  thumbVolumeRadiusMeters: 0.0012
+  thumbExtraLengthMeters: 0.006
+  littleVolumeRadiusMeters: 0.01
+  littleExtraLengthMeters: 0.004
   showVolumes: 0
   hideWhenEndpointsInactive: 1
-  thumbSegmentStart01: 0.35
+  thumbSegmentStart01: 0.45
   thumbSegmentEnd01: 1
-  littleSegmentStart01: 0.45
+  littleSegmentStart01: 0.5
   littleSegmentEnd01: 1
   followSpeed: 25
   thumbVolumeActive: 0
@@ -3077,13 +3119,14 @@ GameObject:
   - component: {fileID: 1901067591}
   - component: {fileID: 1901067596}
   - component: {fileID: 1901067597}
+  - component: {fileID: 1901067598}
   m_Layer: 0
   m_Name: StressBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1901067591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3105,7 +3148,7 @@ MonoBehaviour:
   deformationGain: 0.8
   squeezeAmplification: 0.15
   debugText: {fileID: 465603560}
-  showRuntimeDebug: 1
+  showRuntimeDebug: 0
   currentBallRadius: 0
   interactionLimit: 0
   activeFingerCount: 0
@@ -3163,46 +3206,53 @@ MonoBehaviour:
   ballMeshFilter: {fileID: 810206438}
   ballRadiusMeters: 0.065
   projectContactsToSurface: 1
-  surfaceOffsetMeters: 0
+  surfaceOffsetMeters: 0.0015
   usePalmCompression: 1
   usePalmSurfaceProxy: 1
-  palmSurfaceOffsetMeters: 0.02
+  palmSurfaceOffsetMeters: 0.026
   palmContactToleranceMeters: 0.006
   palmMaxPenetrationMeters: 0.045
-  palmCompressionRadiusMeters: 0.068
-  palmMaxDepthMeters: 0.024
+  palmCompressionRadiusMeters: 0.08
+  palmMaxDepthMeters: 0.026
   squeezeInfluenceOnPalm: 0.03
   usePalmSideBulge: 1
-  palmBulgeRadiusMeters: 0.015
+  palmBulgeRadiusMeters: 0.07
   palmBulgeInnerRadiusMeters: 0.055
-  palmBulgeDepthMeters: 0.0005
+  palmBulgeDepthMeters: 0.0004
   palmBulgeFalloffPower: 3
-  useFingerBand: 0
+  useFingerBand: 1
   useThumbInFingerBand: 0
-  fingerPressureThreshold: 0.04
-  fingerPressureForMaxDepth: 0.75
-  fingerBandRadiusMeters: 0.025
-  fingerBandMaxDepthMeters: 0.001
-  squeezeInfluenceOnFingerBand: 0.02
-  fingerBandResponseCurve: 1.2
+  fingerPressureThreshold: 0.012
+  fingerPressureForMaxDepth: 0.7
+  fingerBandRadiusMeters: 0.028
+  fingerBandMaxDepthMeters: 0.004
+  squeezeInfluenceOnFingerBand: 0.04
+  fingerBandResponseCurve: 1.3
   useLocalFingerAccents: 1
   useThumbAccent: 1
-  useLittleFingerAccent: 1
-  localAccentPressureThreshold: 0.04
-  localAccentPressureForMaxDepth: 0.7
-  localAccentResponseCurve: 1
+  useLittleFingerAccent: 0
+  localAccentPressureThreshold: 0.03
+  localAccentPressureForMaxDepth: 0.55
+  localAccentResponseCurve: 0.85
+  useLocalThumbPatch: 1
+  thumbPatchRadiusMeters: 0.02
+  thumbPatchMaxDepthMeters: 0.018
+  thumbPatchMinimumAmount: 0
+  thumbPatchSqueezeInfluence: 0.06
+  thumbPatchFalloffPower: 1.4
+  thumbPatchSurfaceOffsetMeters: 0
   usePalmToFingerCompression: 1
   useContactVolumeSegments: 1
   usePalmToThumbCompression: 1
-  usePalmToLittleCompression: 1
-  thumbSegmentRadiusMeters: 0.022
+  usePalmToLittleCompression: 0
+  thumbSegmentRadiusMeters: 0.026
   littleSegmentRadiusMeters: 0.016
-  thumbSegmentMaxDepthMeters: 0.046
-  littleSegmentMaxDepthMeters: 0.038
-  thumbVolumeDeformationRadiusMultiplier: 2.2
-  littleVolumeDeformationRadiusMultiplier: 2
-  segmentSqueezeInfluence: 0.8
-  segmentFalloffPower: 0.75
+  thumbSegmentMaxDepthMeters: 0.024
+  littleSegmentMaxDepthMeters: 0.02
+  thumbVolumeDeformationRadiusMultiplier: 1.7
+  littleVolumeDeformationRadiusMultiplier: 1.6
+  segmentSqueezeInfluence: 0.45
+  segmentFalloffPower: 0.6
   maxTotalVertexDepthMeters: 0.065
   clampTotalVertexDepth: 1
   protectTopArea: 1
@@ -3211,17 +3261,21 @@ MonoBehaviour:
   topAreaMinimumMultiplier: 0.55
   indentationFalloffPower: 1.25
   softnessBlend: 0.5
-  deformationSpeed: 8
+  deformationSpeed: 10
   returnSpeed: 10
   palmContactActive: 0
   palmRawDistance: 0
   palmSurfaceDistance: 0
   palmAmount: 0
   fingerBandAmount: 0
+  thumbPatchAmount: 0
   activeFingerCount: 0
   affectedVertices: 0
   thumbSegmentActive: 0
   littleSegmentActive: 0
+  thumbPatchActive: 0
+  lastThumbPressure: 0
+  lastThumbSegmentRadiusMeters: 0
 --- !u!114 &1901067597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3269,6 +3323,30 @@ MonoBehaviour:
   palmDistance: 0
   thumbDistance: 0
   littleDistance: 0
+--- !u!114 &1901067598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1901067590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfa1fb2224dbb914cbc61f37d89ac66e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deformer: {fileID: 0}
+  visualDeformationGain: 1
+  basePalmMaxDepthMeters: 0.024
+  baseThumbPatchMaxDepthMeters: 0.016
+  baseThumbSegmentMaxDepthMeters: 0.024
+  baseFingerBandMaxDepthMeters: 0
+  baseLittleSegmentMaxDepthMeters: 0
+  appliedPalmMaxDepthMeters: 0
+  appliedThumbPatchMaxDepthMeters: 0
+  appliedThumbSegmentMaxDepthMeters: 0
+  appliedFingerBandMaxDepthMeters: 0
+  appliedLittleSegmentMaxDepthMeters: 0
 --- !u!1 &1919710771
 GameObject:
   m_ObjectHideFlags: 0
@@ -3370,7 +3448,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.034, y: 0.012, z: 0.004}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 685128196}
@@ -3416,7 +3494,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: a5ade080c12c51949bc372b64cab8fd4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3528,7 +3606,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.016, y: 0.016, z: 0.016}
+  m_LocalScale: {x: 0.008, y: 0.008, z: 0.008}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1682615163}

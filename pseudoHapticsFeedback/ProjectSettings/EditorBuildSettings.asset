@@ -14,9 +14,18 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/_Scenes/calibration.unity
     guid: af465eec049c133479454d175c5a590d
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Scenes/squeezeBall.unity
     guid: ddd82bf36312c26468d3bb330b930854
+  - enabled: 0
+    path: Assets/_Scenes/squeezBall2.unity
+    guid: bc67e4468ef5256438d1e69ba8dc7f1b
+  - enabled: 0
+    path: Assets/_Scenes/squeezeBall3.unity
+    guid: 18e79071c769eca49b1ff23fd478dbf3
+  - enabled: 1
+    path: Assets/_Scenes/squeeze_staircase.unity
+    guid: 90bec3761250f5644958b678b4722676
   m_configObjects:
     com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: 9828be31eb72e564ba02f1ee529f9915,
       type: 2}
