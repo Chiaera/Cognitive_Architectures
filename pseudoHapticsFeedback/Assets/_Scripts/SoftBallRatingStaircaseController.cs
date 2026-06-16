@@ -20,6 +20,11 @@ public class SoftBallRatingStaircaseController : MonoBehaviour {
     public TextMeshProUGUI postQuestionText;
     public TextMeshProUGUI postQuestionStatusText;
 
+    [Header("Intro UI")]
+    public GameObject introTextObject;
+    public GameObject introPostTextObject;
+    private bool waitingForPostQuestionIntro = false;
+
     [Header("Post Question Buttons Group")]
     [Tooltip("Main 1 to 7 button group used for standard post questions")]
     public GameObject postRatingButtonsGroup;
@@ -193,10 +198,22 @@ public class SoftBallRatingStaircaseController : MonoBehaviour {
 
     void PrepareLocalLog() {
         ratingLogRows.Clear();
-        ratingLogRows.Add("participant_id,phase,question_id,trial_index,gain,gain_label,rating,binary_answer,timestamp");
+        ratingLogRows.Add("participant_id;phase;question_id;trial_index;gain;gain_label;rating;binary_answer;timestamp");
 
-        string fileName = "soft_ball_" + System.DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".csv";
-        ratingLogPath = Path.Combine(Application.persistentDataPath, fileName);
+        string folderPath = Path.Combine(Application.persistentDataPath, "CogAR_test");
+
+        if (!Directory.Exists(folderPath)) {
+            Directory.CreateDirectory(folderPath);
+        }
+
+        string fileName =
+            "CogAR_test_P" +
+            participantNumber.ToString("D2") +
+            "_" +
+            System.DateTime.Now.ToString("yyyyMMdd_HHmmss") +
+            ".csv";
+
+        ratingLogPath = Path.Combine(folderPath, fileName);
 
         File.WriteAllLines(ratingLogPath, ratingLogRows);
 
@@ -251,11 +268,20 @@ public class SoftBallRatingStaircaseController : MonoBehaviour {
         staircaseInitialized = false;
         staircaseFinished = false;
         ratingEnabled = false;
+        waitingForPostQuestionIntro = false;
 
         SetAllPanelsOff();
 
         if (introPanel != null) {
             introPanel.SetActive(true);
+        }
+
+        if (introTextObject != null) {
+            introTextObject.SetActive(true);
+        }
+
+        if (introPostTextObject != null) {
+            introPostTextObject.SetActive(false);
         }
 
         SetLazyFollow(true);
@@ -268,6 +294,23 @@ public class SoftBallRatingStaircaseController : MonoBehaviour {
     // ─── INTRO ──────────────────────────────────────────────────────────────────
 
     public void HandleContinuePressed() {
+        if (waitingForPostQuestionIntro) {
+            waitingForPostQuestionIntro = false;
+
+            if (introPanel != null) {
+                introPanel.SetActive(false);
+            }
+
+            if (introPostTextObject != null) {
+                introPostTextObject.SetActive(false);
+            }
+
+            StartPostQuestions();
+
+            Debug.Log("Post-questionnaire started from intro panel");
+            return;
+        }
+
         SetAllPanelsOff();
 
         if (preQuestionPanel != null) {
@@ -573,8 +616,23 @@ public class SoftBallRatingStaircaseController : MonoBehaviour {
             StopCoroutine(canvasRoutine);
         }
 
-        Debug.Log("Trial sequence completed — moving to post-questionnaire");
-        StartPostQuestions();
+        SetAllPanelsOff();
+
+        waitingForPostQuestionIntro = true;
+
+        if (introPanel != null) {
+            introPanel.SetActive(true);
+        }
+
+        if (introTextObject != null) {
+            introTextObject.SetActive(false);
+        }
+
+        if (introPostTextObject != null) {
+            introPostTextObject.SetActive(true);
+        }
+
+        Debug.Log("Trial sequence completed — showing post-questionnaire intro");
     }
 
     // ─── POST QUESTIONS ─────────────────────────────────────────────────────────
@@ -874,14 +932,14 @@ public class SoftBallRatingStaircaseController : MonoBehaviour {
         string timestamp = System.DateTime.Now.ToString("HH:mm:ss.fff");
 
         string row =
-            participantNumber.ToString() + "," +
-            phase + "," +
-            questionId + "," +
-            trialIndex.ToString() + "," +
-            gain.ToString("F3") + "," +
-            gainLabel + "," +
-            rating.ToString() + "," +
-            binaryAnswer + "," +
+            participantNumber.ToString() + ";" +
+            phase + ";" +
+            questionId + ";" +
+            trialIndex.ToString() + ";" +
+            gain.ToString("F3") + ";" +
+            gainLabel + ";" +
+            rating.ToString() + ";" +
+            binaryAnswer + ";" +
             timestamp;
 
         ratingLogRows.Add(row);
