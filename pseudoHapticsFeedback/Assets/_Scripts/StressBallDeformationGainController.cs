@@ -34,10 +34,6 @@ public class StressBallDeformationGainController : MonoBehaviour {
         Debug.Log("Stress ball deformation gain controller initialized");
     }
 
-    void Update() {
-        ApplyGain();
-    }
-
     public void SetVisualDeformationGain(float newGain) {
         visualDeformationGain = Mathf.Clamp(newGain, 0.25f, 2.0f);
         ApplyGain();

@@ -6,6 +6,55 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class SoftBallRatingStaircaseController : MonoBehaviour {
+    [Header("Question Panels")]
+    public GameObject introPanel;
+    public GameObject preQuestionPanel;
+    public GameObject postQuestionsPanel;
+    public GameObject endPanel;
+
+    [Header("Pre Question Containers")]
+    public GameObject handChoiceContainer;
+    public GameObject arExperienceContainer;
+
+    [Header("Post Question UI")]
+    public TextMeshProUGUI postQuestionText;
+    public TextMeshProUGUI postQuestionStatusText;
+
+    [Header("Post Question Buttons Group")]
+    [Tooltip("Main 1 to 7 button group used for standard post questions")]
+    public GameObject postRatingButtonsGroup;
+
+    [Header("Post Question Disconnection UI")]
+    [Tooltip("Container shown for Q8 Yes/No step")]
+    public GameObject disconnectionYesNoContainer;
+
+    [Tooltip("Container shown for Q8 timing step, only if participant answered Yes")]
+    public GameObject disconnectionTimingContainer;
+
+    [Header("Question Runtime")]
+    public int currentPostQuestionIndex = 0;
+    public string currentPostQuestionId = "";
+    private bool disconnectionAnswerWasYes = false;
+
+    [Header("Fallback Trial Sequence")]
+    [Tooltip("Force a fixed sequence of trials instead of using the adaptive staircase toolkit")]
+    public bool forceFallbackSequence = true;
+
+    [Tooltip("Use fallback if the staircase toolkit is not ready")]
+    public bool useFallbackIfToolkitFails = true;
+
+    [Tooltip("Fixed gain sequence used when fallback mode is active")]
+    public float[] fallbackGains = new float[] {
+        1.00f,
+        0.60f,
+        1.40f,
+        0.60f,
+        1.40f,
+        1.00f
+    };
+
+    private bool usingFallbackSequence = false;
+
     [Header("Toolkit References")]
     [Tooltip("Staircase Procedure component from Andre Zenner's toolkit")]
     public StaircaseProcedure staircaseProcedure;
@@ -20,17 +69,20 @@ public class SoftBallRatingStaircaseController : MonoBehaviour {
     [Tooltip("Calibration panel shown during hand calibration")]
     public GameObject calibrationPanel;
 
-    [Tooltip("Optional start panel shown after calibration and before the first trial")]
+    [Tooltip("Start panel shown after pre-questions and before the first trial")]
     public GameObject startPanel;
 
-    [Tooltip("Experiment panel used for trial instructions and rating")]
+    [Tooltip("Info panel shown during the ball interaction phase")]
+    public GameObject infoPanel;
+
+    [Tooltip("Experiment panel used for trial rating")]
     public GameObject experimentPanel;
 
-    [Tooltip("Group containing the 1 to 7 rating buttons")]
+    [Tooltip("Group containing the 1 to 7 rating buttons for trial ratings")]
     public GameObject ratingButtonsGroup;
 
     [Header("Start UI")]
-    [Tooltip("Existing START button")]
+    [Tooltip("START button shown on the start panel")]
     public Button startButton;
 
     [Header("Experiment UI References")]
@@ -65,6 +117,7 @@ public class SoftBallRatingStaircaseController : MonoBehaviour {
     public bool waitForExternalCalibration = true;
 
     [Header("Staircase Settings")]
+    public int participantNumber = 1;
     public float minimumGain = 0.50f;
     public float maximumGain = 1.50f;
     public int numberOfSteps = 10;
@@ -79,7 +132,7 @@ public class SoftBallRatingStaircaseController : MonoBehaviour {
     public int stopAmount = 4;
 
     public int numberThresholdPoints = 3;
-    public int participantNumber = 1;
+    
 
     public string experimentName = "SoftBallPseudoHaptics";
     public string conditionName = "SiliconeVisualDeformation";
@@ -110,12 +163,10 @@ public class SoftBallRatingStaircaseController : MonoBehaviour {
         SetupStartButton();
         SetupRatingButtons();
         PrepareLocalLog();
-        EnsureToolkitIsReady();
 
         if (waitForExternalCalibration) {
             ShowCalibrationState();
-        }
-        else {
+        } else {
             BeginExperimentAfterCalibration();
         }
 
@@ -142,10 +193,14 @@ public class SoftBallRatingStaircaseController : MonoBehaviour {
 
     void PrepareLocalLog() {
         ratingLogRows.Clear();
-        ratingLogRows.Add("trial_index,gain,rating,toolkit_answer,timestamp");
+        ratingLogRows.Add("participant_id,phase,question_id,trial_index,gain,gain_label,rating,binary_answer,timestamp");
 
-        string fileName = "soft_ball_rating_staircase_" + System.DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".csv";
+        string fileName = "soft_ball_" + System.DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".csv";
         ratingLogPath = Path.Combine(Application.persistentDataPath, fileName);
+
+        File.WriteAllLines(ratingLogPath, ratingLogRows);
+
+        Debug.Log("CSV log prepared at " + ratingLogPath);
     }
 
     void EnsureToolkitIsReady() {
@@ -159,19 +214,14 @@ public class SoftBallRatingStaircaseController : MonoBehaviour {
         }
 
         if (StaircaseProcedure.SP == null) {
-            staircaseProcedure.Create(
-                Application.persistentDataPath,
-                "python_disabled",
-                false,
-                false,
-                false
-            );
-
-            staircaseProcedure.Awake();
-
-            Debug.Log("Staircase Procedure toolkit initialized without Python live plotter");
+            Debug.LogWarning("StaircaseProcedure.SP is null — do not manually call Create or Awake on Magic Leap");
+            return;
         }
+
+        Debug.Log("Staircase Procedure found and ready");
     }
+
+    // ─── CALIBRATION ────────────────────────────────────────────────────────────
 
     void ShowCalibrationState() {
         calibrationCompleted = false;
@@ -179,13 +229,11 @@ public class SoftBallRatingStaircaseController : MonoBehaviour {
         staircaseFinished = false;
         ratingEnabled = false;
 
-        SetPanelStates(
-            calibration: true,
-            start: false,
-            experiment: false,
-            ratingButtons: false,
-            ball: false
-        );
+        SetAllPanelsOff();
+
+        if (calibrationPanel != null) {
+            calibrationPanel.SetActive(true);
+        }
 
         SetLazyFollow(true);
 
@@ -193,10 +241,10 @@ public class SoftBallRatingStaircaseController : MonoBehaviour {
     }
 
     public void BeginExperimentAfterCalibration() {
-        StartCoroutine(BeginExperimentAfterCalibrationRoutine());
+        StartCoroutine(ShowIntroPanelAfterCalibration());
     }
 
-    IEnumerator BeginExperimentAfterCalibrationRoutine() {
+    IEnumerator ShowIntroPanelAfterCalibration() {
         yield return null;
 
         calibrationCompleted = true;
@@ -204,18 +252,77 @@ public class SoftBallRatingStaircaseController : MonoBehaviour {
         staircaseFinished = false;
         ratingEnabled = false;
 
-        SetPanelStates(
-            calibration: false,
-            start: true,
-            experiment: false,
-            ratingButtons: false,
-            ball: false
-        );
+        SetAllPanelsOff();
 
+        if (introPanel != null) {
+            introPanel.SetActive(true);
+        }
+
+        SetLazyFollow(true);
+        yield return new WaitForSeconds(0.5f);
         SetLazyFollow(false);
 
-        Debug.Log("Calibration completed and start panel shown");
+        Debug.Log("Intro panel shown after calibration");
     }
+
+    // ─── INTRO ──────────────────────────────────────────────────────────────────
+
+    public void HandleContinuePressed() {
+        SetAllPanelsOff();
+
+        if (preQuestionPanel != null) {
+            preQuestionPanel.SetActive(true);
+        }
+
+        if (handChoiceContainer != null) {
+            handChoiceContainer.SetActive(true);
+        }
+
+        if (arExperienceContainer != null) {
+            arExperienceContainer.SetActive(false);
+        }
+
+        Debug.Log("Pre-questionnaire started");
+    }
+
+    // ─── PRE QUESTIONS ──────────────────────────────────────────────────────────
+
+    public void HandleHandednessAnswer(int value) {
+        if (value < 1 || value > 3) {
+            Debug.Log("Handedness answer ignored — only 1, 2, or 3 are valid");
+            return;
+        }
+
+        SaveQuestionRow("pre", "handedness", 0, 0f, "", value, "");
+
+        if (handChoiceContainer != null) {
+            handChoiceContainer.SetActive(false);
+        }
+
+        if (arExperienceContainer != null) {
+            arExperienceContainer.SetActive(true);
+        }
+
+        Debug.Log("Handedness answer saved: " + value);
+    }
+
+    public void HandleARExperienceAnswer(int value) {
+        SaveQuestionRow("pre", "ar_vr_familiarity", 0, 0f, "", value, "");
+
+        SetAllPanelsOff();
+
+        if (startPanel != null) {
+            startPanel.SetActive(true);
+        }
+
+        if (startButton != null) {
+            startButton.gameObject.SetActive(true);
+        }
+
+        Debug.Log("AR experience answer saved: " + value);
+    }
+
+    // ─── EXPERIMENT START ───────────────────────────────────────────────────────
 
     public void StartExperimentFromButton() {
         calibrationCompleted = true;
@@ -223,61 +330,66 @@ public class SoftBallRatingStaircaseController : MonoBehaviour {
         staircaseFinished = false;
         ratingEnabled = false;
 
-        SetPanelStates(
-            calibration: false,
-            start: false,
-            experiment: true,
-            ratingButtons: false,
-            ball: true
-        );
+        SetAllPanelsOff();
 
-        if (instructionText != null) {
-            instructionText.text =
-                "Ready to start." +
-                "\n\nPress START again or wait for the first trial.";
+        if (stressBallRoot != null) {
+            stressBallRoot.SetActive(true);
         }
 
-        if (statusText != null) {
-            statusText.text =
-                "The rating scale will appear after each interaction.";
+        if (infoPanel != null) {
+            infoPanel.SetActive(true);
         }
 
         SetLazyFollow(false);
-
         StartStaircase();
 
         Debug.Log("Experiment started from START button");
     }
+
+    // ─── STAIRCASE / FIXED SEQUENCE ─────────────────────────────────────────────
 
     public void StartStaircase() {
         if (staircaseInitialized) {
             return;
         }
 
-        EnsureToolkitIsReady();
+        usingFallbackSequence = forceFallbackSequence;
 
-        if (StaircaseProcedure.SP == null) {
-            Debug.LogWarning("StaircaseProcedure.SP is null");
-            return;
+        if (usingFallbackSequence) {
+            Debug.Log("Starting fixed fallback trial sequence");
+        } else {
+            EnsureToolkitIsReady();
+
+            if (StaircaseProcedure.SP == null) {
+                if (!useFallbackIfToolkitFails) {
+                    Debug.LogWarning("StaircaseProcedure.SP is null — staircase cannot start");
+                    return;
+                }
+
+                usingFallbackSequence = true;
+                Debug.LogWarning("StaircaseProcedure.SP is null — switching to fallback trial sequence");
+            }
         }
 
-        StaircaseProcedure.SP.Init(
-            minimumValue: minimumGain,
-            maximumValue: maximumGain,
-            numberOfSteps: numberOfSteps,
-            startStepSequ1: startStepSequence1,
-            startStepSequ2: startStepSequence2,
-            stopAmount: stopAmount,
-            numberThresholdPoints: numberThresholdPoints,
-            experimentName: experimentName,
-            conditionName: conditionName,
-            numberParticipant: participantNumber,
-            stepsUp: 1,
-            stepsDown: 1,
-            stopCriterionReversals: true,
-            strictLimits: true,
-            plotTitle: "Soft Ball Pseudo-Haptic Staircase"
-        );
+        if (!usingFallbackSequence && StaircaseProcedure.SP != null) {
+            StaircaseProcedure.SP.Init(
+                minimumValue: minimumGain,
+                maximumValue: maximumGain,
+                numberOfSteps: numberOfSteps,
+                startStepSequ1: startStepSequence1,
+                startStepSequ2: startStepSequence2,
+                stopAmount: stopAmount,
+                numberThresholdPoints: numberThresholdPoints,
+                experimentName: experimentName,
+                conditionName: conditionName,
+                numberParticipant: participantNumber,
+                stepsUp: 1,
+                stepsDown: 1,
+                stopCriterionReversals: true,
+                strictLimits: true,
+                plotTitle: "Soft Ball Pseudo-Haptic Staircase"
+            );
+        }
 
         staircaseInitialized = true;
         staircaseFinished = false;
@@ -286,7 +398,7 @@ public class SoftBallRatingStaircaseController : MonoBehaviour {
 
         StartNextTrial();
 
-        Debug.Log("Rating staircase started");
+        Debug.Log("Rating experiment started");
     }
 
     void StartNextTrial() {
@@ -294,13 +406,23 @@ public class SoftBallRatingStaircaseController : MonoBehaviour {
             return;
         }
 
-        if (StaircaseProcedure.SP.IsFinished()) {
-            FinishStaircase();
-            return;
+        if (usingFallbackSequence) {
+            if (currentTrial >= fallbackGains.Length) {
+                FinishStaircase();
+                return;
+            }
+
+            currentGain = fallbackGains[currentTrial];
+        } else {
+            if (StaircaseProcedure.SP.IsFinished()) {
+                FinishStaircase();
+                return;
+            }
+
+            currentGain = StaircaseProcedure.SP.GetNextStimulus();
         }
 
         currentTrial++;
-        currentGain = StaircaseProcedure.SP.GetNextStimulus();
 
         if (gainController != null) {
             gainController.SetVisualDeformationGain(currentGain);
@@ -308,13 +430,15 @@ public class SoftBallRatingStaircaseController : MonoBehaviour {
 
         ratingEnabled = false;
 
-        SetPanelStates(
-            calibration: false,
-            start: false,
-            experiment: true,
-            ratingButtons: false,
-            ball: true
-        );
+        SetAllPanelsOff();
+
+        if (stressBallRoot != null) {
+            stressBallRoot.SetActive(true);
+        }
+
+        if (infoPanel != null) {
+            infoPanel.SetActive(true);
+        }
 
         if (instructionText != null) {
             instructionText.text =
@@ -339,7 +463,7 @@ public class SoftBallRatingStaircaseController : MonoBehaviour {
         canvasRoutine = StartCoroutine(HandleCanvasForInteractionPhase());
         trialRoutine = StartCoroutine(ShowRatingAfterInteraction());
 
-        Debug.Log("Started trial " + currentTrial + " with gain " + currentGain);
+        Debug.Log("Started trial " + currentTrial + " with gain " + currentGain + " (" + GetGainLabel(currentGain) + ")");
     }
 
     IEnumerator HandleCanvasForInteractionPhase() {
@@ -366,58 +490,75 @@ public class SoftBallRatingStaircaseController : MonoBehaviour {
             SetLazyFollow(false);
         }
 
+        if (infoPanel != null) {
+            infoPanel.SetActive(false);
+        }
+
+        if (stressBallRoot != null) {
+            stressBallRoot.SetActive(false);
+        }
+
+        if (experimentPanel != null) {
+            experimentPanel.SetActive(true);
+        }
+
         if (ratingButtonsGroup != null) {
             ratingButtonsGroup.SetActive(true);
         }
 
         if (instructionText != null) {
-            instructionText.text =
-                "How clearly did you perceive the deformation of the ball?";
+            instructionText.text = "How clearly did you perceive the deformation of the ball?";
         }
 
         if (statusText != null) {
-            statusText.text =
-                "1 = not clear | 7 = very clear";
+            statusText.text = "1 = not clear at all | 7 = very clear";
         }
 
         Debug.Log("Rating phase started for trial " + currentTrial);
     }
 
+    public void HandleTrialRatingAnswer(int value) {
+        SubmitRating(value);
+    }
+
     public void SubmitRating(int rating) {
         if (!staircaseInitialized || staircaseFinished || !ratingEnabled) {
-            Debug.Log("Rating ignored because this is not an active rating phase");
+            Debug.Log("Rating ignored — not in active rating phase");
             return;
         }
 
         lastRating = Mathf.Clamp(rating, 1, 7);
         lastToolkitAnswer = lastRating >= noticedRatingThreshold;
 
-        SaveRatingRow(lastRating, lastToolkitAnswer);
+        SaveTrialRatingRow(lastRating, lastToolkitAnswer);
 
-        StaircaseProcedure.SP.TrialFinished(lastToolkitAnswer);
-
-        Debug.Log("Submitted rating " + lastRating + " as toolkit answer " + lastToolkitAnswer);
-
-        if (StaircaseProcedure.SP.IsFinished()) {
-            FinishStaircase();
+        if (!usingFallbackSequence && StaircaseProcedure.SP != null) {
+            StaircaseProcedure.SP.TrialFinished(lastToolkitAnswer);
         }
-        else {
+
+        Debug.Log("Submitted rating " + lastRating + " — toolkit answer: " + lastToolkitAnswer);
+
+        bool isFinished = usingFallbackSequence
+            ? currentTrial >= fallbackGains.Length
+            : StaircaseProcedure.SP.IsFinished();
+
+        if (isFinished) {
+            FinishStaircase();
+        } else {
             StartNextTrial();
         }
     }
 
-    void SaveRatingRow(int rating, bool toolkitAnswer) {
-        string timestamp = System.DateTime.Now.ToString("HH:mm:ss.fff");
-
-        string row =
-            currentTrial.ToString() + "," +
-            currentGain.ToString("F3") + "," +
-            rating.ToString() + "," +
-            toolkitAnswer.ToString() + "," +
-            timestamp;
-
-        ratingLogRows.Add(row);
-        File.WriteAllLines(ratingLogPath, ratingLogRows);
+    void SaveTrialRatingRow(int rating, bool toolkitAnswer) {
+        SaveQuestionRow(
+            "trial",
+            "deformation_clarity",
+            currentTrial,
+            currentGain,
+            GetGainLabel(currentGain),
+            rating,
+            toolkitAnswer.ToString()
+        );
     }
 
     void FinishStaircase() {
@@ -432,35 +573,194 @@ public class SoftBallRatingStaircaseController : MonoBehaviour {
             StopCoroutine(canvasRoutine);
         }
 
-        SetLazyFollow(false);
+        Debug.Log("Trial sequence completed — moving to post-questionnaire");
+        StartPostQuestions();
+    }
 
-        float threshold = StaircaseProcedure.SP.GetThreshold();
+    // ─── POST QUESTIONS ─────────────────────────────────────────────────────────
+
+    void StartPostQuestions() {
+        currentPostQuestionIndex = 0;
+        disconnectionAnswerWasYes = false;
+
+        SetAllPanelsOff();
+
+        if (postQuestionsPanel != null) {
+            postQuestionsPanel.SetActive(true);
+        }
+
+        ShowPostQuestion();
+
+        Debug.Log("Post-questionnaire started");
+    }
+
+    void ShowPostQuestion() {
+        if (disconnectionYesNoContainer != null) {
+            disconnectionYesNoContainer.SetActive(false);
+        }
+
+        if (disconnectionTimingContainer != null) {
+            disconnectionTimingContainer.SetActive(false);
+        }
+
+        if (postRatingButtonsGroup != null) {
+            postRatingButtonsGroup.SetActive(true);
+        }
+
+        string question = "";
+        string status = "1 = not at all | 7 = very much";
+
+        if (currentPostQuestionIndex == 0) {
+            currentPostQuestionId = "softness";
+            question = "How soft did the virtual ball feel?";
+            status = "1 = not soft at all | 7 = very soft";
+        } else if (currentPostQuestionIndex == 1) {
+            currentPostQuestionId = "elasticity";
+            question = "How elastic did the virtual ball feel?";
+            status = "1 = not elastic at all | 7 = very elastic";
+        } else if (currentPostQuestionIndex == 2) {
+            currentPostQuestionId = "contact_believability";
+            question = "How believable was the contact with the ball?";
+            status = "1 = not believable at all | 7 = very believable";
+        } else if (currentPostQuestionIndex == 3) {
+            currentPostQuestionId = "thumb_contribution";
+            question = "Did adding the thumb make the interaction feel more convincing?";
+            status = "1 = not at all | 7 = very much";
+        } else if (currentPostQuestionIndex == 4) {
+            currentPostQuestionId = "visual_touch_influence";
+            question = "Did the visual deformation create a sense of physical contact?";
+            status = "1 = not at all | 7 = very strongly";
+        } else if (currentPostQuestionIndex == 5) {
+            currentPostQuestionId = "object_vs_animation";
+            question = "Did the interaction feel more like touching an object than watching an animation?";
+            status = "1 = only watching an animation | 7 = touching an object";
+        } else if (currentPostQuestionIndex == 6) {
+            currentPostQuestionId = "movement_match";
+            question = "How well did the visual deformation match your hand movement?";
+            status = "1 = not well at all | 7 = very well";
+        } else if (currentPostQuestionIndex == 7) {
+            currentPostQuestionId = "disconnection_presence";
+            question = "At any point, did the visual deformation feel disconnected from your hand movement?";
+            status = "";
+
+            if (postQuestionText != null) {
+                postQuestionText.text = question;
+            }
+
+            if (postQuestionStatusText != null) {
+                postQuestionStatusText.text = status;
+            }
+
+            if (postRatingButtonsGroup != null) {
+                postRatingButtonsGroup.SetActive(false);
+            }
+
+            if (disconnectionYesNoContainer != null) {
+                disconnectionYesNoContainer.SetActive(true);
+            }
+
+            Debug.Log("Showing post question: disconnection_presence");
+            return;
+        } else {
+            FinishPostQuestions();
+            return;
+        }
+
+        if (postQuestionText != null) {
+            postQuestionText.text = question;
+        }
+
+        if (postQuestionStatusText != null) {
+            postQuestionStatusText.text = status;
+        }
+
+        Debug.Log("Showing post question: " + currentPostQuestionId);
+    }
+
+    public void HandlePostQuestionAnswer(int value) {
+        if (currentPostQuestionId == "disconnection_presence") {
+            Debug.Log("Post rating ignored because Q8 expects Yes or No");
+            return;
+        }
+
+        SaveQuestionRow("post", currentPostQuestionId, 0, 0f, "", value, "");
+
+        currentPostQuestionIndex++;
+        ShowPostQuestion();
+    }
+
+    public void HandleDisconnectionYesNo(bool answeredYes) {
+        disconnectionAnswerWasYes = answeredYes;
+
+        SaveQuestionRow("post", "disconnection_presence", 0, 0f, "", 0, answeredYes ? "yes" : "no");
+
+        if (answeredYes) {
+            if (postRatingButtonsGroup != null) {
+                postRatingButtonsGroup.SetActive(false);
+            }
+
+            if (disconnectionYesNoContainer != null) {
+                disconnectionYesNoContainer.SetActive(false);
+            }
+
+            if (disconnectionTimingContainer != null) {
+                disconnectionTimingContainer.SetActive(true);
+            }
+
+            if (postQuestionText != null) {
+                postQuestionText.text = "At which point did you first notice the disconnection?";
+            }
+
+            if (postQuestionStatusText != null) {
+                postQuestionStatusText.text =
+                    "1 = from the beginning\n" +
+                    "2 = when first touching the ball\n" +
+                    "3 = when adding the thumb\n" +
+                    "4 = toward the end of the interaction";
+            }
+
+            Debug.Log("Disconnection confirmed — showing timing question");
+        } else {
+            currentPostQuestionIndex++;
+            ShowPostQuestion();
+
+            Debug.Log("No disconnection reported — skipping timing question");
+        }
+    }
+
+    public void HandleDisconnectionTiming(int value) {
+        if (value < 1 || value > 4) {
+            Debug.Log("Disconnection timing answer ignored — only 1, 2, 3, or 4 are valid");
+            return;
+        }
+
+        SaveQuestionRow("post", "disconnection_timing", 0, 0f, "", value, "");
+
+        currentPostQuestionIndex++;
+        ShowPostQuestion();
+
+        Debug.Log("Disconnection timing answer saved: " + value);
+    }
+
+    void FinishPostQuestions() {
+        if (!usingFallbackSequence && StaircaseProcedure.SP != null) {
+            float threshold = StaircaseProcedure.SP.GetThreshold();
+            SaveQuestionRow("result", "staircase_threshold", 0, threshold, "threshold", 0, "");
+            Debug.Log("Staircase threshold saved: " + threshold);
+        }
 
         File.WriteAllLines(ratingLogPath, ratingLogRows);
 
-        SetPanelStates(
-            calibration: false,
-            start: false,
-            experiment: true,
-            ratingButtons: false,
-            ball: false
-        );
+        SetAllPanelsOff();
 
-        if (instructionText != null) {
-            instructionText.text =
-                "Experiment completed." +
-                "\n\nEstimated noticeability threshold: " + threshold.ToString("F2");
+        if (endPanel != null) {
+            endPanel.SetActive(true);
         }
 
-        if (statusText != null) {
-            statusText.text =
-                "Rating CSV saved to:" +
-                "\n" + ratingLogPath;
-        }
-
-        Debug.Log("Rating staircase completed with threshold " + threshold);
-        Debug.Log("Rating data saved to " + ratingLogPath);
+        Debug.Log("Post-questionnaire completed — experiment finished");
     }
+
+    // ─── RESET ──────────────────────────────────────────────────────────────────
 
     public void ResetExperiment() {
         staircaseInitialized = false;
@@ -470,6 +770,8 @@ public class SoftBallRatingStaircaseController : MonoBehaviour {
         currentGain = 1.0f;
         lastRating = 0;
         lastToolkitAnswer = false;
+        currentPostQuestionIndex = 0;
+        disconnectionAnswerWasYes = false;
 
         if (trialRoutine != null) {
             StopCoroutine(trialRoutine);
@@ -483,37 +785,70 @@ public class SoftBallRatingStaircaseController : MonoBehaviour {
 
         if (waitForExternalCalibration) {
             ShowCalibrationState();
-        }
-        else {
+        } else {
             BeginExperimentAfterCalibration();
         }
 
         Debug.Log("Soft ball rating staircase controller reset");
     }
 
-    void SetPanelStates(bool calibration, bool start, bool experiment, bool ratingButtons, bool ball) {
+    // ─── HELPERS ────────────────────────────────────────────────────────────────
+
+    void SetAllPanelsOff() {
         if (calibrationPanel != null) {
-            calibrationPanel.SetActive(calibration);
+            calibrationPanel.SetActive(false);
+        }
+
+        if (introPanel != null) {
+            introPanel.SetActive(false);
+        }
+
+        if (preQuestionPanel != null) {
+            preQuestionPanel.SetActive(false);
         }
 
         if (startPanel != null) {
-            startPanel.SetActive(start);
+            startPanel.SetActive(false);
         }
 
         if (startButton != null) {
-            startButton.gameObject.SetActive(start);
+            startButton.gameObject.SetActive(false);
+        }
+
+        if (infoPanel != null) {
+            infoPanel.SetActive(false);
         }
 
         if (experimentPanel != null) {
-            experimentPanel.SetActive(experiment);
+            experimentPanel.SetActive(false);
         }
 
         if (ratingButtonsGroup != null) {
-            ratingButtonsGroup.SetActive(ratingButtons);
+            ratingButtonsGroup.SetActive(false);
+        }
+
+        if (postQuestionsPanel != null) {
+            postQuestionsPanel.SetActive(false);
+        }
+
+        if (postRatingButtonsGroup != null) {
+            postRatingButtonsGroup.SetActive(false);
+        }
+
+        if (endPanel != null) {
+            endPanel.SetActive(false);
         }
 
         if (stressBallRoot != null) {
-            stressBallRoot.SetActive(ball);
+            stressBallRoot.SetActive(false);
+        }
+
+        if (disconnectionYesNoContainer != null) {
+            disconnectionYesNoContainer.SetActive(false);
+        }
+
+        if (disconnectionTimingContainer != null) {
+            disconnectionTimingContainer.SetActive(false);
         }
     }
 
@@ -521,5 +856,37 @@ public class SoftBallRatingStaircaseController : MonoBehaviour {
         if (lazyFollowCanvas != null) {
             lazyFollowCanvas.enabled = enabled;
         }
+    }
+
+    string GetGainLabel(float gain) {
+        if (gain < 0.80f) {
+            return "low";
+        }
+
+        if (gain > 1.20f) {
+            return "high";
+        }
+
+        return "medium";
+    }
+
+    void SaveQuestionRow(string phase, string questionId, int trialIndex, float gain, string gainLabel, int rating, string binaryAnswer) {
+        string timestamp = System.DateTime.Now.ToString("HH:mm:ss.fff");
+
+        string row =
+            participantNumber.ToString() + "," +
+            phase + "," +
+            questionId + "," +
+            trialIndex.ToString() + "," +
+            gain.ToString("F3") + "," +
+            gainLabel + "," +
+            rating.ToString() + "," +
+            binaryAnswer + "," +
+            timestamp;
+
+        ratingLogRows.Add(row);
+        File.WriteAllLines(ratingLogPath, ratingLogRows);
+
+        Debug.Log("Saved row: " + row);
     }
 }

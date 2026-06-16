@@ -415,6 +415,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   detector: {fileID: 1919710774}
   instructionText: {fileID: 820374174}
+  staircaseController: {fileID: 0}
   buttonsGroup: {fileID: 1171700466}
   stressBall: {fileID: 1901067590}
   stabilityDuration: 3

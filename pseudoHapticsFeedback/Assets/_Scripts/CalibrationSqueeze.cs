@@ -440,7 +440,7 @@ public class CalibrationSqueeze : MonoBehaviour {
                 continue;
             }
 
-            instructionText.text = "Open your hand again before the squeeze gestures";
+            instructionText.text = "Turn your palm on and open your hand again before the squeeze gestures";
 
             if (detector.squeezeNormalized < squeezeReleaseThreshold) {
                 break;
