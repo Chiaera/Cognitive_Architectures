@@ -385,4 +385,35 @@ public class HandSqueezeDetector : MonoBehaviour {
 
         Debug.Log("Closed hand calibration applied");
     }
+
+    public float GetSqueezeNormalized() {
+        if (!IsHandTracked) {
+            return 0f;
+        }
+
+        return Mathf.Clamp01(squeezeNormalized);
+    }
+
+    public float GetThumbPressure() {
+        if (!IsHandTracked) {
+            return 0f;
+        }
+
+        return Mathf.Clamp01(thumbPressure);
+    }
+
+    public float GetMeanFingerPressure() {
+        if (!IsHandTracked) {
+            return 0f;
+        }
+
+        float sum =
+            thumbPressure +
+            indexPressure +
+            middlePressure +
+            ringPressure +
+            littlePressure;
+
+        return Mathf.Clamp01(sum / 5f);
+    }
 }

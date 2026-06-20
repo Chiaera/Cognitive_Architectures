@@ -959,10 +959,10 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'The interaction phase is complete.
 
-    
 
-    You will now answer a
-    few questions about your experience.'
+
+    You will now answer a few questions
+    about your experience.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4663,10 +4663,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 843394965}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 660, y: 170}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -200, y: 0}
+  m_SizeDelta: {x: 650, y: 170}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &609795207
 MonoBehaviour:
@@ -4688,8 +4688,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Interact with the virtual silicone ball:\n\r\t1. Place your palm under
-    the ball and press gently.\r\n\t2. Then add your thumb to increase the pressure."
+  m_text: "Interact with the virtual silicone ball:\n\r1. Place your palm under the
+    ball and press gently.\r\n2. Then add your thumb to increase the pressure."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4723,7 +4723,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -7429,7 +7429,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &843394965
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7876,6 +7876,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30bc643b651b2c146b2794f9f0e73ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  squeezeDetector: {fileID: 1919710774}
+  maxSqueezeAmount: 0
+  meanSqueezeAmount: 0
+  maxThumbPressure: 0
+  meanThumbPressure: 0
   introPanel: {fileID: 293923961}
   preQuestionPanel: {fileID: 713994021}
   postQuestionsPanel: {fileID: 1732982372}
@@ -7924,9 +7929,9 @@ MonoBehaviour:
   canvasRecenterDurationSeconds: 0.7
   freezeCanvasDuringRating: 1
   freezeCanvasDuringInteraction: 1
-  interactionDurationSeconds: 8
-  waitForExternalCalibration: 0
-  participantNumber: 1
+  interactionDurationSeconds: 13
+  waitForExternalCalibration: 1
+  participantNumber: 13
   minimumGain: 0.5
   maximumGain: 1.5
   numberOfSteps: 10
@@ -13003,13 +13008,13 @@ MonoBehaviour:
   thumbContactVolume: {fileID: 219472763}
   littleContactVolume: {fileID: 658620507}
   thumbVolumeRadiusMeters: 0.0012
-  thumbExtraLengthMeters: 0.006
-  littleVolumeRadiusMeters: 0.01
-  littleExtraLengthMeters: 0.004
+  thumbExtraLengthMeters: 0.05
+  littleVolumeRadiusMeters: 0.03
+  littleExtraLengthMeters: 0.0025
   showVolumes: 0
   hideWhenEndpointsInactive: 1
-  thumbSegmentStart01: 0.45
-  thumbSegmentEnd01: 1
+  thumbSegmentStart01: 0.4
+  thumbSegmentEnd01: 0.75
   littleSegmentStart01: 0.5
   littleSegmentEnd01: 1
   followSpeed: 25
@@ -14030,7 +14035,7 @@ Transform:
   m_GameObject: {fileID: 1901067590}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.3}
+  m_LocalPosition: {x: 0, y: 0, z: 0.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -14068,9 +14073,9 @@ MonoBehaviour:
   usePalmSurfaceProxy: 1
   palmSurfaceOffsetMeters: 0.026
   palmContactToleranceMeters: 0.006
-  palmMaxPenetrationMeters: 0.045
+  palmMaxPenetrationMeters: 0.043
   palmCompressionRadiusMeters: 0.08
-  palmMaxDepthMeters: 0.026
+  palmMaxDepthMeters: 0.025
   squeezeInfluenceOnPalm: 0.03
   usePalmSideBulge: 1
   palmBulgeRadiusMeters: 0.07
@@ -14082,21 +14087,21 @@ MonoBehaviour:
   fingerPressureThreshold: 0.012
   fingerPressureForMaxDepth: 0.7
   fingerBandRadiusMeters: 0.028
-  fingerBandMaxDepthMeters: 0.004
-  squeezeInfluenceOnFingerBand: 0.04
-  fingerBandResponseCurve: 1.3
+  fingerBandMaxDepthMeters: 0.003
+  squeezeInfluenceOnFingerBand: 0.027
+  fingerBandResponseCurve: 1.1
   useLocalFingerAccents: 1
   useThumbAccent: 1
   useLittleFingerAccent: 0
-  localAccentPressureThreshold: 0.03
+  localAccentPressureThreshold: 0.037
   localAccentPressureForMaxDepth: 0.55
-  localAccentResponseCurve: 0.85
+  localAccentResponseCurve: 0.67
   useLocalThumbPatch: 1
-  thumbPatchRadiusMeters: 0.02
-  thumbPatchMaxDepthMeters: 0.018
+  thumbPatchRadiusMeters: 0.026
+  thumbPatchMaxDepthMeters: 0.08
   thumbPatchMinimumAmount: 0
-  thumbPatchSqueezeInfluence: 0.06
-  thumbPatchFalloffPower: 1.4
+  thumbPatchSqueezeInfluence: 0.03
+  thumbPatchFalloffPower: 2
   thumbPatchSurfaceOffsetMeters: 0
   usePalmToFingerCompression: 1
   useContactVolumeSegments: 1
@@ -14104,12 +14109,12 @@ MonoBehaviour:
   usePalmToLittleCompression: 0
   thumbSegmentRadiusMeters: 0.026
   littleSegmentRadiusMeters: 0.016
-  thumbSegmentMaxDepthMeters: 0.024
+  thumbSegmentMaxDepthMeters: 0.014
   littleSegmentMaxDepthMeters: 0.02
-  thumbVolumeDeformationRadiusMultiplier: 1.7
+  thumbVolumeDeformationRadiusMultiplier: 1
   littleVolumeDeformationRadiusMultiplier: 1.6
-  segmentSqueezeInfluence: 0.45
-  segmentFalloffPower: 0.6
+  segmentSqueezeInfluence: 0.29
+  segmentFalloffPower: 0.8
   maxTotalVertexDepthMeters: 0.065
   clampTotalVertexDepth: 1
   protectTopArea: 1
@@ -14117,9 +14122,9 @@ MonoBehaviour:
   topProtectionFullLocalY: 0.52
   topAreaMinimumMultiplier: 0.55
   indentationFalloffPower: 1.25
-  softnessBlend: 0.5
-  deformationSpeed: 10
-  returnSpeed: 10
+  softnessBlend: 0.55
+  deformationSpeed: 9
+  returnSpeed: 9
   palmContactActive: 0
   palmRawDistance: 0
   palmSurfaceDistance: 0
@@ -15426,7 +15431,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
+  m_StaticShadowCaster: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -15694,7 +15699,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2061450769
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15712,7 +15717,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0.3}
   m_SizeDelta: {x: 750, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2061450770
@@ -16487,7 +16492,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0.7}
   m_SizeDelta: {x: 800, y: 450}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2136174978

@@ -6,6 +6,19 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class SoftBallRatingStaircaseController : MonoBehaviour {
+    [Header("Tracking Metrics")]
+    [Tooltip("Detector used to log tracking-derived interaction intensity")]
+    public HandSqueezeDetector squeezeDetector;
+
+    public float maxSqueezeAmount = 0f;
+    public float meanSqueezeAmount = 0f;
+    public float maxThumbPressure = 0f;
+    public float meanThumbPressure = 0f;
+
+    private float squeezeSum = 0f;
+    private float thumbPressureSum = 0f;
+    private int trackingSampleCount = 0;
+
     [Header("Question Panels")]
     public GameObject introPanel;
     public GameObject preQuestionPanel;
@@ -198,7 +211,7 @@ public class SoftBallRatingStaircaseController : MonoBehaviour {
 
     void PrepareLocalLog() {
         ratingLogRows.Clear();
-        ratingLogRows.Add("participant_id;phase;question_id;trial_index;gain;gain_label;rating;binary_answer;timestamp");
+        ratingLogRows.Add("participant_id;phase;question_id;trial_index;gain;gain_label;rating;binary_answer;max_squeeze;mean_squeeze;max_thumb_pressure;mean_thumb_pressure;timestamp");
 
         string folderPath = Path.Combine(Application.persistentDataPath, "CogAR_test");
 
@@ -473,6 +486,8 @@ public class SoftBallRatingStaircaseController : MonoBehaviour {
 
         ratingEnabled = false;
 
+        ResetTrackingMetrics();
+
         SetAllPanelsOff();
 
         if (stressBallRoot != null) {
@@ -524,8 +539,15 @@ public class SoftBallRatingStaircaseController : MonoBehaviour {
         }
     }
 
-    IEnumerator ShowRatingAfterInteraction() {
-        yield return new WaitForSeconds(interactionDurationSeconds);
+   IEnumerator ShowRatingAfterInteraction() {
+        float elapsed = 0f;
+
+        while (elapsed < interactionDurationSeconds) {
+            UpdateTrackingMetrics();
+
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
 
         ratingEnabled = true;
 
@@ -558,6 +580,40 @@ public class SoftBallRatingStaircaseController : MonoBehaviour {
         }
 
         Debug.Log("Rating phase started for trial " + currentTrial);
+    }
+
+    void ResetTrackingMetrics() {
+        maxSqueezeAmount = 0f;
+        meanSqueezeAmount = 0f;
+        maxThumbPressure = 0f;
+        meanThumbPressure = 0f;
+
+        squeezeSum = 0f;
+        thumbPressureSum = 0f;
+        trackingSampleCount = 0;
+    }
+
+    void UpdateTrackingMetrics() {
+        if (squeezeDetector == null) {
+            return;
+        }
+
+        if (!squeezeDetector.IsHandTracked) {
+            return;
+        }
+
+        float squeeze = Mathf.Clamp01(squeezeDetector.squeezeNormalized);
+        float thumb = Mathf.Clamp01(squeezeDetector.thumbPressure);
+
+        maxSqueezeAmount = Mathf.Max(maxSqueezeAmount, squeeze);
+        maxThumbPressure = Mathf.Max(maxThumbPressure, thumb);
+
+        squeezeSum += squeeze;
+        thumbPressureSum += thumb;
+        trackingSampleCount++;
+
+        meanSqueezeAmount = squeezeSum / Mathf.Max(trackingSampleCount, 1);
+        meanThumbPressure = thumbPressureSum / Mathf.Max(trackingSampleCount, 1);
     }
 
     public void HandleTrialRatingAnswer(int value) {
@@ -600,7 +656,11 @@ public class SoftBallRatingStaircaseController : MonoBehaviour {
             currentGain,
             GetGainLabel(currentGain),
             rating,
-            toolkitAnswer.ToString()
+            toolkitAnswer.ToString(),
+            maxSqueezeAmount,
+            meanSqueezeAmount,
+            maxThumbPressure,
+            meanThumbPressure
         );
     }
 
@@ -928,7 +988,19 @@ public class SoftBallRatingStaircaseController : MonoBehaviour {
         return "medium";
     }
 
-    void SaveQuestionRow(string phase, string questionId, int trialIndex, float gain, string gainLabel, int rating, string binaryAnswer) {
+    void SaveQuestionRow(
+        string phase,
+        string questionId,
+        int trialIndex,
+        float gain,
+        string gainLabel,
+        int rating,
+        string binaryAnswer,
+        float maxSqueeze,
+        float meanSqueeze,
+        float maxThumb,
+        float meanThumb
+    ) {
         string timestamp = System.DateTime.Now.ToString("HH:mm:ss.fff");
 
         string row =
@@ -940,11 +1012,39 @@ public class SoftBallRatingStaircaseController : MonoBehaviour {
             gainLabel + ";" +
             rating.ToString() + ";" +
             binaryAnswer + ";" +
+            maxSqueeze.ToString("F3") + ";" +
+            meanSqueeze.ToString("F3") + ";" +
+            maxThumb.ToString("F3") + ";" +
+            meanThumb.ToString("F3") + ";" +
             timestamp;
 
         ratingLogRows.Add(row);
         File.WriteAllLines(ratingLogPath, ratingLogRows);
 
         Debug.Log("Saved row: " + row);
+    }
+
+    void SaveQuestionRow(
+        string phase,
+        string questionId,
+        int trialIndex,
+        float gain,
+        string gainLabel,
+        int rating,
+        string binaryAnswer
+    ) {
+        SaveQuestionRow(
+            phase,
+            questionId,
+            trialIndex,
+            gain,
+            gainLabel,
+            rating,
+            binaryAnswer,
+            0f,
+            0f,
+            0f,
+            0f
+        );
     }
 }
